@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/resources/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/selenium-server-standalone-3.141.59.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webscraper/Dinasty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dinasty Scraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dinasty Scraper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Dinasty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Dinasty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Webscraper" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,7 +98,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WebScraperTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -123,6 +120,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebScraperTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="webscraper.WebScraperTester" />
+      <module name="Dinasty Scraper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="webscraper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WebScraperTester" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,6 +161,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />

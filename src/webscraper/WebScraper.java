@@ -6,46 +6,56 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebScraper {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public WebScraper() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-    public void getDinasties(String urlDinasty){
+    public void getDinasties(String urlDinasty) {
         // Launch Website
         driver.navigate().to(urlDinasty);
 
+        ArrayList<Dinasty> dinasties = new ArrayList<>();
         //Maximize the browser
         //driver.manage().window().maximize();
         List<WebElement> allDinasties = driver.findElements(By.tagName("h4"));
-        for (WebElement el: allDinasties) {
-            System.out.println(el.getText());
-        }
-        System.out.println();
-        List<WebElement> allTable = driver.findElements(By.className("wikitable"));
-        for (WebElement table : allTable) {
+        for (WebElement el : allDinasties) {
+            WebElement table = el.findElement(By.xpath("./following::table[@class='wikitable']"));
+            String dinasty = el.getText();
+            List<WebElement> listWb = table.findElements(By.tagName("tr"));
+            ArrayList<Member> members = new ArrayList<>();
+            for (int i = 0; i < listWb.size(); i++) {
+                WebElement wb = listWb.get(i);
+                List<WebElement> tempList = wb.findElements(By.tagName("td"));
+                if (tempList.size()>1) {
 
-            List<WebElement> insideTable = table.findElements(By.tagName("td"));
-            WebElement el = insideTable.get(1);
-            String name = el.getText();
-            String url;
+                    WebElement temp = tempList.get(1);
+                    String name = temp.getText();
+                    if (!wb.findElements(By.tagName("a")).isEmpty()) {
 
-            try {
-                WebElement temp = el.findElement(By.tagName("a"));
-                url = temp.getAttribute("href");
-                System.out.println(name + " " + url + "\n");
-            } catch (NoSuchElementException e) {
-                url = "Nessun link";
+                        //String url = temp.findElement(By.tagName("a")).getAttribute("href")
+                    }
+                    Member member = new Member(name, "nop", "0", "0");
+                    members.add(member);
+                }
             }
+            dinasties.add(new Dinasty(dinasty, members));
 
         }
+        for(Dinasty d: dinasties){
+            System.out.println(d);
+        }
 
-        driver.close();
+    }
 
+
+    public void close() {
+        this.driver.close();
     }
 }
