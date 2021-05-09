@@ -11,6 +11,7 @@ public class Member {
     private Member mother;
     private Member father;
     private Member adoptiveFather;
+    private Member spouse;
     private boolean adopted;
 
     public Member(String name, String url) {
@@ -65,15 +66,6 @@ public class Member {
         this.adopted = adopted;
     }
 
-    public String toString() {
-        StringBuilder toPrint = new StringBuilder(name).append(" - ");
-        if(adopted)
-            toPrint.append("adottato - ");
-
-        toPrint.append(url);
-        return toPrint.toString();
-    }
-
     public Member getFather() {
         return father;
     }
@@ -96,5 +88,22 @@ public class Member {
 
     public void setAdoptiveFather(Member adoptiveFather) {
         this.adoptiveFather = adoptiveFather;
+    }
+
+    public Member getSpouse() {
+        return spouse;
+    }
+
+    public void setSpouse(Member spouse) {
+        this.spouse = spouse;
+    }
+
+    public String toString() {
+        StringBuilder toPrint = new StringBuilder(name).append(" - ");
+        if(adopted)
+            toPrint.append("adottato - ");
+
+        toPrint.append(url);
+        return toPrint.toString();
     }
 }

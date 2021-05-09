@@ -20,23 +20,22 @@ public class WebScraper {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
-
-    public ArrayList<Dinasty> getDinasties(String urlDinasty) {
-        //apertura del browser al link urlDinasty
-        driver.navigate().to(urlDinasty);
+    public ArrayList<Dinasty> getDynasties(String urlDynasty) {
+        //apertura del browser al link urlDynasty
+        driver.navigate().to(urlDynasty);
 
         //arraylist contente le dinastie
-        ArrayList<Dinasty> dinasties = new ArrayList<>();
+        ArrayList<Dinasty> dynasties = new ArrayList<>();
 
-        //i nomi delle dinastie sono all'interno dei tag h4, percio' il programma cerchera' per quelli
-        List<WebElement> allDinasties = driver.findElements(By.tagName("h4"));
+        //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cerchera' per quelli
+        List<WebElement> allDynasties = driver.findElements(By.tagName("h4"));
 
 
-        for (WebElement dinasty : allDinasties) {
-            //viene prelevato la prima tabella che ha come classe 'wikitable' dopo il tag h4 salvato in dinasty
-            WebElement table = dinasty.findElement(By.xpath("./following::table[@class='wikitable']"));
+        for (WebElement dynasty : allDynasties) {
+            //viene prelevato la prima tabella che ha come classe 'wikitable' dopo il tag h4 salvato in dynasty
+            WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
 
-            String dinastyName = dinasty.getText();
+            String dynastyName = dynasty.getText();
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             ArrayList<Member> members = new ArrayList<>();
 
@@ -51,10 +50,10 @@ public class WebScraper {
                     members.add(member);
                 }
             }
-            dinasties.add(new Dinasty(dinastyName, members));
+            dynasties.add(new Dinasty(dynastyName, members));
 
         }
-        return dinasties;
+        return dynasties;
 
     }
 
@@ -64,7 +63,7 @@ public class WebScraper {
 
         try {
             WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
-            personLookingFor.setIssue(getDescendantsArray(descendants));
+            personLookingFor.setIssue(getPeopleArray(descendants));
         }catch (NoSuchElementException noDescendants){
             personLookingFor.setIssue(new ArrayList<>());
         }
@@ -80,11 +79,22 @@ public class WebScraper {
 
         try {
             WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
-            String fatherName = clearText(father.getText());
-            String fatherUrl = getUrlFromWE(father);
-            personLookingFor.setFather(new Member(fatherName, fatherUrl));
+            ArrayList<Member> fatherArray = getPeopleArray(father);
+            if(fatherArray.size() > 1){
+                personLookingFor.setAdoptiveFather(fatherArray.get(1));
+            }
+            personLookingFor.setFather(fatherArray.get(0));
         }catch (NoSuchElementException noFather){
             personLookingFor.setFather(null);
+        }
+
+        try {
+            WebElement consort = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Coniuge')]/following::td"));
+            String consortName = clearText(consort.getText());
+            String consortUrl = getUrlFromWE(consort);
+            personLookingFor.setSpouse(new Member(consortName, consortUrl));
+        }catch (NoSuchElementException noConsort){
+            personLookingFor.setSpouse(null);
         }
     }
 
@@ -101,7 +111,7 @@ public class WebScraper {
         }
     }
 
-    private static ArrayList<Member> getDescendantsArray(WebElement WE) {
+    private static ArrayList<Member> getPeopleArray(WebElement WE) {
         String prova = WE.getText();
         ArrayList<Member> m = new ArrayList<>();
         boolean areAdopted = false;
@@ -120,11 +130,9 @@ public class WebScraper {
             String url;
             try {
                 s = clearText(s);
-                System.out.println(s);
 
                 url = WE.findElement(By.xpath(".//a[text()='" + s + "']")).getAttribute("href");
             } catch (NoSuchElementException e) {
-                System.out.println("Nessun link trovato");
                 url = "no url";
             }
 
