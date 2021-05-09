@@ -1,21 +1,24 @@
 package webscraper;
 
+import java.util.ArrayList;
+
 public class Member {
     private String name;
     private String url;
-    private String startEmpire;
-    private String endEmpire;
+    private String startReign;
+    private String endReign;
+    private ArrayList<Member> issue;
+    private boolean adopted;
 
-    public Member(String name, String url){
-           this.name = name;
-           this.url = url;
-    }
-
-    public Member(String name, String url, String startEmpire, String endEmpire){
+    public Member(String name, String url) {
         this.name = name;
         this.url = url;
-        this.startEmpire = startEmpire;
-        this.endEmpire = endEmpire;
+    }
+
+    public Member(String name, String url, boolean adopted) {
+        this.name = name;
+        this.url = url;
+        this.adopted = adopted;
     }
 
     public String getName() {
@@ -26,11 +29,44 @@ public class Member {
         return url;
     }
 
-    public String getEndEmpire() {
-        return endEmpire;
+    public String getEndReign() {
+        return endReign;
     }
 
-    public String getStartEmpire() {
-        return startEmpire;
+    public void setEndReign(String endReign) {
+        this.endReign = endReign;
+    }
+
+    public ArrayList<Member> getIssue() {
+        return issue;
+    }
+
+    public void setIssue(ArrayList<Member> arr){
+        this.issue = arr;
+    }
+
+    public String getStartReign() {
+        return startReign;
+    }
+
+    public void setStartReign(String startReign) {
+        this.startReign = startReign;
+    }
+
+    public boolean isAdopted() {
+        return adopted;
+    }
+
+    public void setAdopted(boolean adopted) {
+        this.adopted = adopted;
+    }
+
+    public String toString() {
+        StringBuilder toPrint = new StringBuilder(name).append(" - ");
+        if(adopted)
+            toPrint.append("adottato - ");
+
+        toPrint.append(url);
+        return toPrint.toString();
     }
 }

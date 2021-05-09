@@ -23,7 +23,8 @@ public class Dinasty {
     public String toString(){
         StringBuilder print = new StringBuilder(name + "\n");
         for(Member member: members){
-            print.append("\t").append(member.getName().replace("\n"," ")).append("\n");
+            //print.append("\t").append(member.getName().replace("\n"," ")).append(" ").append(member.getUrl()).append("\n");
+            print.append(member.toString()).append("\n");
         }
         return print.toString();
     }

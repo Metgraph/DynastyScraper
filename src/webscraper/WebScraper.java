@@ -9,6 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.List;
 
+//guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
+//classe Optional
+//browser per Selenium https://github.com/machinepublishers/jbrowserdriver
+
 public class WebScraper {
     private final WebDriver driver;
 
@@ -17,45 +21,107 @@ public class WebScraper {
         driver = new ChromeDriver();
     }
 
-    public void getDinasties(String urlDinasty) {
-        // Launch Website
+    public ArrayList<Dinasty> getDinasties(String urlDinasty) {
+        //apertura del browser al link urlDinasty
         driver.navigate().to(urlDinasty);
 
+        //arraylist contente le dinastie
         ArrayList<Dinasty> dinasties = new ArrayList<>();
-        //Maximize the browser
-        //driver.manage().window().maximize();
+
+        //i nomi delle dinastie sono all'interno dei tag h4, percio' il programma cerchera' per quelli
         List<WebElement> allDinasties = driver.findElements(By.tagName("h4"));
-        for (WebElement el : allDinasties) {
-            WebElement table = el.findElement(By.xpath("./following::table[@class='wikitable']"));
-            String dinasty = el.getText();
-            List<WebElement> listWb = table.findElements(By.tagName("tr"));
+
+
+        for (WebElement dinasty : allDinasties) {
+            //viene prelevato la prima tabella che ha come classe 'wikitable' dopo il tag h4 salvato in dinasty
+            WebElement table = dinasty.findElement(By.xpath("./following::table[@class='wikitable']"));
+
+            String dinastyName = dinasty.getText();
+            List<WebElement> listTr = table.findElements(By.tagName("tr"));
             ArrayList<Member> members = new ArrayList<>();
-            for (int i = 0; i < listWb.size(); i++) {
-                WebElement wb = listWb.get(i);
-                List<WebElement> tempList = wb.findElements(By.tagName("td"));
-                if (tempList.size()>1) {
 
-                    WebElement temp = tempList.get(1);
-                    String name = temp.getText();
-                    if (!wb.findElements(By.tagName("a")).isEmpty()) {
+            for (WebElement wb : listTr) {
+                List<WebElement> listTd = wb.findElements(By.tagName("td"));
+                if (listTd.size() > 1) {
 
-                        //String url = temp.findElement(By.tagName("a")).getAttribute("href")
-                    }
-                    Member member = new Member(name, "nop", "0", "0");
+                    WebElement memberNameWE = listTd.get(1);
+                    String memberName = memberNameWE.getText();
+                    String url = getUrlFromWE(memberNameWE);
+                    Member member = new Member(memberName, url);
                     members.add(member);
                 }
             }
-            dinasties.add(new Dinasty(dinasty, members));
+            dinasties.add(new Dinasty(dinastyName, members));
 
         }
-        for(Dinasty d: dinasties){
-            System.out.println(d);
-        }
+        return dinasties;
 
     }
 
+    public void getPersonInfo(Member personLookingFor) {
+        driver.navigate().to(personLookingFor.getUrl());
+        WebElement synoptic = driver.findElement(By.className("sinottico"));
+        WebElement descendants = synoptic.findElement(By.xpath("//tr/th[text()='Figli']/following::td"));
+        personLookingFor.setIssue(splitBrTag(descendants));
+    }
 
     public void close() {
         this.driver.close();
+    }
+
+    private static String getUrlFromWE(WebElement WE) {
+        if (!WE.findElements(By.tagName("a")).isEmpty()) {
+
+            return WE.findElement(By.tagName("a")).getAttribute("href");
+        } else {
+            return "";
+        }
+    }
+
+    private static ArrayList<Member> splitBrTag(WebElement WE) {
+        String prova = WE.getText();
+        ArrayList<Member> m = new ArrayList<>();
+        boolean areAdopted = false;
+        for (String s : prova.split("\n")) {
+            boolean isAdopted = false;
+
+            if (s.contains("Adott")) {
+                areAdopted = true;
+                continue;
+            }
+
+            if (s.contains("adott")) {
+                isAdopted = true;
+            }
+
+            String url;
+            try {
+                s = clearText(s);
+                System.out.println(s);
+
+                url = WE.findElement(By.xpath(".//a[text()='" + s + "']")).getAttribute("href");
+            } catch (NoSuchElementException e) {
+                System.out.println("Nessun link trovato");
+                url = "no url";
+            }
+
+            m.add(new Member(s, url, areAdopted || isAdopted));
+
+        }
+
+        return m;
+    }
+
+    private static String clearText(String text) {
+        //rimozione delle parentesi tonde e del loro contenuto
+        text = text.replaceAll("\\(.*\\)", "");
+
+        //rimozione delle parentesi quadre e del loro contenuto
+        text = text.replaceAll("\\[.*]", "");
+
+        //rimozione della punteggiatura
+        text = text.replaceAll("\\p{Punct}", "");
+
+        return text.trim();
     }
 }

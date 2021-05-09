@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/Dinasty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Dinasty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1s7wYhofAI63lkhoku0hDZq6K3L" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -162,19 +164,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
   </component>
 </project>
