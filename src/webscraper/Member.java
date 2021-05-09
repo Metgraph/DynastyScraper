@@ -8,6 +8,8 @@ public class Member {
     private String startReign;
     private String endReign;
     private ArrayList<Member> issue;
+    private String mother;
+    private String father;
     private boolean adopted;
 
     public Member(String name, String url) {
@@ -68,5 +70,21 @@ public class Member {
 
         toPrint.append(url);
         return toPrint.toString();
+    }
+
+    public String getFather() {
+        return father;
+    }
+
+    public void setFather(String father) {
+        this.father = father;
+    }
+
+    public String getMother() {
+        return mother;
+    }
+
+    public void setMother(String mother) {
+        this.mother = mother;
     }
 }
