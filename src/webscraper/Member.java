@@ -8,13 +8,15 @@ public class Member {
     private String startReign;
     private String endReign;
     private ArrayList<Member> issue;
-    private String mother;
-    private String father;
+    private Member mother;
+    private Member father;
+    private Member adoptiveFather;
     private boolean adopted;
 
     public Member(String name, String url) {
         this.name = name;
         this.url = url;
+        this.adopted = false;
     }
 
     public Member(String name, String url, boolean adopted) {
@@ -72,19 +74,27 @@ public class Member {
         return toPrint.toString();
     }
 
-    public String getFather() {
+    public Member getFather() {
         return father;
     }
 
-    public void setFather(String father) {
+    public void setFather(Member father) {
         this.father = father;
     }
 
-    public String getMother() {
+    public Member getMother() {
         return mother;
     }
 
-    public void setMother(String mother) {
+    public void setMother(Member mother) {
         this.mother = mother;
+    }
+
+    public Member getAdoptiveFather() {
+        return adoptiveFather;
+    }
+
+    public void setAdoptiveFather(Member adoptiveFather) {
+        this.adoptiveFather = adoptiveFather;
     }
 }

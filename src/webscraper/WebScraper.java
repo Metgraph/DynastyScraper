@@ -58,11 +58,34 @@ public class WebScraper {
 
     }
 
-    public void getPersonInfo(Member personLookingFor) {
+    public void addMemberInfo(Member personLookingFor) {
         driver.navigate().to(personLookingFor.getUrl());
         WebElement synoptic = driver.findElement(By.className("sinottico"));
-        WebElement descendants = synoptic.findElement(By.xpath("//tr/th[text()='Figli']/following::td"));
-        personLookingFor.setIssue(splitBrTag(descendants));
+
+        try {
+            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
+            personLookingFor.setIssue(getDescendantsArray(descendants));
+        }catch (NoSuchElementException noDescendants){
+            personLookingFor.setIssue(new ArrayList<>());
+        }
+
+        try {
+            WebElement mother = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Madre')]/following::td"));
+            String motherName = clearText(mother.getText());
+            String motherUrl = getUrlFromWE(mother);
+            personLookingFor.setMother(new Member(motherName, motherUrl));
+        }catch (NoSuchElementException noMother){
+            personLookingFor.setMother(null);
+        }
+
+        try {
+            WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
+            String fatherName = clearText(father.getText());
+            String fatherUrl = getUrlFromWE(father);
+            personLookingFor.setFather(new Member(fatherName, fatherUrl));
+        }catch (NoSuchElementException noFather){
+            personLookingFor.setFather(null);
+        }
     }
 
     public void close() {
@@ -78,7 +101,7 @@ public class WebScraper {
         }
     }
 
-    private static ArrayList<Member> splitBrTag(WebElement WE) {
+    private static ArrayList<Member> getDescendantsArray(WebElement WE) {
         String prova = WE.getText();
         ArrayList<Member> m = new ArrayList<>();
         boolean areAdopted = false;
