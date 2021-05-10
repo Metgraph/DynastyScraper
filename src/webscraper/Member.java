@@ -7,6 +7,7 @@ public class Member {
     private String url;
     private String startReign;
     private String endReign;
+    private String dynastyName;
     private ArrayList<Member> issue;
     private Member mother;
     private Member father;
@@ -103,7 +104,17 @@ public class Member {
         if(adopted)
             toPrint.append("adottato - ");
 
+        toPrint.append(dynastyName).append(" - ");
+
         toPrint.append(url);
         return toPrint.toString();
+    }
+
+    public String getDynastyName() {
+        return dynastyName;
+    }
+
+    public void setDynastyName(String dynastyName) {
+        this.dynastyName = dynastyName;
     }
 }

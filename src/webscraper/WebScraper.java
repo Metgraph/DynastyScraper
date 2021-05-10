@@ -20,6 +20,7 @@ public class WebScraper {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
+
     public ArrayList<Dinasty> getDynasties(String urlDynasty) {
         //apertura del browser al link urlDynasty
         driver.navigate().to(urlDynasty);
@@ -63,8 +64,8 @@ public class WebScraper {
 
         try {
             WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
-            personLookingFor.setIssue(getPeopleArray(descendants));
-        }catch (NoSuchElementException noDescendants){
+            personLookingFor.setIssue(getPeopleArray(descendants, true));
+        } catch (NoSuchElementException noDescendants) {
             personLookingFor.setIssue(new ArrayList<>());
         }
 
@@ -73,18 +74,18 @@ public class WebScraper {
             String motherName = clearText(mother.getText());
             String motherUrl = getUrlFromWE(mother);
             personLookingFor.setMother(new Member(motherName, motherUrl));
-        }catch (NoSuchElementException noMother){
+        } catch (NoSuchElementException noMother) {
             personLookingFor.setMother(null);
         }
 
         try {
             WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
-            ArrayList<Member> fatherArray = getPeopleArray(father);
-            if(fatherArray.size() > 1){
+            ArrayList<Member> fatherArray = getPeopleArray(father, false);
+            if (fatherArray.size() > 1) {
                 personLookingFor.setAdoptiveFather(fatherArray.get(1));
             }
             personLookingFor.setFather(fatherArray.get(0));
-        }catch (NoSuchElementException noFather){
+        } catch (NoSuchElementException noFather) {
             personLookingFor.setFather(null);
         }
 
@@ -93,8 +94,16 @@ public class WebScraper {
             String consortName = clearText(consort.getText());
             String consortUrl = getUrlFromWE(consort);
             personLookingFor.setSpouse(new Member(consortName, consortUrl));
-        }catch (NoSuchElementException noConsort){
+        } catch (NoSuchElementException noConsort) {
             personLookingFor.setSpouse(null);
+        }
+
+        try {
+            WebElement dynastyWE = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Dinastia')]/following::td"));
+            String dynastyName = clearText(dynastyWE.getText());
+            personLookingFor.setDynastyName(dynastyName);
+        } catch (NoSuchElementException noConsort) {
+            personLookingFor.setDynastyName("");
         }
     }
 
@@ -111,7 +120,7 @@ public class WebScraper {
         }
     }
 
-    private static ArrayList<Member> getPeopleArray(WebElement WE) {
+    private static ArrayList<Member> getPeopleArray(WebElement WE, boolean setAdopted) {
         String prova = WE.getText();
         ArrayList<Member> m = new ArrayList<>();
         boolean areAdopted = false;
@@ -136,7 +145,7 @@ public class WebScraper {
                 url = "no url";
             }
 
-            m.add(new Member(s, url, areAdopted || isAdopted));
+            m.add(new Member(s, url, (areAdopted || isAdopted) && setAdopted));
 
         }
 

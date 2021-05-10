@@ -178,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620582938567</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty 🙃)">
+      <created>1620584581548</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620584581548</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +196,7 @@
     <MESSAGE value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )" />
   </component>
 </project>

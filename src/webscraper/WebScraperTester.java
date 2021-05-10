@@ -49,8 +49,8 @@ public class WebScraperTester {
         for (Dinasty dinasty : arr) {
             ArrayList<Member> members = dinasty.getMembers();
             for (Member member : members) {
-                System.out.println("Nome Imperatore: " + member.getName());
                 ws.addMemberInfo(member);
+                System.out.println("Imperatore: " + member);
                 System.out.println("\nStampa della lista");
                 System.out.println(member.getIssue());
                 System.out.println("Madre: " + member.getMother());
