@@ -108,11 +108,12 @@ public class WebScraper {
         //se esiste la riga "Coniuge" ne preleva il nome e eventuali url, altrimenti imposto null
         try {
             WebElement consort = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Coniuge')]/following::td"));
-            String consortName = clearText(consort.getText());
-            String consortUrl = getUrlFromWE(consort);
-            personLookingFor.setSpouse(new Member(consortName, consortUrl));
+//            String consortName = clearText(consort.getText());
+//            String consortUrl = getUrlFromWE(consort);
+//            personLookingFor.setSpouses(new Member(consortName, consortUrl));
+            personLookingFor.setSpouses(getPeopleArray(consort, false));
         } catch (NoSuchElementException noConsort) {
-            personLookingFor.setSpouse(null);
+            personLookingFor.setSpouses(null);
         }
 
         //se esiste la riga "Dinastia" ne preleva il nome, altrimenti imposta una stringa vuota

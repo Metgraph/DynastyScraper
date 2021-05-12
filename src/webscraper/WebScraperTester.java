@@ -27,7 +27,7 @@ public class WebScraperTester {
         if(adoptFather != null){
             System.out.println("Padre adottivo: " + m.getAdoptiveFather());
         }
-        System.out.println("Coniuge: " + m.getSpouse());
+        System.out.println("Coniuge: " + m.getSpouses());
         System.out.println();
 
         Member m2 = arr.get(1).getMembers().get(0);
@@ -40,7 +40,7 @@ public class WebScraperTester {
         if(adoptFather != null){
             System.out.println("Padre adottivo: " + m2.getAdoptiveFather());
         }
-        System.out.println("Coniuge: " + m2.getSpouse());
+        System.out.println("Coniuge: " + m2.getSpouses());
         System.out.println();
         System.out.println("fine");
     }
@@ -60,7 +60,7 @@ public class WebScraperTester {
                     System.out.println("Padre adottivo: " + member.getAdoptiveFather());
                 }
 
-                System.out.println("Coniuge: " + member.getSpouse());
+                System.out.println("Coniuge: " + member.getSpouses());
                 System.out.println("-------------------\n");
             }
         }

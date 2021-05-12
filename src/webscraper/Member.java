@@ -12,7 +12,7 @@ public class Member {
     private Member mother;
     private Member father;
     private Member adoptiveFather;
-    private Member spouse;
+    private ArrayList<Member> spouses;
     private boolean adopted;
 
     public Member(String name, String url) {
@@ -91,12 +91,12 @@ public class Member {
         this.adoptiveFather = adoptiveFather;
     }
 
-    public Member getSpouse() {
-        return spouse;
+    public ArrayList<Member> getSpouses() {
+        return spouses;
     }
 
-    public void setSpouse(Member spouse) {
-        this.spouse = spouse;
+    public void setSpouses(ArrayList<Member> spouses) {
+        this.spouses = spouses;
     }
 
     public String toString() {
