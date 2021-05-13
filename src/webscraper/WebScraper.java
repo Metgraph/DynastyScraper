@@ -38,7 +38,7 @@ public class WebScraper {
             WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
 
             //prendo il nome della dinastia
-            String dynastyName = dynasty.getText();
+            String dynastyName = clearText(dynasty.getText());
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
@@ -187,9 +187,8 @@ public class WebScraper {
         return members;
     }
 
-
     //pulisce il testo dalla punteggiatura e dalle parentesi e il contenuto al loro interno
-    private static String clearText(String text) {
+    public static String clearText(String text) {
         //rimozione delle parentesi tonde e del loro contenuto
         text = text.replaceAll("\\(.*\\)", "");
 
@@ -201,4 +200,5 @@ public class WebScraper {
 
         return text.trim();
     }
+
 }
