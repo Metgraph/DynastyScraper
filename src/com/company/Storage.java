@@ -33,6 +33,7 @@ public class Storage {
             return emperor;
         }
         //se devo creare 2 rami scollegati da aggiungere
+        return null;
     }
 
     private void ricorsione(Member emperor){
