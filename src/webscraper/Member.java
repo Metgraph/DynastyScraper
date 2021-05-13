@@ -15,6 +15,9 @@ public class Member {
     private ArrayList<Member> spouses;
     private boolean adopted;
 
+    //nuova aggiunta
+    private String dynasty;
+
     public Member(String name, String url) {
         this.name = name;
         this.url = url;
@@ -117,4 +120,18 @@ public class Member {
     public void setDynastyName(String dynastyName) {
         this.dynastyName = dynastyName;
     }
+
+    //nuovi metodi
+    public String getDynasty() {
+        return dynasty;
+    }
+
+    public void setDynasty(String dynasty) {
+        this.dynasty = dynasty;
+    }
+
+    public boolean isInTheDynasty(String dynastyName){
+        return dynasty.equals(dynastyName);
+    }
+
 }

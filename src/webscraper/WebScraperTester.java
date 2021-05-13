@@ -4,8 +4,25 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
+        testWebScraper2();
+
+    }
+
+    public static void testWebScraper2() {
+        WebScraper2 ws = new WebScraper2();
+        ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
+        System.out.println(arr);
+        try {
+
+        } finally {
+            ws.close();
+        }
+
+    }
+
+    public static void testWebScraper() {
         WebScraper ws = new WebScraper();
-        ArrayList<Dinasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
+        ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {
 //            test1(arr, ws);
@@ -16,7 +33,7 @@ public class WebScraperTester {
 
     }
 
-    public static void test1(ArrayList<Dinasty> arr, WebScraper ws) {
+    public static void test1(ArrayList<Dynasty> arr, WebScraper ws) {
         Member m = arr.get(0).getMembers().get(0);
         ws.addMemberInfo(m);
         System.out.println("\nStampa della lista");
@@ -24,7 +41,7 @@ public class WebScraperTester {
         System.out.println("Madre: " + m.getMother());
         System.out.println("Padre: " + m.getFather());
         Member adoptFather = m.getAdoptiveFather();
-        if(adoptFather != null){
+        if (adoptFather != null) {
             System.out.println("Padre adottivo: " + m.getAdoptiveFather());
         }
         System.out.println("Coniuge: " + m.getSpouses());
@@ -37,7 +54,7 @@ public class WebScraperTester {
         System.out.println("Madre: " + m2.getMother());
         System.out.println("Padre: " + m2.getFather());
         adoptFather = m2.getAdoptiveFather();
-        if(adoptFather != null){
+        if (adoptFather != null) {
             System.out.println("Padre adottivo: " + m2.getAdoptiveFather());
         }
         System.out.println("Coniuge: " + m2.getSpouses());
@@ -45,8 +62,8 @@ public class WebScraperTester {
         System.out.println("fine");
     }
 
-    public static void test2(ArrayList<Dinasty> arr, WebScraper ws) {
-        for (Dinasty dinasty : arr) {
+    public static void test2(ArrayList<Dynasty> arr, WebScraper ws) {
+        for (Dynasty dinasty : arr) {
             ArrayList<Member> members = dinasty.getMembers();
             for (Member member : members) {
                 ws.addMemberInfo(member);
@@ -56,7 +73,7 @@ public class WebScraperTester {
                 System.out.println("Madre: " + member.getMother());
                 System.out.println("Padre: " + member.getFather());
                 Member adoptFather = member.getAdoptiveFather();
-                if(adoptFather != null){
+                if (adoptFather != null) {
                     System.out.println("Padre adottivo: " + member.getAdoptiveFather());
                 }
 

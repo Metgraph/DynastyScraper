@@ -3,11 +3,11 @@ package webscraper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dinasty {
+public class Dynasty {
     private String name;
     private ArrayList<Member> members;
 
-    public Dinasty(String name, ArrayList<Member> members) {
+    public Dynasty(String name, ArrayList<Member> members) {
         this.name = name;
         this.members = members;
     }

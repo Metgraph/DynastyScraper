@@ -9,40 +9,31 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-//guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
-//classe Optional
-//browser per Selenium https://github.com/machinepublishers/jbrowserdriver
-
-public class WebScraper {
+public class WebScraper2 {
     private final WebDriver driver;
 
-    public WebScraper() {
+    public WebScraper2() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-
-    public ArrayList<Dynasty> getDynasties(String urlDynasty) {
+    public ArrayList<Member> getEmperors(String urlPage) {
         //apertura del browser al link urlDynasty
-        driver.navigate().to(urlDynasty);
+        driver.navigate().to(urlPage);
 
         //arraylist dove verranno salvate le dinastie della tabella
-        ArrayList<Dynasty> dynasties = new ArrayList<>();
+        ArrayList<Member> emperors = new ArrayList<>();
 
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> allDynasties = driver.findElements(By.tagName("h4"));
-
 
         for (WebElement dynasty : allDynasties) {
             //viene prelevato la prima tabella che ha come classe 'wikitable' dopo il tag h4 salvato in dynasty
             WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
 
-            //prendo il nome della dinastia
-            String dynastyName = dynasty.getText();
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
-            ArrayList<Member> members = new ArrayList<>();
 
             for (WebElement wb : listTr) {
                 List<WebElement> listTd = wb.findElements(By.tagName("td"));
@@ -54,79 +45,14 @@ public class WebScraper {
                     String url = getUrlFromWE(memberNameWE);
 
                     //aggiungo l'imperatore nell'array
-                    members.add(new Member(memberName, url));
+                    emperors.add(new Member(memberName, url));
                 }
             }
 
-            //aggiungo la dinastia nell'array
-            dynasties.add(new Dynasty(dynastyName, members));
-
         }
-
-        return dynasties;
-
+        return emperors;
     }
 
-    public void addMemberInfo(Member personLookingFor) {
-        //apro l'url sul browser
-        driver.navigate().to(personLookingFor.getUrl());
-
-        //vado alla tabella sinistra della pagina
-        WebElement synoptic = driver.findElement(By.className("sinottico"));
-
-        //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
-        try {
-            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
-            personLookingFor.setIssue(getPeopleArray(descendants, true));
-        } catch (NoSuchElementException noDescendants) {
-            personLookingFor.setIssue(new ArrayList<>());
-        }
-
-        //se esiste la riga "Madre" ne preleva il nome e eventuali url, altrimenti imposto null
-        try {
-            WebElement mother = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Madre')]/following::td"));
-            String motherName = clearText(mother.getText());
-            String motherUrl = getUrlFromWE(mother);
-            personLookingFor.setMother(new Member(motherName, motherUrl));
-        } catch (NoSuchElementException noMother) {
-            personLookingFor.setMother(null);
-        }
-
-        //se esiste la riga "Padre" ne preleva il nome e eventuali url, altrimenti imposto null
-        //se trova più di un padre metterà il secondo come adottivo
-        try {
-            WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
-            ArrayList<Member> fatherArray = getPeopleArray(father, false);
-            if (fatherArray.size() > 1) {
-                personLookingFor.setAdoptiveFather(fatherArray.get(1));
-            }
-            personLookingFor.setFather(fatherArray.get(0));
-        } catch (NoSuchElementException noFather) {
-            personLookingFor.setFather(null);
-        }
-
-        //se esiste la riga "Coniuge" ne preleva il nome e eventuali url, altrimenti imposto null
-        try {
-            WebElement consort = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Coniuge')]/following::td"));
-//            String consortName = clearText(consort.getText());
-//            String consortUrl = getUrlFromWE(consort);
-//            personLookingFor.setSpouses(new Member(consortName, consortUrl));
-            personLookingFor.setSpouses(getPeopleArray(consort, false));
-        } catch (NoSuchElementException noConsort) {
-            personLookingFor.setSpouses(null);
-        }
-
-        //se esiste la riga "Dinastia" ne preleva il nome, altrimenti imposta una stringa vuota
-        try {
-            WebElement dynastyWE = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Dinastia')]/following::td"));
-            String dynastyName = clearText(dynastyWE.getText());
-            personLookingFor.setDynastyName(dynastyName);
-        } catch (NoSuchElementException noConsort) {
-            personLookingFor.setDynastyName("");
-        }
-    }
-
-    //chiude il browser, se non viene chiamato il browser rimarrà aperto anche dopo la fine del programma
     public void close() {
         this.driver.close();
     }
@@ -202,4 +128,5 @@ public class WebScraper {
 
         return text.trim();
     }
+
 }
