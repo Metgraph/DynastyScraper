@@ -14,6 +14,7 @@ public class Member {
     private Member adoptiveFather;
     private Member spouse;
     private boolean adopted;
+    private boolean emperor;
 
     public Member(String name, String url) {
         this.name = name;
@@ -116,5 +117,13 @@ public class Member {
 
     public void setDynastyName(String dynastyName) {
         this.dynastyName = dynastyName;
+    }
+
+    public boolean isEmperor() {
+        return emperor;
+    }
+
+    public void setEmperor(boolean emperor) {
+        this.emperor = emperor;
     }
 }
