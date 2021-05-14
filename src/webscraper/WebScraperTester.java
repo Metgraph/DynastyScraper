@@ -1,5 +1,7 @@
 package webscraper;
 
+import okhttp3.WebSocket;
+
 import java.util.ArrayList;
 
 public class WebScraperTester {
@@ -13,7 +15,7 @@ public class WebScraperTester {
         ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
         System.out.println(arr);
         try {
-
+            test3(arr, ws);
         } finally {
             ws.close();
         }
@@ -80,6 +82,13 @@ public class WebScraperTester {
                 System.out.println("Coniuge: " + member.getSpouses());
                 System.out.println("-------------------\n");
             }
+        }
+    }
+
+    public static void test3(ArrayList<Member> arr, WebScraper2 ws) {
+        ArrayList<Dynasty> arrD = ws.createDynastiesList(arr);
+        for (Dynasty dynasty : arrD) {
+            System.out.println(dynasty.getName() + " - " + dynasty.getMembers().size() + "\n");
         }
     }
 }

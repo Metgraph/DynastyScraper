@@ -8,15 +8,13 @@ public class Member {
     private String startReign;
     private String endReign;
     private String dynastyName;
+    private String dynastyUrl;
     private ArrayList<Member> issue;
     private Member mother;
     private Member father;
     private Member adoptiveFather;
     private ArrayList<Member> spouses;
     private boolean adopted;
-
-    //nuova aggiunta
-    private String dynasty;
 
     public Member(String name, String url) {
         this.name = name;
@@ -122,16 +120,15 @@ public class Member {
     }
 
     //nuovi metodi
-    public String getDynasty() {
-        return dynasty;
-    }
-
-    public void setDynasty(String dynasty) {
-        this.dynasty = dynasty;
-    }
-
     public boolean isInTheDynasty(String dynastyName){
-        return dynasty.equals(dynastyName);
+        return this.dynastyUrl.equals(dynastyName);
     }
 
+    public String getDynastyUrl() {
+        return dynastyUrl;
+    }
+
+    public void setDynastyUrl(String dynastyUrl) {
+        this.dynastyUrl = dynastyUrl;
+    }
 }
