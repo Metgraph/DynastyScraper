@@ -1,2 +1,0 @@
-# DinastyScraper
-sdfgsdfgsdfgh
