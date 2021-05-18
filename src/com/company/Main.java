@@ -4,13 +4,18 @@ import javax.swing.*;
 
 public class Main {
 
-    private static LinkInput LINKFRAME;
+    private static InputInterface LINKFRAME;
+
+    /**
+     * Starts the program
+    **/
 
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                Main.LINKFRAME = new LinkInput();
+                Main.LINKFRAME = new InputInterface();
             }
         });
     }
