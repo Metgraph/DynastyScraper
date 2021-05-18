@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13ff88ab-db06-479a-a35d-d5f707e9b865" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/com/company/EmperorGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/GenerationTreeGUI.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EmperorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/GenerationTreeGUI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1s7wYhofAI63lkhoku0hDZq6K3L" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -84,18 +89,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="Dinasty Scraper" />
       <RunnerSettings RunnerId="Run" />
@@ -113,14 +115,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="13ff88ab-db06-479a-a35d-d5f707e9b865" name="Default Changelist" comment="first commit" />
+      <changelist id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="" />
       <created>1620236989342</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620236989342</updated>
       <workItem from="1620236990512" duration="1141000" />
-      <workItem from="1620749996737" duration="6315000" />
-      <workItem from="1620809226499" duration="882000" />
+      <workItem from="1621234695154" duration="168000" />
+      <workItem from="1621234912264" duration="1631000" />
+      <workItem from="1621318429048" duration="1009000" />
+      <workItem from="1621326525461" duration="7203000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
@@ -140,7 +144,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Output-interface" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
