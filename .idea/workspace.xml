@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="first commit">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="stilizzazione delle finestre per la gestione relazione albero-imperatore">
+      <change afterPath="$PROJECT_DIR$/bmoc/bio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EmperorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/GenerationTreeGUI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -124,7 +137,9 @@
       <workItem from="1621234695154" duration="168000" />
       <workItem from="1621234912264" duration="1631000" />
       <workItem from="1621318429048" duration="1009000" />
-      <workItem from="1621326525461" duration="7203000" />
+      <workItem from="1621326525461" duration="7788000" />
+      <workItem from="1621440734968" duration="11145000" />
+      <workItem from="1621496635801" duration="22475000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
@@ -133,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620237866002</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="stilizzazione delle finestre per la gestione relazione albero-imperatore">
+      <created>1621343297005</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621343297005</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +187,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="stilizzazione delle finestre per la gestione relazione albero-imperatore" />
+    <option name="LAST_COMMIT_MESSAGE" value="stilizzazione delle finestre per la gestione relazione albero-imperatore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="type" />
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="sourceElement" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
