@@ -58,11 +58,6 @@ public class Storage {
         int i=0;
         //cicla finchè non si svuola emperors
         while(!emperors.isEmpty()) {
-            //aggiunge l'imperatore all'albero
-            trees.add(emperor);
-            //crea l'albero con radice l'imperatore
-            ricorsione(emperor);
-            i++;
             //cerca il prossimo imperatore non analizzato
             while(!emperors.remove(dinasty.getMembers().get(i).getUrl())){
                 i++;
@@ -71,6 +66,11 @@ public class Storage {
             emperors.add(dinasty.getMembers().get(i).getUrl());
             //setta su emperor il prossimo imperatore da analizzare
             emperor=dinasty.getMembers().get(i);
+            //aggiunge l'imperatore all'albero
+            trees.add(emperor);
+            //crea l'albero con radice l'imperatore
+            ricorsione(emperor);
+            i++;
         }
         return trees;
 
