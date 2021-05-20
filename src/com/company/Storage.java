@@ -68,9 +68,9 @@ public class Storage {
                 i++;
             }
             //riaggiunge l'imperatore tolto per poterlo analizzare
-            emperors.add(emperors.remove(dinasty.getMembers().get(i).getUrl());
+            emperors.add(dinasty.getMembers().get(i).getUrl());
             //setta su emperor il prossimo imperatore da analizzare
-            emperor=emperors.remove(dinasty.getMembers().get(i);
+            emperor=dinasty.getMembers().get(i);
         }
         return trees;
 
