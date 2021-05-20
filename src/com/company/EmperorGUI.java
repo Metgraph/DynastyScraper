@@ -39,7 +39,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         emperorFrame.setLayout(new BorderLayout());
 
 
-        //diuchiaro eventuali bottoni
+        //componenti albero
         JButton button = new JButton("switch");
 
 
@@ -49,6 +49,8 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         treepanel.add(button);
 
         //componenti della scheda imperatore
+
+        //immagine dellímperatore presa tramite url
         BufferedImage image = null;
         try {
             URL picurl = new URL(pic);
@@ -63,18 +65,23 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         JLabel emperorPic = new JLabel(new ImageIcon(image));
         emperorPic.setAlignmentX(CENTER_ALIGNMENT);
 
+        //nome dellímperatore passato dalal variabile
         JLabel emperorName = new JLabel(name);
         emperorName.setFont(new Font("Arial", Font.BOLD, 24));
         emperorName.setAlignmentX(CENTER_ALIGNMENT);
 
+        //pannello della biografia
         JEditorPane emperorBio = new JEditorPane();
+        //contentitore scrollbar per la gestione di testi lunghi
         JScrollPane emperorScrollbar = new JScrollPane(emperorBio, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         emperorScrollbar.setMaximumSize(new Dimension(310,emperorPanel.getHeight()%2));
         emperorScrollbar.setBorder(new EmptyBorder(20,20,20, 5));
+        //il pannello legge codice html, ma i doppi apici vanno sostituiti da singoli
         emperorBio.setContentType("text/html");
         emperorBio.setText("<html>" + bio + "</html>");
         emperorBio.setAlignmentX(CENTER_ALIGNMENT);
         emperorBio.setEditable(false);
+        //lettore di hyperlink e href che apre il default browser e ti apre la pagina cliccata
         emperorBio.addHyperlinkListener(new HyperlinkListener() {
             @Override
             public void hyperlinkUpdate(HyperlinkEvent event) {
@@ -104,7 +111,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         emperorPanel.add(emperorScrollbar);
         emperorPanel.add(Box.createVerticalGlue());
         emperorPanel.setBackground(Color.WHITE);
-        emperorPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 3, Color.LIGHT_GRAY));
+        emperorPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 2, Color.LIGHT_GRAY));
 
 
         //aggiungo i panel al frame e lo rendo visibile
