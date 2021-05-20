@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="classe Storage per la creazione dell'albero">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="implementazione eventualità di più alberi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/StorageTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620658309965</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="implementazione eventualità di più alberi">
+      <created>1621496656280</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621496656280</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implementazione eventualità di più alberi">
+      <created>1621496865143</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621496865143</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,17 +236,7 @@
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Storage.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="implementazione eventualità di più alberi" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementazione eventualità di più alberi" />
   </component>
 </project>

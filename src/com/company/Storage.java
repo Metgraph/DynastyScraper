@@ -24,9 +24,9 @@ public class Storage {
 
     /**
      *  Crea un Member che poi ritornerà prendendo come parametro il nome della dinastia
-     *  il Member ritornato è la radice della dinastia indicata
+     *  i Member ritornati sono le radici della dinastia indicata
      * @param nameDinasty
-     * @return Member
+     * @return ArrayList di radici
      */
 
     public ArrayList<Member> getTree(String nameDinasty) {
@@ -42,9 +42,9 @@ public class Storage {
     /**
      *  Cerca tutto quello che c'è da sapere su i vari imperatori della dinastia
      *  prende come parametro la dinastia in cui deve cercare
-     *  ritorna un Member che sarà la radice dell'albero creato per la dinastia
+     *  ritorna i Member che sono le radici dell'albero creato per la dinastia
      * @param dinasty
-     * @return
+     * @return ArrayList di radici
      */
 
     private ArrayList<Member> search(Dinasty dinasty) {
