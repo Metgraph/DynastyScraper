@@ -74,7 +74,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         JEditorPane emperorBio = new JEditorPane();
         //contentitore scrollbar per la gestione di testi lunghi
         JScrollPane emperorScrollbar = new JScrollPane(emperorBio, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        emperorScrollbar.setMaximumSize(new Dimension(310,emperorPanel.getHeight()%2));
+        emperorScrollbar.setMaximumSize(new Dimension(310,emperorFrame.getHeight()%2));
         emperorScrollbar.setBorder(new EmptyBorder(20,20,20, 5));
         //il pannello legge codice html, ma i doppi apici vanno sostituiti da singoli
         emperorBio.setContentType("text/html");
