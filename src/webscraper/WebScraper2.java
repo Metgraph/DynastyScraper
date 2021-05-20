@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class WebScraper2 {
     private final WebDriver driver;
@@ -83,6 +84,7 @@ public class WebScraper2 {
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 
+        personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
 
@@ -212,6 +214,36 @@ public class WebScraper2 {
         text = text.replaceAll("\\p{Punct}", "");
 
         return text.trim();
+    }
+
+    private String getBio() {
+        List<WebElement> ll = driver.findElements(By.xpath("//div[@class='toc']/preceding-sibling::p"));
+        StringBuilder adjustedBioBuilder = new StringBuilder();
+        for (WebElement webElement : ll) {
+            String partOfBio = webElement.getAttribute("innerHTML");
+            partOfBio = removeBracketsNum(webElement, partOfBio);
+            adjustedBioBuilder.append(partOfBio);
+        }
+        String adjustedBio = adjustedBioBuilder.toString();
+        adjustedBio = adjustedBio.replace('"', '\'');
+        return adjustedBio;
+    }
+
+    private static String removeBracketsNum(WebElement el, String text) {
+        List<WebElement> list = el.findElements(By.tagName("a"));
+        for (WebElement we : list) {
+            String weText = we.getText();
+            if (Pattern.compile("\\[.*]").matcher(weText).find()) {
+
+                //se il carattere prima della parentesi quadra chiusa e' un numero allora rimuovi le parentesi,
+                // il contenuto e i tag che lo racchiudono
+                char c = weText.charAt(weText.indexOf(']') - 1);
+                if (c >= '0' && c <= '9') {
+                    text = text.replace(we.getAttribute("outerHTML"), "");
+                }
+            }
+        }
+        return text;
     }
 
 }

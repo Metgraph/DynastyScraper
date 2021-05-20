@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-        testWebScraper();
+        testWebScraper2();
+//        testWebScraper();
 
     }
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
@@ -68,13 +69,14 @@ public class WebScraper {
         }
 
         return dynasties;
-
     }
+
 
     public void addMemberInfo(Member personLookingFor) {
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 
+        personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
 
@@ -130,10 +132,12 @@ public class WebScraper {
         }
     }
 
+
     //chiude il browser, se non viene chiamato il browser rimarrà aperto anche dopo la fine del programma
     public void close() {
         this.driver.close();
     }
+
 
     //ritorna l'url se presente, altrimenti ritorna una stringa vuota
     private static String getUrlFromWE(WebElement WE) {
@@ -144,6 +148,7 @@ public class WebScraper {
             return "";
         }
     }
+
 
     //metodo per prelevare più persone da un webElement,
     //setAdopted = true se si vuole assegnare alle persone trovate se sono adottate o meno (da usare solo coi figli)
@@ -205,5 +210,37 @@ public class WebScraper {
         text = text.replaceAll("\\p{Punct}", "");
 
         return text.trim();
+    }
+
+
+    private String getBio() {
+        List<WebElement> ll = driver.findElements(By.xpath("//div[@class='toc']/preceding-sibling::p"));
+        StringBuilder adjustedBioBuilder = new StringBuilder();
+        for (WebElement webElement : ll) {
+            String partOfBio = webElement.getAttribute("innerHTML");
+            partOfBio = removeBracketsNum(webElement, partOfBio);
+            adjustedBioBuilder.append(partOfBio);
+        }
+        String adjustedBio = adjustedBioBuilder.toString();
+        adjustedBio = adjustedBio.replace('"', '\'');
+        return adjustedBio;
+    }
+
+
+    private static String removeBracketsNum(WebElement el, String text) {
+        List<WebElement> list = el.findElements(By.tagName("a"));
+        for (WebElement we : list) {
+            String weText = we.getText();
+            if (Pattern.compile("\\[.*]").matcher(weText).find()) {
+
+                //se il carattere prima della parentesi quadra chiusa e' un numero allora rimuovi le parentesi,
+                // il contenuto e i tag che lo racchiudono
+                char c = weText.charAt(weText.indexOf(']') - 1);
+                if (c >= '0' && c <= '9') {
+                    text = text.replace(we.getAttribute("outerHTML"), "");
+                }
+            }
+        }
+        return text;
     }
 }

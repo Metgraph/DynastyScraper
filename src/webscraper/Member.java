@@ -14,6 +14,7 @@ public class Member {
     private Member father;
     private Member adoptiveFather;
     private ArrayList<Member> spouses;
+    private String biography;
     private boolean adopted;
 
     public Member(String name, String url) {
@@ -130,5 +131,13 @@ public class Member {
 
     public void setDynastyUrl(String dynastyUrl) {
         this.dynastyUrl = dynastyUrl;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
     }
 }
