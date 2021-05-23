@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
   <component name="RunManager" selected="Application.WebScraperTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -119,8 +120,6 @@
       </method>
     </configuration>
     <configuration name="WebScraperTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="webscraper.WebScraperTester" />
       <module name="Dynasty Scraper" />
       <extension name="coverage">
@@ -156,58 +155,62 @@
       <option name="project" value="LOCAL" />
       <updated>1620237866002</updated>
     </task>
-    <task id="LOCAL-00002" summary="Lavorando su una nuova versione del webscraper, aggiunto variabile d'instanza dynasty a Member con relativi metodi get e set, aggiunto metodo isInTheDynasty che preso in input una stringa controlla se essa sia uguale al nome della propria dinastia">
-      <created>1620921639403</created>
+    <task id="LOCAL-00002" summary="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona">
+      <created>1620558310755</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1620921639403</updated>
+      <updated>1620558310755</updated>
     </task>
-    <task id="LOCAL-00003" summary="Sistemata ricerca imperatore su Webscraper2, creato una prima bozza del sistema di raccolta delle dinastie">
-      <created>1621000781250</created>
+    <task id="LOCAL-00003" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter">
+      <created>1620558530403</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1621000781250</updated>
+      <updated>1620558530403</updated>
     </task>
-    <task id="LOCAL-00004" summary="Sistemata ricerca in WebScraper, ora trova anche la dinastia dei severi">
-      <created>1621002089953</created>
+    <task id="LOCAL-00004" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli">
+      <created>1620582938567</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1621002089953</updated>
+      <updated>1620582938567</updated>
     </task>
-    <task id="LOCAL-00005" summary="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)">
-      <created>1621534188329</created>
+    <task id="LOCAL-00005" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty 🙃)">
+      <created>1620584581548</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1621534188329</updated>
+      <updated>1620584581548</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore">
+      <created>1620657992221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620657992221</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data">
+      <created>1620658309965</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620658309965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <MESSAGE value="Lavorando su una nuova versione del webscraper, aggiunto variabile d'instanza dynasty a Member con relativi metodi get e set, aggiunto metodo isInTheDynasty che preso in input una stringa controlla se essa sia uguale al nome della propria dinastia" />
-    <MESSAGE value="Sistemata ricerca imperatore su Webscraper2, creato una prima bozza del sistema di raccolta delle dinastie" />
-    <MESSAGE value="Sistemata ricerca in WebScraper, ora trova anche la dinastia dei severi" />
-    <MESSAGE value="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)" />
+    <MESSAGE value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data" />
   </component>
 </project>
