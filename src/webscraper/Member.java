@@ -16,6 +16,7 @@ public class Member {
     private ArrayList<Member> spouses;
     private String biography;
     private boolean adopted;
+    private boolean emperor;
 
     public Member(String name, String url) {
         this.name = name;
@@ -139,5 +140,13 @@ public class Member {
 
     public void setBiography(String biography) {
         this.biography = biography;
+    }
+
+    public boolean isEmperor() {
+        return emperor;
+    }
+
+    public void setEmperor(boolean emperor) {
+        this.emperor = emperor;
     }
 }
