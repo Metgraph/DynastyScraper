@@ -16,6 +16,7 @@ public class InputInterface {
         inpGUI.setSize(780,160);
         inpGUI.setTitle("Dynasty Scraper");
         inpGUI.setResizable(false);
+        inpGUI.setLocationRelativeTo(null);
         inpGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inpGUI.getContentPane().setLayout(null);
 
@@ -58,8 +59,16 @@ public class InputInterface {
         createTree.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                url = linkField.getText();
-                dynastyName = dynastyField.getText();
+                if (linkField.getText().isEmpty() || dynastyField.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Il link e/o il nome della dinastia " +
+                            "non è/non sono stati inseriti");
+                }
+                else {
+                    url = linkField.getText();
+                    dynastyName = dynastyField.getText();
+                    System.out.println("url -> " + url +
+                            "\ndinasty -> " + dynastyName);
+                }
             }
         });
 
