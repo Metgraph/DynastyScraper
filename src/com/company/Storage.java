@@ -1,13 +1,14 @@
 package com.company;
 
 import webscraper.*;
+
+import java.io.IOException;
 import java.util.*;
 
 public class Storage {
     private ArrayList<Dinasty> dynasties;   //contiene tutte le dinastie
     private WebScraper scraper;             //scaber
-    private Set<String> trovati;            //contiene i Member gia analizzati
-    private Set<String> emperors;           //contiene gli tutti gli imperatori da analizzare
+    private Set<Member> trovati;            //contiene i Member gia analizzati
 
     /**
      *  Costruttore prende come parametri ulr di wikipedia della paggina delle dinastie
@@ -16,7 +17,6 @@ public class Storage {
      */
 
     public Storage(String url) {
-        emperors = new TreeSet<>();
         trovati = new TreeSet<>();
         scraper = new WebScraper();
         dynasties = scraper.getDynasties(url);
@@ -48,29 +48,14 @@ public class Storage {
      */
 
     private ArrayList<Member> search(Dinasty dinasty) {
-        Member emperor = dinasty.getMembers().get(0);   //prende il primo imperatore
         ArrayList<Member> trees=new ArrayList<>();
 
-        //riempe l'insieme di emperors
-        for (int i = 0; i < dinasty.getMembers().size(); i++) {
-            emperors.add(dinasty.getMembers().get(i).getUrl());
-        }
-        int i=0;
-        //cicla finchè non si svuola emperors
-        while(!emperors.isEmpty()) {
-            //cerca il prossimo imperatore non analizzato
-            while(!emperors.remove(dinasty.getMembers().get(i).getUrl())){
-                i++;
-            }
-            //riaggiunge l'imperatore tolto per poterlo analizzare
-            emperors.add(dinasty.getMembers().get(i).getUrl());
-            //setta su emperor il prossimo imperatore da analizzare
-            emperor=dinasty.getMembers().get(i);
+        //cicla finchè per tutti gli emperors nella dinastia
+        for(Member emperor :dinasty.getMembers()) {
             //aggiunge l'imperatore all'albero
             trees.add(emperor);
             //crea l'albero con radice l'imperatore
-            ricorsione(emperor);
-            i++;
+            ricorsione(emperor,trees);
         }
         return trees;
 
@@ -82,19 +67,30 @@ public class Storage {
      * @param emperor
      */
 
-    private void ricorsione(Member emperor) {
+    private void ricorsione(Member emperor,ArrayList<Member> trees) {
         //cerca le informazioni sull'imperatore
         scraper.addMemberInfo(emperor);
+        emperor.setEmperor(true);
+        scraper.addMemberInfo(emperor.getFather());
+        if(trovati.contains(emperor.getFather())){
+            for(Member father : trovati){
+                if(father.equals(emperor.getFather())){
+                    emperor.setFather(father);
+                    trees.remove(emperor);
+                    break;
+                }
+            }
+        }
         //cerca le informazioni per tutti i suoi figli
         for (int i = 0; i < emperor.getIssue().size(); i++) {
             //controlla se il figlio è un imperatore
-            if (emperors.remove(emperor.getUrl())) {
-                emperor.setEmperor(true);
-            }
-            //controlla se il Member è gia stato analizzato
-            if (trovati.add(emperor.getIssue().get(i).getUrl())) {
-                ricorsione(emperor.getIssue().get(i));
-            }
+            scraper.addMemberInfo(emperor.getIssue().get(i));
+            trovati.add(emperor.getIssue().get(i));
+
+//            //controlla se il Member è gia stato analizzato
+//            if (trovati.add(emperor.getIssue().get(i).getUrl())) {
+//                ricorsione(emperor.getIssue().get(i));
+//            }
         }
     }
 

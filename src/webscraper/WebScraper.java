@@ -17,7 +17,7 @@ public class WebScraper {
     private final WebDriver driver;
 
     public WebScraper() {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\MATTY2401\\IdeaProjects\\DinastyScraper\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 
