@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Storage {
-    private ArrayList<Dinasty> dynasties;   //contiene tutte le dinastie
+    private ArrayList<Dynasty> dynasties;   //contiene tutte le dinastie
     private WebScraper scraper;             //scaber
     private Set<Member> trovati;            //contiene i Member gia analizzati
 
@@ -47,7 +47,7 @@ public class Storage {
      * @return ArrayList di radici
      */
 
-    private ArrayList<Member> search(Dinasty dinasty) {
+    private ArrayList<Member> search(Dynasty dinasty) {
         ArrayList<Member> trees=new ArrayList<>();
 
         //cicla finchè per tutti gli emperors nella dinastia
@@ -99,7 +99,7 @@ public class Storage {
      * @return
      */
 
-    public ArrayList<Dinasty> getDynasties() {
+    public ArrayList<Dynasty> getDynasties() {
         return dynasties;
     }
 
