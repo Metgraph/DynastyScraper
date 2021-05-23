@@ -66,8 +66,6 @@ public class InputInterface {
                 else {
                     url = linkField.getText();
                     dynastyName = dynastyField.getText();
-                    System.out.println("url -> " + url +
-                            "\ndinasty -> " + dynastyName);
                 }
             }
         });
