@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621002089953</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)">
+      <created>1621534188329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621534188329</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +211,7 @@
     <MESSAGE value="Lavorando su una nuova versione del webscraper, aggiunto variabile d'instanza dynasty a Member con relativi metodi get e set, aggiunto metodo isInTheDynasty che preso in input una stringa controlla se essa sia uguale al nome della propria dinastia" />
     <MESSAGE value="Sistemata ricerca imperatore su Webscraper2, creato una prima bozza del sistema di raccolta delle dinastie" />
     <MESSAGE value="Sistemata ricerca in WebScraper, ora trova anche la dinastia dei severi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemata ricerca in WebScraper, ora trova anche la dinastia dei severi" />
+    <MESSAGE value="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta la variabile d'instanza biography alla classe Member e relativi set e get&#10;Aggiunti 2 metodi privati in WebScraper e WebScraper2 per estrapolare e pulire la biografia degli imperatori (sto lavorando su tutte e 2 le classi per decidere in seguito quale conviene usare)" />
   </component>
 </project>
