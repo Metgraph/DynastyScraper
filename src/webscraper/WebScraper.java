@@ -69,7 +69,7 @@ public class WebScraper {
     }
 
 
-    public void addMemberInfo(Member personLookingFor) {
+    public void addMemberInfo(Member personLookingFor) throws NoSuchElementException{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 

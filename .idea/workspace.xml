@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
-  <component name="RunManager" selected="Application.WebScraperTester">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="webscraper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StorageTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -158,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621869844537</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ora Comparable accettera' esclusivamente altri oggetti Member">
+      <created>1621884378754</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621884378754</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +279,7 @@
     <MESSAGE value="eseguito merge con Data-Managment" />
     <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
     <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
+    <MESSAGE value="ora Comparable accettera' esclusivamente altri oggetti Member" />
+    <option name="LAST_COMMIT_MESSAGE" value="ora Comparable accettera' esclusivamente altri oggetti Member" />
   </component>
 </project>
