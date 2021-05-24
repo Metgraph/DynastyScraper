@@ -33,9 +33,6 @@ public class WebScraper {
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> allDynasties = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table[@class='wikitable']/preceding::*[@class=\"mw-headline\"][1]"));
         System.out.println(allDynasties.size());
-        for (WebElement allDynasty : allDynasties) {
-            System.out.println(allDynasty.getText());
-        }
 
 
         for (WebElement dynasty : allDynasties) {
@@ -43,7 +40,7 @@ public class WebScraper {
             WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
 
             //prendo il nome della dinastia
-            String dynastyName = dynasty.getText();
+            String dynastyName = clearText(dynasty.getText());
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
@@ -202,10 +199,8 @@ public class WebScraper {
     private static String clearText(String text) {
         //rimozione delle parentesi tonde e del loro contenuto
         text = text.replaceAll("\\(.*\\)", "");
-
         //rimozione delle parentesi quadre e del loro contenuto
         text = text.replaceAll("\\[.*]", "");
-
         //rimozione della punteggiatura
         text = text.replaceAll("\\p{Punct}", "");
 

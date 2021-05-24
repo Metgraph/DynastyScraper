@@ -6,10 +6,11 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-        testWebScraper2();
-//        testWebScraper();
+//        testWebScraper2();
+        testWebScraper();
 
     }
+
 
     public static void testWebScraper2() {
         WebScraper2 ws = new WebScraper2();
