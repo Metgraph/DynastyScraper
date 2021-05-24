@@ -2,9 +2,9 @@ package webscraper;
 
 import java.util.ArrayList;
 
-public class Member {
-    private String name;
-    private String url;
+public class Member implements Comparable<Member>{
+    private final String name;
+    private final String url;
     private String startReign;
     private String endReign;
     private String dynastyName;
@@ -148,5 +148,19 @@ public class Member {
 
     public void setEmperor(boolean emperor) {
         this.emperor = emperor;
+    }
+
+    @Override
+    public int compareTo(Member o) {
+        if(this.url.equals(o.getUrl())){
+            if(this.url.equals("")){
+                if(this.name.equals(o.getName())){
+                    return 1;
+                }
+            }else{
+                return 1;
+            }
+        }
+        return 0;
     }
 }

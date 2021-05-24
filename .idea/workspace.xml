@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -92,6 +93,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/selenium-server-standalone-3.141.59.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -225,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621779001096</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ora i nomi delle dinastie vengono ritornati senza parentesi">
+      <created>1621869844537</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621869844537</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +263,8 @@
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore&#10;merge con il branch data" />
     <MESSAGE value="eseguito merge con Data-Managment" />
-    <option name="LAST_COMMIT_MESSAGE" value="eseguito merge con Data-Managment" />
+    <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
+    <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
   </component>
 </project>
