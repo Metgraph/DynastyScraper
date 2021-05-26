@@ -1,5 +1,6 @@
 package com.company;
 
+import org.openqa.selenium.NoSuchElementException;
 import webscraper.*;
 
 import java.io.IOException;
@@ -84,8 +85,12 @@ public class Storage {
         //cerca le informazioni per tutti i suoi figli
         for (int i = 0; i < emperor.getIssue().size(); i++) {
             //controlla se il figlio è un imperatore
-            scraper.addMemberInfo(emperor.getIssue().get(i));
-            trovati.add(emperor.getIssue().get(i));
+            try {
+                scraper.addMemberInfo(emperor.getIssue().get(i));
+                trovati.add(emperor.getIssue().get(i));
+            } catch (NoSuchElementException e){
+
+            }
 
 //            //controlla se il Member è gia stato analizzato
 //            if (trovati.add(emperor.getIssue().get(i).getUrl())) {
