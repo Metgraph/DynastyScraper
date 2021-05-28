@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="risoluzione bug gestione storage">
-      <change afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="corretto un bug sul metodo search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outpugui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/StorageTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -32,6 +27,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -115,7 +111,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
-  <component name="RunManager" selected="Application.StorageTester">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="outpugui.Main" />
       <module name="Dynasty Scraper" />
@@ -136,7 +132,7 @@
       </method>
     </configuration>
     <configuration name="StorageTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dataManagement.StorageTester" />
+      <option name="MAIN_CLASS_NAME" value="com.company.StorageTester" />
       <module name="Dynasty Scraper" />
       <extension name="coverage">
         <pattern>
@@ -161,6 +157,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.WebScraperTester" />
       <item itemvalue="Application.Main" />
@@ -168,8 +175,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StorageTester" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.StorageTester" />
         <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
@@ -188,20 +195,6 @@
       <workItem from="1621768774860" duration="8569000" />
       <workItem from="1621778000747" duration="1112000" />
       <workItem from="1621842203231" duration="293000" />
-      <workItem from="1622473318254" duration="3927000" />
-      <workItem from="1622638983756" duration="313000" />
-      <workItem from="1623497400092" duration="815000" />
-      <workItem from="1623765719391" duration="1509000" />
-      <workItem from="1623774864526" duration="3133000" />
-      <workItem from="1623931322635" duration="1396000" />
-      <workItem from="1623951766448" duration="2360000" />
-      <workItem from="1624182749021" duration="361000" />
-      <workItem from="1624263667902" duration="21656000" />
-      <workItem from="1624286557530" duration="4358000" />
-      <workItem from="1624381743881" duration="5360000" />
-      <workItem from="1624441401887" duration="502000" />
-      <workItem from="1624629854391" duration="1301000" />
-      <workItem from="1624704459236" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
@@ -296,21 +289,5 @@
     <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
     <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
     <option name="LAST_COMMIT_MESSAGE" value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="type" />
-        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="sourceElement" />
-      </pinned-members>
-    </pin-to-top-manager>
   </component>
 </project>
