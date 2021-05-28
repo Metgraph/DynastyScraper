@@ -1,4 +1,4 @@
-package com.company;
+package outpugui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,7 @@ import java.net.*;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.io.File;
@@ -174,7 +175,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         });
         //contentitore scrollbar per la gestione di testi lunghi
         JScrollPane emperorScrollbar = new JScrollPane(emperorBio, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        emperorScrollbar.setBorder(new EmptyBorder(20, 20, 20, 0));
+        emperorScrollbar.setBorder(new MatteBorder(20,20,20,0, Color.WHITE));
 
         //pannello dell' imperatore
         emperorPanel.add(emperorName);
