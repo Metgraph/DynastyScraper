@@ -1,9 +1,8 @@
-package com.company;
+package dataManagement;
 
 import org.openqa.selenium.NoSuchElementException;
 import webscraper.*;
 
-import java.io.IOException;
 import java.util.*;
 
 public class Storage {
