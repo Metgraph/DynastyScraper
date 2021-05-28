@@ -22,12 +22,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Webscraper" />
+        <entry key="$PROJECT_DIR$" value="Data-management" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1s7wYhofAI63lkhoku0hDZq6K3L" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -103,14 +111,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
-  <component name="RunManager" selected="Application.StorageTester">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="outpugui.Main" />
+      <module name="Dynasty Scraper" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,13 +157,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.WebScraperTester" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.StorageTester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StorageTester" />
         <item itemvalue="Application.WebScraperTester" />
       </list>
@@ -172,6 +193,11 @@
       <option name="presentableId" value="Default" />
       <updated>1620236989342</updated>
       <workItem from="1620236990512" duration="1141000" />
+      <workItem from="1621529889203" duration="1452000" />
+      <workItem from="1621583411130" duration="7612000" />
+      <workItem from="1621768774860" duration="8569000" />
+      <workItem from="1621778000747" duration="1112000" />
+      <workItem from="1621842203231" duration="293000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
