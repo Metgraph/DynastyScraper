@@ -6,10 +6,11 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-        testWebScraper2();
-//        testWebScraper();
+//        testWebScraper2();
+        testWebScraper();
 
     }
+
 
     public static void testWebScraper2() {
         WebScraper2 ws = new WebScraper2();
@@ -67,6 +68,7 @@ public class WebScraperTester {
 
     public static void test2(ArrayList<Dynasty> arr, WebScraper ws) {
         for (Dynasty dinasty : arr) {
+            System.out.println(dinasty.getName());
             ArrayList<Member> members = dinasty.getMembers();
             for (Member member : members) {
                 ws.addMemberInfo(member);
