@@ -1,4 +1,4 @@
-package com.company;
+package dataManagement;
 
 import org.openqa.selenium.NoSuchElementException;
 import webscraper.*;

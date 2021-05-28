@@ -1,4 +1,4 @@
-package com.company;
+package dataManagement;
 
 import webscraper.Member;
 import java.util.*;
