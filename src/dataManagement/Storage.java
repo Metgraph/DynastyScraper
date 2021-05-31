@@ -9,6 +9,8 @@ public class Storage {
     private ArrayList<Dynasty> dynasties;   //contiene tutte le dinastie
     private WebScraper scraper;             //scaber
     private Set<Member> trovati;            //contiene i Member gia analizzati
+    private Set<Member> adottato;
+    private int contatore=0;
 
     /**
      *  Costruttore prende come parametri ulr di wikipedia della paggina delle dinastie
@@ -17,8 +19,9 @@ public class Storage {
      */
 
     public Storage(String url) {
-        trovati = new TreeSet<>();
+        trovati = new HashSet<>();
         scraper = new WebScraper();
+        adottato = new HashSet<>();
         dynasties = scraper.getDynasties(url);
     }
 
@@ -49,9 +52,10 @@ public class Storage {
 
     private ArrayList<Member> search(Dynasty dinasty) {
         ArrayList<Member> trees=new ArrayList<>();
-
+                                                                        //System.out.println("dimenzione member:"+dinasty.getMembers().size());
         //cicla finchè per tutti gli emperors nella dinastia
         for(Member emperor :dinasty.getMembers()) {
+                                                                        System.out.println(emperor.getUrl()+" limite");
             //aggiunge l'imperatore all'albero
             trees.add(emperor);
             //crea l'albero con radice l'imperatore
@@ -71,30 +75,50 @@ public class Storage {
         //cerca le informazioni sull'imperatore
         scraper.addMemberInfo(emperor);
         emperor.setEmperor(true);
-        scraper.addMemberInfo(emperor.getFather());
-        if(trovati.contains(emperor.getFather())){
+        try {
+            scraper.addMemberInfo(emperor.getFather());
+        }catch (Exception e){
+
+        }
             for(Member father : trovati){
                 if(father.equals(emperor.getFather())){
                     emperor.setFather(father);
-                    trees.remove(emperor);
-                    break;
+                    //System.out.println(emperor.getUrl()+" siamo qui");
+                    if(father.getIssue()!=null){
+                        for(int i=0;i<father.getIssue().size();i++){
+                            if(father.getIssue().get(i).equals(emperor)){
+                                father.getIssue().set(i,emperor);
+                                trees.remove(emperor);
+                            }
+                        }
+                    }
                 }
             }
-        }
+        trovati.add(emperor);
         //cerca le informazioni per tutti i suoi figli
         for (int i = 0; i < emperor.getIssue().size(); i++) {
             //controlla se il figlio è un imperatore
+            if(emperor.getIssue().get(i).isAdopted()){
+                adottato.add(emperor.getIssue().get(i));
+            }
             try {
                 scraper.addMemberInfo(emperor.getIssue().get(i));
-                trovati.add(emperor.getIssue().get(i));
-            } catch (NoSuchElementException e){
+            } catch (Exception e){
 
             }
-
-//            //controlla se il Member è gia stato analizzato
-//            if (trovati.add(emperor.getIssue().get(i).getUrl())) {
-//                ricorsione(emperor.getIssue().get(i));
-//            }
+            trovati.add(emperor.getIssue().get(i));
+        }
+        for(Member father:trovati){
+            if(father.getIssue()!=null){
+                for(int i=0;i<father.getIssue().size();i++){
+                    if(father.getIssue().get(i).equals(emperor)){
+                        emperor.setFather(father);
+                        emperor.setAdopted(true);
+                        father.getIssue().set(i,emperor);
+                        trees.remove(emperor);
+                    }
+                }
+            }
         }
     }
 
