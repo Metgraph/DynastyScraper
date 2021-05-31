@@ -150,6 +150,7 @@ public class Member implements Comparable<Member>{
         this.emperor = emperor;
     }
 
+    //TODO cambiare con qualcosa di migliore
     @Override
     public int compareTo(Member o) {
         if(this.url.equals(o.getUrl())){
