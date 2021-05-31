@@ -12,7 +12,6 @@ public class Member implements Comparable<Member>{
     private ArrayList<Member> issue;
     private Member mother;
     private Member father;
-    private Member adoptiveFather;
     private ArrayList<Member> spouses;
     private String biography;
     private boolean adopted;
@@ -84,14 +83,6 @@ public class Member implements Comparable<Member>{
 
     public void setMother(Member mother) {
         this.mother = mother;
-    }
-
-    public Member getAdoptiveFather() {
-        return adoptiveFather;
-    }
-
-    public void setAdoptiveFather(Member adoptiveFather) {
-        this.adoptiveFather = adoptiveFather;
     }
 
     public ArrayList<Member> getSpouses() {

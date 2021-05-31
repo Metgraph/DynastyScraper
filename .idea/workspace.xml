@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
-    </list>
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622476908055</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="aggiunto todo">
+      <created>1622481794466</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622481794466</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +300,7 @@
     <MESSAGE value="ora Comparable accettera' esclusivamente altri oggetti Member" />
     <MESSAGE value="aggiunto throws nel metodo addMemberInfo" />
     <MESSAGE value="aggiunto metodo getDynasties in WebScraper2" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto metodo getDynasties in WebScraper2" />
+    <MESSAGE value="aggiunto todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunto todo" />
   </component>
 </project>

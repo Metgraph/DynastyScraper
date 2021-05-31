@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
 //browser per Selenium https://github.com/machinepublishers/jbrowserdriver
-
 public class WebScraper {
     private final WebDriver driver;
 
