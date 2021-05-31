@@ -111,9 +111,6 @@ public class WebScraper2 {
         try {
             WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
             ArrayList<Member> fatherArray = getPeopleArray(father, false);
-            if (fatherArray.size() > 1) {
-                personLookingFor.setAdoptiveFather(fatherArray.get(1));
-            }
             personLookingFor.setFather(fatherArray.get(0));
         } catch (NoSuchElementException noFather) {
             personLookingFor.setFather(null);
