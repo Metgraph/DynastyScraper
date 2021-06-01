@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,7 +272,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622481794466</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="rimosso adoptiveFather">
+      <created>1622484846190</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622484846190</updated>
+    </task>
+    <task id="LOCAL-00015" summary="rimosso adoptiveFather">
+      <created>1622484878386</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622484878386</updated>
+    </task>
+    <task id="LOCAL-00016" summary="rimosso adoptiveFather">
+      <created>1622484892613</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622484892613</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +326,7 @@
     <MESSAGE value="aggiunto throws nel metodo addMemberInfo" />
     <MESSAGE value="aggiunto metodo getDynasties in WebScraper2" />
     <MESSAGE value="aggiunto todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunto todo" />
+    <MESSAGE value="rimosso adoptiveFather" />
+    <option name="LAST_COMMIT_MESSAGE" value="rimosso adoptiveFather" />
   </component>
 </project>

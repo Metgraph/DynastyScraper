@@ -44,10 +44,6 @@ public class WebScraperTester {
         System.out.println(m.getIssue());
         System.out.println("Madre: " + m.getMother());
         System.out.println("Padre: " + m.getFather());
-        Member adoptFather = m.getAdoptiveFather();
-        if (adoptFather != null) {
-            System.out.println("Padre adottivo: " + m.getAdoptiveFather());
-        }
         System.out.println("Coniuge: " + m.getSpouses());
         System.out.println();
 
@@ -57,10 +53,6 @@ public class WebScraperTester {
         System.out.println(m2.getIssue());
         System.out.println("Madre: " + m2.getMother());
         System.out.println("Padre: " + m2.getFather());
-        adoptFather = m2.getAdoptiveFather();
-        if (adoptFather != null) {
-            System.out.println("Padre adottivo: " + m2.getAdoptiveFather());
-        }
         System.out.println("Coniuge: " + m2.getSpouses());
         System.out.println();
         System.out.println("fine");
@@ -77,10 +69,6 @@ public class WebScraperTester {
                 System.out.println(member.getIssue());
                 System.out.println("Madre: " + member.getMother());
                 System.out.println("Padre: " + member.getFather());
-                Member adoptFather = member.getAdoptiveFather();
-                if (adoptFather != null) {
-                    System.out.println("Padre adottivo: " + member.getAdoptiveFather());
-                }
 
                 System.out.println("Coniuge: " + member.getSpouses());
                 System.out.println("-------------------\n");

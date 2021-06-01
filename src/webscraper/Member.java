@@ -2,7 +2,7 @@ package webscraper;
 
 import java.util.ArrayList;
 
-public class Member implements Comparable<Member>{
+public class Member{
     private final String name;
     private final String url;
     private String startReign;
@@ -142,17 +142,17 @@ public class Member implements Comparable<Member>{
     }
 
     //TODO cambiare con qualcosa di migliore
-    @Override
-    public int compareTo(Member o) {
+
+    public boolean equals(Member o) {
         if(this.url.equals(o.getUrl())){
             if(this.url.equals("")){
                 if(this.name.equals(o.getName())){
-                    return 1;
+                    return true;
                 }
             }else{
-                return 1;
+                return true;
             }
         }
-        return 0;
+        return false;
     }
 }
