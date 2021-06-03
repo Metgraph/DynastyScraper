@@ -12,7 +12,7 @@ public class StorageTester {
         }*/
         try {
             //System.out.println("oraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            ArrayList<Member> m = storage.getTree("Dinastia dei Severi");
+            ArrayList<Member> m = storage.getTree("Gens Iulia");
             System.out.println(m.size());
             for(Member f: m){
                 //System.out.println(f.getName()+"?");

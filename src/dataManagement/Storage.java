@@ -55,7 +55,7 @@ public class Storage {
                                                                         //System.out.println("dimenzione member:"+dinasty.getMembers().size());
         //cicla finchè per tutti gli emperors nella dinastia
         for(Member emperor :dinasty.getMembers()) {
-                                                                        System.out.println(emperor.getUrl()+" limite");
+                                                                        //System.out.println(emperor.getUrl()+" limite");
             //aggiunge l'imperatore all'albero
             trees.add(emperor);
             //crea l'albero con radice l'imperatore
@@ -83,7 +83,7 @@ public class Storage {
             for(Member father : trovati){
                 if(father.equals(emperor.getFather())){
                     emperor.setFather(father);
-                    //System.out.println(emperor.getUrl()+" siamo qui");
+                                                                            //System.out.println(emperor.getUrl()+" siamo qui");
                     if(father.getIssue()!=null){
                         for(int i=0;i<father.getIssue().size();i++){
                             if(father.getIssue().get(i).equals(emperor)){
