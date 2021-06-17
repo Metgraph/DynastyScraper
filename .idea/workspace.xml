@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="corretto un bug sul metodo search">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="risoluzione bug gestione storage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/StorageTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +111,20 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.StorageTester">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="outpugui.Main" />
       <module name="Dynasty Scraper" />
@@ -132,11 +145,11 @@
       </method>
     </configuration>
     <configuration name="StorageTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.StorageTester" />
+      <option name="MAIN_CLASS_NAME" value="dataManagement.StorageTester" />
       <module name="Dynasty Scraper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.*" />
+          <option name="PATTERN" value="dataManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,17 +170,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.WebScraperTester" />
       <item itemvalue="Application.Main" />
@@ -175,8 +177,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
@@ -259,7 +261,28 @@
       <option name="project" value="LOCAL" />
       <updated>1621869844537</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="cambio pakage">
+      <created>1622239796630</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622239796631</updated>
+    </task>
+    <task id="LOCAL-00011" summary="eliminati il costractor nel main">
+      <created>1622473389743</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622473389743</updated>
+    </task>
+    <task id="LOCAL-00012" summary="risoluzione bug gestione storage">
+      <created>1622485196822</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622485196822</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +311,17 @@
     <MESSAGE value="eseguito merge con Data-Managment" />
     <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
     <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
+    <MESSAGE value="cambio pakage" />
+    <MESSAGE value="eliminati il costractor nel main" />
+    <MESSAGE value="risoluzione bug gestione storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="risoluzione bug gestione storage" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="type" />
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="sourceElement" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

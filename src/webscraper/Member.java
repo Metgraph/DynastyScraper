@@ -163,4 +163,16 @@ public class Member implements Comparable<Member>{
         }
         return 0;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o.getClass()!=this.getClass()){
+            return false;
+        }
+        Member oo=(Member) o;
+        if(oo.getUrl().equals(getUrl())){
+            return true;
+        }
+        return false;
+    }
 }
