@@ -62,12 +62,12 @@ public class WebScraper2 {
         //array dove verranno salvati gli imperatori della tabella
 
 
-
         return emperors;
     }
 
     /**
      * Group the emperors into their dynasties, for each emperor will be make a search on their page
+     *
      * @param members The list of emperors
      * @return List of dinasties
      */
@@ -100,6 +100,7 @@ public class WebScraper2 {
 
     /**
      * Set the member close relatives
+     *
      * @param personLookingFor the person on which to take the family
      */
     public void addMemberInfo(Member personLookingFor) {
@@ -109,6 +110,22 @@ public class WebScraper2 {
         personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
+
+        //se esiste un immagine dell'imperatore preleva il suo link e lo salva
+        try{
+            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
+            personLookingFor.setImageURL(image.getAttribute("src"));
+        }catch (NoSuchElementException noImage){
+            personLookingFor.setImageURL(null);
+        }
+
+        //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
+        try {
+            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
+            personLookingFor.setIssue(getPeopleArray(descendants, true));
+        } catch (NoSuchElementException noDescendants) {
+            personLookingFor.setIssue(new ArrayList<>());
+        }
 
         //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
         try {
@@ -161,12 +178,12 @@ public class WebScraper2 {
     /**
      * Fusion of getEmperors and createDynastiesList
      *
-     * @see #getEmperors
-     * @see # createDynastiesList
      * @param urlPage The page where search the emperors
      * @return List of dynasties each one containing the its emperors
+     * @see #getEmperors
+     * @see #createDynastiesList
      */
-    public ArrayList<Dynasty> getDynasties(String urlPage){
+    public ArrayList<Dynasty> getDynasties(String urlPage) {
         ArrayList<Member> emperors = getEmperors(urlPage);
         return createDynastiesList(emperors);
     }

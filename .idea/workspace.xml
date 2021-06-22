@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +112,7 @@
       <recent name="webscraper" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StorageTester">
+  <component name="RunManager" selected="Application.WebScraperTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -165,8 +167,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StorageTester" />
         <item itemvalue="Application.WebScraperTester" />
+        <item itemvalue="Application.StorageTester" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622575815483</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add docs to WebScraper2">
+      <created>1622978332683</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1622978332683</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +343,7 @@
     <MESSAGE value="aggiunto todo" />
     <MESSAGE value="rimosso adoptiveFather" />
     <MESSAGE value="sostituito compareTo con equals" />
-    <option name="LAST_COMMIT_MESSAGE" value="sostituito compareTo con equals" />
+    <MESSAGE value="add docs to WebScraper2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docs to WebScraper2" />
   </component>
 </project>

@@ -16,6 +16,7 @@ public class Member{
     private String biography;
     private boolean adopted;
     private boolean emperor;
+    private String imageURL;
 
     public Member(String name, String url) {
         this.name = name;
@@ -154,5 +155,13 @@ public class Member{
             }
         }
         return false;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

@@ -76,6 +76,14 @@ public class WebScraper {
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
 
+        //se esiste un immagine dell'imperatore preleva il suo link e lo salva
+        try{
+            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
+            personLookingFor.setImageURL(image.getAttribute("src"));
+        }catch (NoSuchElementException noImage){
+            personLookingFor.setImageURL(null);
+        }
+
         //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
         try {
             WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));

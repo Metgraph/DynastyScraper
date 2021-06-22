@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-//        testWebScraper2();
-        testWebScraper();
+        testWebScraper2();
+//        testWebScraper();
 
     }
 
 
     public static void testWebScraper2() {
         WebScraper2 ws = new WebScraper2();
-        ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
-        System.out.println(arr);
+//        ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
+//        System.out.println(arr);
         try {
-            test3(arr, ws);
+            test4(ws);
         } finally {
             ws.close();
         }
@@ -78,8 +78,15 @@ public class WebScraperTester {
 
     public static void test3(ArrayList<Member> arr, WebScraper2 ws) {
         ArrayList<Dynasty> arrD = ws.createDynastiesList(arr);
-        for (Dynasty dynasty : arrD) {
-            System.out.println(dynasty.getName() + " - " + dynasty.getMembers().size() + "\n");
-        }
+        Member temp = arrD.get(1).getMembers().get(0);
+//        ws.addMemberInfo(temp);
+        System.out.println("----------\n");
+        System.out.println(temp.getFather() + " " + temp.getMother() + "\n" + temp.getIssue());
+    }
+
+    public static void test4(WebScraper2 ws){
+        Member m = new Member("Cesare", "https://it.wikipedia.org/wiki/Augusto");
+        ws.addMemberInfo(m);
+        System.out.println(m.getImageURL());
     }
 }
