@@ -17,10 +17,18 @@ public class Member{
     private boolean adopted;
     private boolean emperor;
     private String imageURL;
+    private String shortName;
 
     public Member(String name, String url) {
         this.name = name;
         this.url = url;
+        int endName = name.indexOf('\n');
+        if(endName != -1){
+            this.shortName = name.substring(0, endName);
+        }else{
+            this.shortName = name;
+        }
+
         this.adopted = false;
     }
 
@@ -163,5 +171,13 @@ public class Member{
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 }
