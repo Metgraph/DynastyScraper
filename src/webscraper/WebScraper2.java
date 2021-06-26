@@ -5,6 +5,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import dataManagement.gino;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * This class provide methods to get information about emperors and their relatives
  */
-public class WebScraper2 {
+public class WebScraper2 implements gino{
     private final WebDriver driver;
 
     /**
