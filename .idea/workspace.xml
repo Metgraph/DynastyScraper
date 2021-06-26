@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="risoluzione bug gestione storage">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="tolti print di debug">
+      <change afterPath="$PROJECT_DIR$/src/dataManagement/gino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,7 @@
       <list>
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -171,9 +175,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.WebScraperTester" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.StorageTester" />
+      <item itemvalue="Application.WebScraperTester" />
     </list>
     <recent_temporary>
       <list>
@@ -282,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622485196822</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="tolti print di debug">
+      <created>1622725048396</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622725048396</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +325,8 @@
     <MESSAGE value="cambio pakage" />
     <MESSAGE value="eliminati il costractor nel main" />
     <MESSAGE value="risoluzione bug gestione storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="risoluzione bug gestione storage" />
+    <MESSAGE value="tolti print di debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="tolti print di debug" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

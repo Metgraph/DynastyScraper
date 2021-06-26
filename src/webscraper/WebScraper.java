@@ -9,12 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import dataManagement.gino;
 
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
 //browser per Selenium https://github.com/machinepublishers/jbrowserdriver
 
-public class WebScraper {
+public class WebScraper implements gino {
     private final WebDriver driver;
 
     public WebScraper() {

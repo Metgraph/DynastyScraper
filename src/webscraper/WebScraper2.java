@@ -9,14 +9,61 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import dataManagement.gino;
 
-public class WebScraper2 {
+public class WebScraper2 implements gino{
     private final WebDriver driver;
 
     public WebScraper2() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
+
+    public ArrayList<Dynasty> getDynasties(String urlDynasty) {
+        //apertura del browser al link urlDynasty
+        driver.navigate().to(urlDynasty);
+
+        //arraylist dove verranno salvate le dinastie della tabella
+        ArrayList<Dynasty> dynasties = new ArrayList<>();
+
+        //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
+        List<WebElement> allDynasties = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table[@class='wikitable']/preceding::*[@class=\"mw-headline\"][1]"));
+        System.out.println(allDynasties.size());
+
+
+        for (WebElement dynasty : allDynasties) {
+            //viene prelevato la prima tabella che ha come classe 'wikitable' dopo il tag h4 salvato in dynasty
+            WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
+
+            //prendo il nome della dinastia
+            String dynastyName = clearText(dynasty.getText());
+            //prelevo ogni riga della tabella
+            List<WebElement> listTr = table.findElements(By.tagName("tr"));
+            //array dove verranno salvati gli imperatori della tabella
+            ArrayList<Member> members = new ArrayList<>();
+
+            for (WebElement wb : listTr) {
+                List<WebElement> listTd = wb.findElements(By.tagName("td"));
+                if (listTd.size() > 1) {
+
+                    //prendo il nome e l'url dell'imperatore
+                    WebElement memberNameWE = listTd.get(1);
+                    String memberName = memberNameWE.getText();
+                    String url = getUrlFromWE(memberNameWE);
+
+                    //aggiungo l'imperatore nell'array
+                    members.add(new Member(memberName, url));
+                }
+            }
+
+            //aggiungo la dinastia nell'array
+            dynasties.add(new Dynasty(dynastyName, members));
+
+        }
+
+        return dynasties;
+    }
+
 
     public ArrayList<Member> getEmperors(String urlPage) {
         //apertura del browser al link urlDynasty
