@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="add docs to Dynasty">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/DynastiesScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/DynastiesScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Dynasty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Dynasty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Webscraper" />
+        <entry key="$PROJECT_DIR$" value="Data-management" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -322,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624722702413</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="change gino into DynastiesScraper">
+      <created>1624723031453</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723031453</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +366,15 @@
     <MESSAGE value="sostituito compareTo con equals" />
     <MESSAGE value="add docs to WebScraper2" />
     <MESSAGE value="add image url in Member, now it will be added with addMemberInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image url in Member, now it will be added with addMemberInfo" />
+    <MESSAGE value="add docs to Dynasty" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docs to Dynasty" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="type" />
+        <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="sourceElement" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
