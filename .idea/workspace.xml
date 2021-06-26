@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <recent name="webscraper" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WebScraperTester">
+  <component name="RunManager" selected="Application.StorageTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -166,8 +165,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -251,70 +250,7 @@
       <option name="project" value="LOCAL" />
       <updated>1621884378754</updated>
     </task>
-    <task id="LOCAL-00011" summary="aggiunto throws nel metodo addMemberInfo">
-      <created>1621885704318</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1621885704318</updated>
-    </task>
-    <task id="LOCAL-00012" summary="aggiunto metodo getDynasties in WebScraper2">
-      <created>1622476908055</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1622476908055</updated>
-    </task>
-    <task id="LOCAL-00013" summary="aggiunto todo">
-      <created>1622481794466</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1622481794466</updated>
-    </task>
-    <task id="LOCAL-00014" summary="rimosso adoptiveFather">
-      <created>1622484846190</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1622484846190</updated>
-    </task>
-    <task id="LOCAL-00015" summary="rimosso adoptiveFather">
-      <created>1622484878386</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1622484878386</updated>
-    </task>
-    <task id="LOCAL-00016" summary="rimosso adoptiveFather">
-      <created>1622484892613</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1622484892613</updated>
-    </task>
-    <task id="LOCAL-00017" summary="sostituito compareTo con equals">
-      <created>1622575815483</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1622575815483</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add docs to WebScraper2">
-      <created>1622978332683</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1622978332683</updated>
-    </task>
-    <task id="LOCAL-00019" summary="add image url in Member, now it will be added with addMemberInfo">
-      <created>1624393189977</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1624393189977</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,13 +280,6 @@
     <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
     <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
     <MESSAGE value="ora Comparable accettera' esclusivamente altri oggetti Member" />
-    <MESSAGE value="aggiunto throws nel metodo addMemberInfo" />
-    <MESSAGE value="aggiunto metodo getDynasties in WebScraper2" />
-    <MESSAGE value="aggiunto todo" />
-    <MESSAGE value="rimosso adoptiveFather" />
-    <MESSAGE value="sostituito compareTo con equals" />
-    <MESSAGE value="add docs to WebScraper2" />
-    <MESSAGE value="add image url in Member, now it will be added with addMemberInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image url in Member, now it will be added with addMemberInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="ora Comparable accettera' esclusivamente altri oggetti Member" />
   </component>
 </project>

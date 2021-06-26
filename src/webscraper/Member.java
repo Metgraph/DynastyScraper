@@ -180,4 +180,16 @@ public class Member{
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o.getClass()!=this.getClass()){
+            return false;
+        }
+        Member oo=(Member) o;
+        if(oo.getUrl().equals(getUrl())){
+            return true;
+        }
+        return false;
+    }
 }
