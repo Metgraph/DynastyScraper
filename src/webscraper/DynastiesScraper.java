@@ -1,4 +1,4 @@
-package dataManagement;
+package webscraper;
 import webscraper.Member;
 import webscraper.Dynasty;
 
