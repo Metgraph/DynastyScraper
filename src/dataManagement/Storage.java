@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Storage {
     private ArrayList<Dynasty> dynasties;   //contiene tutte le dinastie
-    private WebScraper scraper;             //scaber
+    private WebScraper2 scraper;             //scaber
     private Set<Member> trovati;            //contiene i Member gia analizzati
     private Set<Member> adottato;
     private int contatore=0;
@@ -20,7 +20,7 @@ public class Storage {
 
     public Storage(String url) {
         trovati = new HashSet<>();
-        scraper = new WebScraper();
+        scraper = new WebScraper2();
         adottato = new HashSet<>();
         dynasties = scraper.getDynasties(url);
     }

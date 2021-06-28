@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="risoluzione bug gestione storage">
+      <change afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/outpugui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -27,7 +32,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -112,19 +116,6 @@
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
   <component name="RunManager" selected="Application.StorageTester">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="outpugui.Main" />
       <module name="Dynasty Scraper" />
@@ -149,7 +140,7 @@
       <module name="Dynasty Scraper" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dataManagement.*" />
+          <option name="PATTERN" value="com.company.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -197,6 +188,20 @@
       <workItem from="1621768774860" duration="8569000" />
       <workItem from="1621778000747" duration="1112000" />
       <workItem from="1621842203231" duration="293000" />
+      <workItem from="1622473318254" duration="3927000" />
+      <workItem from="1622638983756" duration="313000" />
+      <workItem from="1623497400092" duration="815000" />
+      <workItem from="1623765719391" duration="1509000" />
+      <workItem from="1623774864526" duration="3133000" />
+      <workItem from="1623931322635" duration="1396000" />
+      <workItem from="1623951766448" duration="2360000" />
+      <workItem from="1624182749021" duration="361000" />
+      <workItem from="1624263667902" duration="21656000" />
+      <workItem from="1624286557530" duration="4358000" />
+      <workItem from="1624381743881" duration="5360000" />
+      <workItem from="1624441401887" duration="502000" />
+      <workItem from="1624629854391" duration="1301000" />
+      <workItem from="1624704459236" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
@@ -261,28 +266,7 @@
       <option name="project" value="LOCAL" />
       <updated>1621869844537</updated>
     </task>
-    <task id="LOCAL-00010" summary="cambio pakage">
-      <created>1622239796630</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1622239796631</updated>
-    </task>
-    <task id="LOCAL-00011" summary="eliminati il costractor nel main">
-      <created>1622473389743</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1622473389743</updated>
-    </task>
-    <task id="LOCAL-00012" summary="risoluzione bug gestione storage">
-      <created>1622485196822</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1622485196822</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,12 +295,17 @@
     <MESSAGE value="eseguito merge con Data-Managment" />
     <MESSAGE value="ora i nomi delle dinastie vengono ritornati senza parentesi" />
     <MESSAGE value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
-    <MESSAGE value="cambio pakage" />
-    <MESSAGE value="eliminati il costractor nel main" />
-    <MESSAGE value="risoluzione bug gestione storage" />
-    <option name="LAST_COMMIT_MESSAGE" value="risoluzione bug gestione storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementata interfaccia Comparable nella classe Member, non sono stati effettuati test" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="javax.swing.event.HyperlinkEvent" memberName="type" />

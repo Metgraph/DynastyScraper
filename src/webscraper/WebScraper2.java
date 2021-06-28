@@ -139,6 +139,10 @@ public class WebScraper2 {
         }
     }
 
+    public ArrayList<Dynasty> getDynasties(String urlPage){
+        ArrayList<Member> emperors = getEmperors(urlPage);
+        return createDynastiesList(emperors);
+    }
 
     public void close() {
         this.driver.close();
