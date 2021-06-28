@@ -32,8 +32,8 @@ public class WebScraperTester {
 
         try {
 //            test1(arr, ws);
-//            test2(arr, ws);
-            test6(arr, ws);
+            test2(arr, ws);
+//            test6(arr, ws);
         } finally {
             ws.close();
         }

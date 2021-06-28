@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * This class provide a data structure to save information about a dynasty member
  */
 public class Member {
-    private final String name;
+    private final String fullName;
     private final String url;
     private String beginReign;
     private String endReign;
@@ -21,7 +21,7 @@ public class Member {
     private boolean adopted;
     private boolean emperor;
     private String imageURL;
-    private String shortName;
+    private String name;
 
     /**
      * Create object with given the name and own Wikipedia page url
@@ -30,13 +30,13 @@ public class Member {
      * @param url  The Wikipedia page url
      */
     public Member(String name, String url) {
-        this.name = name;
+        this.fullName = name;
         this.url = url;
         int endName = name.indexOf('\n');
         if (endName != -1) {
-            this.shortName = name.substring(0, endName);
+            this.name = name.substring(0, endName);
         } else {
-            this.shortName = name;
+            this.name = name;
         }
 
         this.adopted = false;
@@ -50,24 +50,24 @@ public class Member {
      * @param adopted
      */
     public Member(String name, String url, boolean adopted) {
-        this.name = name;
+        this.fullName = name;
         this.url = url;
         int endName = name.indexOf('\n');
         if (endName != -1) {
-            this.shortName = name.substring(0, endName);
+            this.name = name.substring(0, endName);
         } else {
-            this.shortName = name;
+            this.name = name;
         }
         this.adopted = adopted;
     }
 
     /**
-     * Get the person name
+     * Get the person full name
      *
      * @return The person name
      */
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
     /**
@@ -206,7 +206,7 @@ public class Member {
     }
 
     public String toString() {
-        StringBuilder toPrint = new StringBuilder(name).append(" - ");
+        StringBuilder toPrint = new StringBuilder(fullName).append(" - ");
         if (adopted)
             toPrint.append("adottato - ");
 
@@ -335,21 +335,21 @@ public class Member {
     }
 
     /**
-     * Get the person's short name, that will be only the person main name
+     * Get the person's name, that will be only the person main name
      *
      * @return The person's short name
      */
-    public String getShortName() {
-        return shortName;
+    public String getName() {
+        return name;
     }
 
     /**
      * Set the person's short name, that will be only the person main name
      *
-     * @param shortName The person's short name
+     * @param name The person's short name
      */
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -366,7 +366,7 @@ public class Member {
         Member otherMember = (Member) o;
         if (otherMember.getUrl().equals(getUrl())) {
             if (getUrl() == null || getUrl().equals("")) {
-                return otherMember.getName().equals(getName());
+                return otherMember.getFullName().equals(getFullName());
             }
             return true;
         }
