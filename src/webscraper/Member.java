@@ -206,7 +206,7 @@ public class Member {
     }
 
     public String toString() {
-        StringBuilder toPrint = new StringBuilder(fullName).append(" - ");
+        StringBuilder toPrint = new StringBuilder(name).append(" - ");
         if (adopted)
             toPrint.append("adottato - ");
 
