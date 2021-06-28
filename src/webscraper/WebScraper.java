@@ -135,6 +135,14 @@ public class WebScraper implements DynastiesScraper{
         } catch (NoSuchElementException noConsort) {
             personLookingFor.setDynastyName("");
         }
+
+        //prende il nome accorciato
+        try{
+            WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
+            personLookingFor.setShortName(shName.getText());
+        }catch (NoSuchElementException noShortName){
+            //leave the old setted short name
+        }
     }
 
 
