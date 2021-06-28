@@ -96,7 +96,11 @@ public class WebScraperTester {
 
     public static void test5(WebScraper2 ws) {
         ArrayList<Dynasty> arrD = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
+        System.out.println(arrD.get(0).getName() + " -> " + arrD.get(1).getName());
         for (Member member : arrD.get(0).getMembers()) {
+            System.out.println(member);
+        }
+        for (Member member : arrD.get(1).getMembers()) {
             System.out.println(member);
         }
     }

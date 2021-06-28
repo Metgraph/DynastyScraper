@@ -4,7 +4,6 @@
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -350,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624726706323</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add null object check in equals">
+      <created>1624888189940</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624888189940</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +396,8 @@
     <MESSAGE value="add docs to Dynasty" />
     <MESSAGE value="add docs to Member" />
     <MESSAGE value="fix equals method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix equals method" />
+    <MESSAGE value="add null object check in equals" />
+    <option name="LAST_COMMIT_MESSAGE" value="add null object check in equals" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
