@@ -13,15 +13,27 @@ import java.util.regex.Pattern;
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
 //browser per Selenium https://github.com/machinepublishers/jbrowserdriver
+/**
+ * This class provide methods to get information about emperors and their relatives
+ */
 public class WebScraper implements DynastiesScraper{
     private final WebDriver driver;
 
+    /**
+     * Constructor, initialize the web driver and open the browser
+     */
     public WebScraper() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
 
+    /**
+     * Search the dynasties in a wikipedia page, if nothing has been found will return empty list
+     *
+     * @param urlDynasty The page where search the emperors
+     * @return A list of all founded emperors in the page
+     */
     public ArrayList<Dynasty> getDynasties(String urlDynasty) {
         //apertura del browser al link urlDynasty
         driver.navigate().to(urlDynasty);
@@ -72,6 +84,11 @@ public class WebScraper implements DynastiesScraper{
     }
 
 
+    /**
+     * Set the member close relatives
+     *
+     * @param personLookingFor the person on which to take the family
+     */
     public void addMemberInfo(Member personLookingFor) throws NoSuchElementException{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
@@ -146,7 +163,9 @@ public class WebScraper implements DynastiesScraper{
     }
 
 
-    //chiude il browser, se non viene chiamato il browser rimarrà aperto anche dopo la fine del programma
+    /**
+     * Close the Browser, if not called the browser will be remain open after the end of the execution
+     */
     public void close() {
         this.driver.close();
     }
