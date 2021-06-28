@@ -41,7 +41,6 @@ public class WebScraper2 implements DynastiesScraper {
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> tables = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table"));
 
-        System.out.println(tables.size());
         for (WebElement table : tables) {
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             for (WebElement wb : listTr) {
@@ -92,7 +91,6 @@ public class WebScraper2 implements DynastiesScraper {
                 currentDynasty.addMember(member);
                 dynastiesList.add(currentDynasty);
             }
-            System.out.println(member.getName() + " --- " + member.getDynastyName() + " --- " + member.getDynastyUrl());
 
         }
         return dynastiesList;

@@ -31,7 +31,6 @@ public class WebScraper {
 
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> allDynasties = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table[@class='wikitable']/preceding::*[@class=\"mw-headline\"][1]"));
-        System.out.println(allDynasties.size());
 
 
         for (WebElement dynasty : allDynasties) {
