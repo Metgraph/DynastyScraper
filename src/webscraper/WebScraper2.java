@@ -10,27 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-
-/**
- * This class provide methods to get information about emperors and their relatives
- */
-public class WebScraper2 implements DynastiesScraper {
+public class WebScraper2 {
     private final WebDriver driver;
 
-    /**
-     * Constructor, initialize the web driver and open the browser
-     */
     public WebScraper2() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
-    /**
-     * Search the empereors in a wikipedia page, if nothing has been found will return empty list
-     *
-     * @param urlPage The page where search the emperors
-     * @return A list of all founded emperors in the page
-     */
     public ArrayList<Member> getEmperors(String urlPage) {
         //apertura del browser al link urlDynasty
         driver.navigate().to(urlPage);
@@ -62,15 +49,10 @@ public class WebScraper2 implements DynastiesScraper {
         //array dove verranno salvati gli imperatori della tabella
 
 
+
         return emperors;
     }
 
-    /**
-     * Group the emperors into their dynasties, for each emperor will be make a search on their page
-     *
-     * @param members The list of emperors
-     * @return List of dinasties
-     */
     public ArrayList<Dynasty> createDynastiesList(ArrayList<Member> members) {
         ArrayList<Dynasty> dynastiesList = new ArrayList<>();
         Dynasty currentDynasty = new Dynasty("");
@@ -98,11 +80,6 @@ public class WebScraper2 implements DynastiesScraper {
         return dynastiesList;
     }
 
-    /**
-     * Set the member close relatives
-     *
-     * @param personLookingFor the person on which to take the family
-     */
     public void addMemberInfo(Member personLookingFor) {
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
@@ -110,22 +87,6 @@ public class WebScraper2 implements DynastiesScraper {
         personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
-
-        //se esiste un immagine dell'imperatore preleva il suo link e lo salva
-        try{
-            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
-            personLookingFor.setImageURL(image.getAttribute("src"));
-        }catch (NoSuchElementException noImage){
-            personLookingFor.setImageURL(null);
-        }
-
-        //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
-        try {
-            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
-            personLookingFor.setIssue(getPeopleArray(descendants, true));
-        } catch (NoSuchElementException noDescendants) {
-            personLookingFor.setIssue(new ArrayList<>());
-        }
 
         //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
         try {
@@ -150,6 +111,9 @@ public class WebScraper2 implements DynastiesScraper {
         try {
             WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
             ArrayList<Member> fatherArray = getPeopleArray(father, false);
+            if (fatherArray.size() > 1) {
+                personLookingFor.setAdoptiveFather(fatherArray.get(1));
+            }
             personLookingFor.setFather(fatherArray.get(0));
         } catch (NoSuchElementException noFather) {
             personLookingFor.setFather(null);
@@ -175,22 +139,11 @@ public class WebScraper2 implements DynastiesScraper {
         }
     }
 
-    /**
-     * Fusion of getEmperors and createDynastiesList
-     *
-     * @param urlPage The page where search the emperors
-     * @return List of dynasties each one containing the its emperors
-     * @see #getEmperors
-     * @see #createDynastiesList
-     */
-    public ArrayList<Dynasty> getDynasties(String urlPage) {
+    public ArrayList<Dynasty> getDynasties(String urlPage){
         ArrayList<Member> emperors = getEmperors(urlPage);
         return createDynastiesList(emperors);
     }
 
-    /**
-     * Close the Browser, if not called the browser will be remain open after the end of the execution
-     */
     public void close() {
         this.driver.close();
     }

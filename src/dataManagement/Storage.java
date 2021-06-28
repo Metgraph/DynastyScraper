@@ -1,12 +1,13 @@
 package dataManagement;
 
+import org.openqa.selenium.NoSuchElementException;
 import webscraper.*;
 
 import java.util.*;
 
 public class Storage {
     private ArrayList<Dynasty> dynasties;   //contiene tutte le dinastie
-    private DynastiesScraper scraper;             //scaber
+    private WebScraper2 scraper;             //scaber
     private Set<Member> trovati;            //contiene i Member gia analizzati
     private Set<Member> adottato;
     private int contatore=0;
@@ -17,9 +18,9 @@ public class Storage {
      * @param url
      */
 
-    public Storage(String url, DynastiesScraper scraper) {
+    public Storage(String url) {
         trovati = new HashSet<>();
-        this.scraper = scraper;
+        scraper = new WebScraper2();
         adottato = new HashSet<>();
         dynasties = scraper.getDynasties(url);
     }
