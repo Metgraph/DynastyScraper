@@ -51,6 +51,12 @@ public class Member {
     public Member(String name, String url, boolean adopted) {
         this.name = name;
         this.url = url;
+        int endName = name.indexOf('\n');
+        if (endName != -1) {
+            this.shortName = name.substring(0, endName);
+        } else {
+            this.shortName = name;
+        }
         this.adopted = adopted;
     }
 
@@ -349,7 +355,7 @@ public class Member {
     public boolean equals(Object o) {
         if (o==null)
             return false;
-        
+
         if (this == o)
             return true;
 

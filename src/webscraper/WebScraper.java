@@ -39,6 +39,11 @@ public class WebScraper implements DynastiesScraper{
 
             //prendo il nome della dinastia
             String dynastyName = clearText(dynasty.getText());
+            int counter = 0;
+            for (Dynasty dynasty1 : dynasties) {
+                if(dynasty1.getOriginalName().equals(dynastyName))
+                    counter++;
+            }
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
@@ -59,7 +64,7 @@ public class WebScraper implements DynastiesScraper{
             }
 
             //aggiungo la dinastia nell'array
-            dynasties.add(new Dynasty(dynastyName, members));
+            dynasties.add(new Dynasty(dynastyName, members, counter));
 
         }
 
@@ -241,4 +246,5 @@ public class WebScraper implements DynastiesScraper{
         }
         return text;
     }
+
 }

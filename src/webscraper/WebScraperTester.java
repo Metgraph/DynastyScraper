@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-        testWebScraper2();
-//        testWebScraper();
+//        testWebScraper2();
+        testWebScraper();
 
     }
 
@@ -32,7 +32,8 @@ public class WebScraperTester {
 
         try {
 //            test1(arr, ws);
-            test2(arr, ws);
+//            test2(arr, ws);
+            test6(arr, ws);
         } finally {
             ws.close();
         }
@@ -102,6 +103,12 @@ public class WebScraperTester {
         }
         for (Member member : arrD.get(1).getMembers()) {
             System.out.println(member);
+        }
+    }
+
+    public static void test6(ArrayList<Dynasty> arr, WebScraper ws){
+        for (Dynasty dinasty : arr) {
+            System.out.println(dinasty.getName());
         }
     }
 }
