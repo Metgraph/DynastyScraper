@@ -152,19 +152,6 @@ public class Member{
 
     //TODO cambiare con qualcosa di migliore
 
-    public boolean equals(Member o) {
-        if(this.url.equals(o.getUrl())){
-            if(this.url.equals("")){
-                if(this.name.equals(o.getName())){
-                    return true;
-                }
-            }else{
-                return true;
-            }
-        }
-        return false;
-    }
-
     public String getImageURL() {
         return imageURL;
     }
@@ -183,6 +170,9 @@ public class Member{
 
     @Override
     public boolean equals(Object o){
+        if(o==null){
+            return false;
+        }
         if(o.getClass()!=this.getClass()){
             return false;
         }

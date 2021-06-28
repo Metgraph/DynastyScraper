@@ -6,13 +6,13 @@ import java.util.*;
 
 public class StorageTester {
     public static void main(String[] args) {
-        Storage storage = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper2());
-        /*for(Dynasty f: storage.getDynasties()){
+        Storage storage = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper());
+        for(Dynasty f: storage.getDynasties()){
             System.out.println(f.getName());
-        }*/
+        }
         try {
             //System.out.println("oraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            ArrayList<Member> m = storage.getTree("Gens Iulia");
+            ArrayList<Member> m = storage.getTree("Anarchia militare fino ad Emiliano");
             System.out.println(m.size());
             for(Member f: m){
                 //System.out.println(f.getName()+"?");

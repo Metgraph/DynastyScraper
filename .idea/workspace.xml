@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="tolti print di debug">
-      <change afterPath="$PROJECT_DIR$/src/dataManagement/gino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="spostamento DynastiesScraper">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +108,14 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="webscraper" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="webscraper" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WebScraperTester">
+  <component name="RunManager" selected="Application.StorageTester">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -134,7 +138,7 @@
       </method>
     </configuration>
     <configuration name="StorageTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.StorageTester" />
+      <option name="MAIN_CLASS_NAME" value="dataManagement.StorageTester" />
       <module name="Dynasty Scraper" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624393189977</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="spostamento DynastiesScraper">
+      <created>1624723308504</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1624723308504</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +362,8 @@
     <MESSAGE value="sostituito compareTo con equals" />
     <MESSAGE value="add docs to WebScraper2" />
     <MESSAGE value="add image url in Member, now it will be added with addMemberInfo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image url in Member, now it will be added with addMemberInfo" />
+    <MESSAGE value="spostamento DynastiesScraper" />
+    <option name="LAST_COMMIT_MESSAGE" value="spostamento DynastiesScraper" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
