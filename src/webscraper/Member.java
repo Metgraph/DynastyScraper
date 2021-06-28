@@ -300,21 +300,6 @@ public class Member {
         this.emperor = emperor;
     }
 
-    //TODO cambiare con qualcosa di migliore
-
-//    public boolean equals(Member o) {
-//        if(this.url.equals(o.getUrl())){
-//            if(this.url.equals("")){
-//                if(this.name.equals(o.getName())){
-//                    return true;
-//                }
-//            }else{
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-
 
     /**
      * Get the person's Wikipedia image url
