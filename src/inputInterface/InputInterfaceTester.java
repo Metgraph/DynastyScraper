@@ -1,16 +1,15 @@
 package inputInterface;
 
+import dataManagement.Storage;
+import webscraper.WebScraper;
+
 public class InputInterfaceTester {
 
-    public static boolean a(int b){
-        if (b == 100){
-            return false;
-        }
-        return true;
-    }
-
     public static void main(String[] args){
-        InputGUI inFrame = new InputGUI();
+
+        Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani",new WebScraper());
+
+        InputGUI inFrame = new InputGUI(store.getDynasties());
 
         while(true) {
             if (inFrame.isFinished()) {
@@ -24,13 +23,9 @@ public class InputInterfaceTester {
             }
         }
 
-        /*int c = 0;
-        while(a(c)){
-            c++;
-        }*/
-
         System.out.println("*" + inFrame.getDynastyName() + "*");
 
+        store.close();
     }
 
 }

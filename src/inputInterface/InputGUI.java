@@ -1,22 +1,20 @@
 package inputInterface;
 
+import webscraper.Dynasty;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 /**
  * Input GUI to select a Roman dynasty and view its family tree
  */
 public class InputGUI extends JFrame {
 
-    private final String[] dynasties = {"Gens Iulia", "Dinastia giulioclaudia", "Guerra civile Romana", "Dinastia dei Flavi",
-            "Imperatori adottivi", "Guerra civile romana", "Dinastia dei Severi",
-            "Anarchia militare fino ad Emiliano", "Dinastia valeriana", "Imperatori illirici",
-            "Riforma tetrarchica", "Guerra civile romana", "Dinastia costantiniana",
-            "Casata di Valentiniano e di Teodosio", "Casata di Teodosio", "Ultimi imperatori"};
-
+    private String[] dynasties;
     private final String URL = "https://it.wikipedia.org/wiki/Imperatori_romani";
     private String dynastyName = "";
     private boolean finished = true;
@@ -24,8 +22,11 @@ public class InputGUI extends JFrame {
     /**
      * Creates input GUI.
      */
-    public InputGUI() {
-
+    public InputGUI(ArrayList<Dynasty> dynasties) {
+        this.dynasties = new String[dynasties.size()];
+        for (int i = 0; i < dynasties.size(); i++){
+            this.dynasties[i] = dynasties.get(i).getName();
+        }
         // frame settings
         setSize(600, 355);
         setTitle("Dynasty Scraper");
@@ -35,7 +36,7 @@ public class InputGUI extends JFrame {
         setLayout(null);
 
         // graphical list containing all the dynasties
-        JList dynastyList = new JList(dynasties);
+        JList dynastyList = new JList(this.dynasties);
         dynastyList.setBounds(0,0,220, 270);
         dynastyList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         add(dynastyList);
