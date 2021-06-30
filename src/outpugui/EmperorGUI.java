@@ -94,14 +94,14 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
     private NodeExtender createNode(Member human, JFrame emperorFrame, JPanel emperorPanel,JPanel treepanel,JPanel buttons){
         if(human.isEmperor()){
-            JButton emperorButton = new JButton(human.getName());
+            JButton emperorButton = new JButton(human.getShortName());
             emperorButton.setPreferredSize(new Dimension(200,30));
             emperorButton.setMaximumSize(new Dimension(200,30));
             emperorButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     emperorPanel.removeAll();
-                    emperorBuilder(human.getName(),human.getUrl(), human.getBiography(),"https://upload.wikimedia.org/wikipedia/commons/8/80/Dupondius-Didius_Julianus-RIC_0012_%28obverse%29.jpg",emperorFrame,emperorPanel);
+                    emperorBuilder(human.getShortName(),human.getUrl(), human.getBiography(),human.getImageURL(),emperorFrame,emperorPanel);
                     emperorPanel.revalidate();
                     emperorFrame.add(emperorPanel, BorderLayout.WEST);
                     emperorFrame.revalidate();
@@ -273,11 +273,11 @@ class ButtonRenderer extends JFrame implements TreeCellRenderer{
             NodeExtender node = (NodeExtender) value;
             Member human = node.getMember();
             if (human.isEmperor()){
-                JLabel emperor = new JLabel(human.getName());
+                JLabel emperor = new JLabel(human.getShortName());
                 emperor.setForeground(Color.RED);
                 return emperor;
             } else {
-                return new JLabel(human.getName());
+                return new JLabel(human.getShortName());
 
             }
         }
