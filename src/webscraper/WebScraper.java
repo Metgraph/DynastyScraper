@@ -13,11 +13,10 @@ import java.util.regex.Pattern;
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
 //browser per Selenium https://github.com/machinepublishers/jbrowserdriver
-
-public class WebScraper {
+public class WebScraper implements DynastiesScraper {
     private final WebDriver driver;
 
-    public WebScraper() {
+    public WebScraper()  {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
@@ -33,9 +32,6 @@ public class WebScraper {
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> allDynasties = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table[@class='wikitable']/preceding::*[@class=\"mw-headline\"][1]"));
         System.out.println(allDynasties.size());
-        for (WebElement allDynasty : allDynasties) {
-            System.out.println(allDynasty.getText());
-        }
 
 
         for (WebElement dynasty : allDynasties) {
@@ -43,7 +39,7 @@ public class WebScraper {
             WebElement table = dynasty.findElement(By.xpath("./following::table[@class='wikitable']"));
 
             //prendo il nome della dinastia
-            String dynastyName = dynasty.getText();
+            String dynastyName = clearText(dynasty.getText());
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
@@ -72,13 +68,21 @@ public class WebScraper {
     }
 
 
-    public void addMemberInfo(Member personLookingFor) {
+    public void addMemberInfo(Member personLookingFor) throws NoSuchElementException{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 
         personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
+
+        //se esiste un immagine dell'imperatore preleva il suo link e lo salva
+        try{
+            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
+            personLookingFor.setImageURL(image.getAttribute("src"));
+        }catch (NoSuchElementException noImage){
+            personLookingFor.setImageURL(null);
+        }
 
         //se esiste la riga "Figli" ne preleva i nomi e eventuali url, altrimenti imposta un'array vuota
         try {
@@ -103,9 +107,6 @@ public class WebScraper {
         try {
             WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
             ArrayList<Member> fatherArray = getPeopleArray(father, false);
-            if (fatherArray.size() > 1) {
-                personLookingFor.setAdoptiveFather(fatherArray.get(1));
-            }
             personLookingFor.setFather(fatherArray.get(0));
         } catch (NoSuchElementException noFather) {
             personLookingFor.setFather(null);
@@ -202,10 +203,8 @@ public class WebScraper {
     private static String clearText(String text) {
         //rimozione delle parentesi tonde e del loro contenuto
         text = text.replaceAll("\\(.*\\)", "");
-
         //rimozione delle parentesi quadre e del loro contenuto
         text = text.replaceAll("\\[.*]", "");
-
         //rimozione della punteggiatura
         text = text.replaceAll("\\p{Punct}", "");
 

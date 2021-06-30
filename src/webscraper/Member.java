@@ -2,9 +2,9 @@ package webscraper;
 
 import java.util.ArrayList;
 
-public class Member {
-    private String name;
-    private String url;
+public class Member{
+    private final String name;
+    private final String url;
     private String startReign;
     private String endReign;
     private String dynastyName;
@@ -12,15 +12,23 @@ public class Member {
     private ArrayList<Member> issue;
     private Member mother;
     private Member father;
-    private Member adoptiveFather;
     private ArrayList<Member> spouses;
     private String biography;
     private boolean adopted;
     private boolean emperor;
+    private String imageURL;
+    private String shortName;
 
     public Member(String name, String url) {
         this.name = name;
         this.url = url;
+        int endName = name.indexOf('\n');
+        if(endName != -1){
+            this.shortName = name.substring(0, endName);
+        }else{
+            this.shortName = name;
+        }
+
         this.adopted = false;
     }
 
@@ -86,14 +94,6 @@ public class Member {
         this.mother = mother;
     }
 
-    public Member getAdoptiveFather() {
-        return adoptiveFather;
-    }
-
-    public void setAdoptiveFather(Member adoptiveFather) {
-        this.adoptiveFather = adoptiveFather;
-    }
-
     public ArrayList<Member> getSpouses() {
         return spouses;
     }
@@ -148,5 +148,38 @@ public class Member {
 
     public void setEmperor(boolean emperor) {
         this.emperor = emperor;
+    }
+
+    //TODO cambiare con qualcosa di migliore
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(o==null){
+            return false;
+        }
+        if(o.getClass()!=this.getClass()){
+            return false;
+        }
+        Member oo=(Member) o;
+        if(oo.getUrl().equals(getUrl())){
+            return true;
+        }
+        return false;
     }
 }
