@@ -1,6 +1,4 @@
 package webscraper;
-import webscraper.Member;
-import webscraper.Dynasty;
 
 import java.util.ArrayList;
 

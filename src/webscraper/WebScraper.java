@@ -13,15 +13,27 @@ import java.util.regex.Pattern;
 //guida xpath https://www.lambdatest.com/blog/complete-guide-for-using-xpath-in-selenium-with-examples/#testid1.2
 //classe Optional
 //browser per Selenium https://github.com/machinepublishers/jbrowserdriver
-public class WebScraper {
+/**
+ * This class provide methods to get information about emperors and their relatives
+ */
+public class WebScraper implements DynastiesScraper{
     private final WebDriver driver;
 
+    /**
+     * Constructor, initialize the web driver and open the browser
+     */
     public WebScraper() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
 
+    /**
+     * Search the dynasties in a wikipedia page, if nothing has been found will return empty list
+     *
+     * @param urlDynasty The page where search the emperors
+     * @return A list of all founded emperors in the page
+     */
     public ArrayList<Dynasty> getDynasties(String urlDynasty) {
         //apertura del browser al link urlDynasty
         driver.navigate().to(urlDynasty);
@@ -31,7 +43,6 @@ public class WebScraper {
 
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> allDynasties = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table[@class='wikitable']/preceding::*[@class=\"mw-headline\"][1]"));
-        System.out.println(allDynasties.size());
 
 
         for (WebElement dynasty : allDynasties) {
@@ -40,6 +51,11 @@ public class WebScraper {
 
             //prendo il nome della dinastia
             String dynastyName = clearText(dynasty.getText());
+            int counter = 0;
+            for (Dynasty dynasty1 : dynasties) {
+                if(dynasty1.getOriginalName().equals(dynastyName))
+                    counter++;
+            }
             //prelevo ogni riga della tabella
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             //array dove verranno salvati gli imperatori della tabella
@@ -60,7 +76,7 @@ public class WebScraper {
             }
 
             //aggiungo la dinastia nell'array
-            dynasties.add(new Dynasty(dynastyName, members));
+            dynasties.add(new Dynasty(dynastyName, members, counter));
 
         }
 
@@ -68,6 +84,11 @@ public class WebScraper {
     }
 
 
+    /**
+     * Set the member close relatives
+     *
+     * @param personLookingFor the person on which to take the family
+     */
     public void addMemberInfo(Member personLookingFor) throws NoSuchElementException{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
@@ -131,10 +152,20 @@ public class WebScraper {
         } catch (NoSuchElementException noConsort) {
             personLookingFor.setDynastyName("");
         }
+
+        //prende il nome accorciato
+        try{
+            WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
+            personLookingFor.setName(shName.getText());
+        }catch (NoSuchElementException noShortName){
+            //leave the old setted short name
+        }
     }
 
 
-    //chiude il browser, se non viene chiamato il browser rimarrà aperto anche dopo la fine del programma
+    /**
+     * Close the Browser, if not called the browser will be remain open after the end of the execution
+     */
     public void close() {
         this.driver.close();
     }

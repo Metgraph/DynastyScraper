@@ -135,6 +135,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Dinasty-Scraper" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StorageTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dataManagement.StorageTester" />
       <module name="Dynasty Scraper" />
@@ -144,6 +154,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tester" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="test.Tester" />
+      <module name="Dynasty Scraper" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,6 +179,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Tester" />
       <item itemvalue="Application.WebScraperTester" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.StorageTester" />

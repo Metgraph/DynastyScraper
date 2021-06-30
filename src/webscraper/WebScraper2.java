@@ -28,7 +28,6 @@ public class WebScraper2 {
         //i nomi delle dinastie sono all'interno dei tag h4, perciò il programma cercherà per quelli
         List<WebElement> tables = driver.findElements(By.xpath("//tbody/tr/th[contains(text(),'Nome')]/ancestor::table"));
 
-        System.out.println(tables.size());
         for (WebElement table : tables) {
             List<WebElement> listTr = table.findElements(By.tagName("tr"));
             for (WebElement wb : listTr) {
@@ -70,11 +69,10 @@ public class WebScraper2 {
                 }
 
             } else {
-                currentDynasty = new Dynasty(member.getName(), member.getDynastyUrl());
+                currentDynasty = new Dynasty(member.getFullName(), member.getDynastyUrl());
                 currentDynasty.addMember(member);
                 dynastiesList.add(currentDynasty);
             }
-            System.out.println(member.getName() + " --- " + member.getDynastyName() + " --- " + member.getDynastyUrl());
 
         }
         return dynastiesList;
@@ -136,6 +134,14 @@ public class WebScraper2 {
             personLookingFor.setDynastyUrl(dynastyUrl);
         } catch (NoSuchElementException noConsort) {
             personLookingFor.setDynastyName("");
+        }
+
+        //prende il nome accorciato
+        try{
+            WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
+            personLookingFor.setName(shName.getText());
+        }catch (NoSuchElementException noShortName){
+            //leave the old setted short name
         }
     }
 
