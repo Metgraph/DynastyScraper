@@ -27,7 +27,7 @@ public class WebScraperTester {
     }
 
     public static void testWebScraper() {
-        WebScraper ws = new WebScraper();
+        WebScraper2 ws = new WebScraper2();
         ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {
@@ -61,7 +61,7 @@ public class WebScraperTester {
         System.out.println("fine");
     }
 
-    public static void test2(ArrayList<Dynasty> arr, WebScraper ws) {
+    public static void test2(ArrayList<Dynasty> arr, WebScraper2 ws) {
         for (Dynasty dinasty : arr) {
             System.out.println(dinasty.getName());
             ArrayList<Member> members = dinasty.getMembers();
