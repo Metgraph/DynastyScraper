@@ -22,30 +22,64 @@ import webscraper.Member;
 public class EmperorGUI extends JFrame implements HyperlinkListener {
     private String dinasty = "Giulio Claudia";
     private ArrayList<Member> members;
-
+    private boolean finished = true;
 
     public EmperorGUI(ArrayList<Member> members, String dinasty) {
         this.dinasty = dinasty;
         this.members = members;
         //la gestione di tale pagina è divisa in 2 jpanel
+        JFrame emperorFrame = new JFrame("Dinasty");
         JPanel treePanel = new JPanel();
         JPanel emperorPanel = new JPanel();
         JPanel buttons = new JPanel();
         JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("imperatori");
-        menuBar.add(Box.createHorizontalGlue());
-        treePanel.setLayout(new BorderLayout());
+        JMenu menu = new JMenu("visualizza imperatori");
+        JButton home = new JButton("home");
+        //creo il menù che conterrà gli imperatori clickabili nella menubar
         buttons.setLayout(new BoxLayout(buttons, BoxLayout.Y_AXIS));
-        menu.add(buttons);
-        menuBar.add(menu);
+        //creo la menubar che contiene il pulsante home e gli imperatori e la definisco
+        menuBar.add(Box.createHorizontalGlue());
         menuBar.setPreferredSize(new Dimension(0,20));
-        emperorPanel.setLayout(new BoxLayout(emperorPanel, BoxLayout.Y_AXIS));
+        //setto la base del panel dell'albero
+        treePanel.setLayout(new BorderLayout());
         treePanel.setPreferredSize(new Dimension(960, 720));
+        //setto la base del pannello dei singoli imperatori
+        emperorPanel.setLayout(new BoxLayout(emperorPanel, BoxLayout.Y_AXIS));
         emperorPanel.setPreferredSize(new Dimension(320, 720));
+        //mouse event per il tato home
+        home.addMouseListener(new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                finished = false;
+                isFinished();
+                emperorFrame.dispose();
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
 
         //creo il frame che contyiene per 3/4 la GUI dell' albero e per 1/4 la pagina relativa all' imperatore
         //fondamentale caratteristica è l'interruzione del programma a chiusura della finestra
-        JFrame emperorFrame = new JFrame("Dinasty");
         emperorFrame.setLocationRelativeTo(null);
         emperorFrame.setSize(1280, 720);
         emperorFrame.setMinimumSize(new Dimension(1280, 720));
@@ -74,6 +108,9 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
 
         //aggiungo i panel al frame e lo rendo visibile
+        menu.add(buttons);
+        menuBar.add(home);
+        menuBar.add(menu);
         emperorFrame.add(menuBar, BorderLayout.NORTH);
         emperorFrame.add(treeScrollbar, BorderLayout.CENTER);
 
@@ -81,6 +118,8 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         emperorFrame.setVisible(true);
 
     }
+
+    public boolean isFinished(){ return finished;}
 
     private void expandAllNodes(JTree tree, int startingIndex, int rowCount){
         for(int i=startingIndex;i<rowCount;++i){
@@ -139,8 +178,8 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         DefaultTreeModel model = new DefaultTreeModel(root);
         return new JTree(model);
     }
-    //crea il pannello imperatore, usando un metodo, rendendo il tutto dinamico
 
+    //crea il pannello imperatore, usando un metodo, rendendo il tutto dinamico
     private JPanel emperorBuilder(String name, String url, String bio, String pic,JFrame emperorFrame, JPanel emperorPanel ){
         //componenti della scheda imperatore
 
@@ -259,7 +298,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 }
 class ButtonRenderer extends JFrame implements TreeCellRenderer{
     private Member member;
-
+    //override dell'albero per differenziazione imperatori
     @Override
     public Component getTreeCellRendererComponent(JTree    tree,
                                                   Object   value,
@@ -285,6 +324,7 @@ class ButtonRenderer extends JFrame implements TreeCellRenderer{
 
     }
 }
+//classe per implementare l'albero sottoclasse di deafaultmutabletreenode e modificare in override il renderer
 class NodeExtender extends DefaultMutableTreeNode{
     private Member member;
     public NodeExtender(Member value){

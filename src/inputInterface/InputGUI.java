@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class InputGUI extends JFrame {
 
     private String[] dynasties;
-    private final String URL = "https://it.wikipedia.org/wiki/Imperatori_romani";
     private String dynastyName = "";
     private boolean finished = true;
 
@@ -23,23 +22,24 @@ public class InputGUI extends JFrame {
      * Creates input GUI.
      */
     public InputGUI(ArrayList<Dynasty> dynasties) {
+        // Creazione lista dinastie
         this.dynasties = new String[dynasties.size()];
         for (int i = 0; i < dynasties.size(); i++){
             this.dynasties[i] = dynasties.get(i).getName();
         }
         // frame settings
-        setSize(600, 355);
-        setTitle("Dynasty Scraper");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
-        setLayout(null);
+        setSize(600, 355);  // size frame
+        setTitle("Dynasty Scraper");    // title frame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close frame when clicking on the X button
+        setResizable(false);    // Block frame resize
+        setLocationRelativeTo(null);    //  Set frame position in the middle of the screen
+        setLayout(null);    // set empty layout
 
         // graphical list containing all the dynasties
         JList dynastyList = new JList(this.dynasties);
-        dynastyList.setBounds(0,0,220, 270);
-        dynastyList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        add(dynastyList);
+        dynastyList.setBounds(0,0,220, 270);    // set dimension and position in the frame of the JList
+        dynastyList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  // set selection mode
+        add(dynastyList); // add JList to the frame
 
         // sets the selected choice to dynastyName when it is clicked
         dynastyList.addListSelectionListener(new ListSelectionListener() {
@@ -51,29 +51,23 @@ public class InputGUI extends JFrame {
 
         // button
         JButton createTree = new JButton("Genera albero");
-        createTree.setBounds(0,270,220,30);
+        createTree.setBounds(0,270,220,30);   // set dimension and position in the frame of the JButton
 
         // disposes the frame
         createTree.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (dynastyName.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Il nome della dinastia non è stato inserito");
-                } else {
+                if (dynastyName.equals("")) { // if no dynasty is selected, shows a frame noticing the user to select a choice
+                    JOptionPane.showMessageDialog(null, "Il nome della dinastia non è stato selezionato");
+                } else {    // else disposes the frame
                     finished = false;
-
-                    /*if (finished) {
-
-                    }else{
-                        System.out.println("finito");
-                    }*/
                     dispose();
                 }
             }
         });
 
-        add(createTree);
-        setVisible(true);
+        add(createTree);    // add JButton to the frame
+        setVisible(true);   // set the frame visible on the screen
     }
 
     /**
@@ -84,16 +78,9 @@ public class InputGUI extends JFrame {
         return dynastyName;
     }
 
-    /**
-     * returns the Wikipedia URL of the Roman emperors
-     * @return URL
-     */
-    public String getURL(){
-        return URL;
-    }
 
     /**
-     * returns
+     * returns selection status
      * @return finished
      */
     public boolean isFinished(){

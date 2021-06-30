@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/Tester.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="Push Tester">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outpugui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputInterface/InputGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputInterface/InputGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624726453177</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Push Tester">
+      <created>1625043339639</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625043339639</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +407,8 @@
     <MESSAGE value="add image url in Member, now it will be added with addMemberInfo" />
     <MESSAGE value="add docs to Dynasty" />
     <MESSAGE value="add docs to Member" />
-    <option name="LAST_COMMIT_MESSAGE" value="add docs to Member" />
+    <MESSAGE value="Push Tester" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push Tester" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

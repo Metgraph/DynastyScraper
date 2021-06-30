@@ -10,29 +10,44 @@ import java.util.ArrayList;
 public class Tester {
 
     public static void main(String[] args) {
-        Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani",new WebScraper());
+        do {
 
-        InputGUI inFrame = new InputGUI(store.getDynasties());
+            Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper());
 
-        while(true) {
-            if (inFrame.isFinished()) {
-                try {
-                    Thread.sleep(20);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            InputGUI inFrame = new InputGUI(store.getDynasties());
+
+            while (true) {
+                if (inFrame.isFinished()) {
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    break;
                 }
-            }else{
-                break;
             }
-        }
 
 
-        ArrayList<Member> tree = store.getTree(inFrame.getDynastyName());
+            ArrayList<Member> tree = store.getTree(inFrame.getDynastyName());
 
-        store.close();
+            store.close();
 
-        new EmperorGUI(tree, inFrame.getDynastyName());
+            EmperorGUI outFrame = new EmperorGUI(tree, inFrame.getDynastyName());
 
+            while (true) {
+                if (outFrame.isFinished()) {
+                    try {
+                        Thread.sleep(20);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    break;
+                }
+            }
+
+        }while(true);
     }
 
 }
