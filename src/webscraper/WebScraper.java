@@ -93,9 +93,9 @@ public class WebScraper implements DynastiesScraper{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 
-        personLookingFor.setBiography(getBio());
         //vado alla tabella sinistra della pagina
         WebElement synoptic = driver.findElement(By.className("sinottico"));
+        personLookingFor.setBiography(getBio());
 
         //se esiste un immagine dell'imperatore preleva il suo link e lo salva
         try{
