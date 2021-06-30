@@ -101,7 +101,7 @@ public class WebScraper2 implements DynastiesScraper {
      *
      * @param personLookingFor the person on which to take the family
      */
-    public void addMemberInfo(Member personLookingFor) {
+    public void addMemberInfo(Member personLookingFor) throws NoSuchElementException{
         //apro l'url sul browser
         driver.navigate().to(personLookingFor.getUrl());
 

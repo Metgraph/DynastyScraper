@@ -244,7 +244,8 @@ public class WebScraper implements DynastiesScraper{
 
 
     private String getBio() {
-        List<WebElement> ll = driver.findElements(By.xpath("//div[@class='toc']/preceding-sibling::p"));
+        //List<WebElement> ll = driver.findElements(By.xpath("//div[@class='toc']/preceding-sibling::p"));
+        List<WebElement> ll = driver.findElements(By.xpath("//div[@id='bodyContent']//p"));
         StringBuilder adjustedBioBuilder = new StringBuilder();
         for (WebElement webElement : ll) {
             String partOfBio = webElement.getAttribute("innerHTML");
