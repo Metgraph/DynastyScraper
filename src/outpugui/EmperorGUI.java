@@ -140,7 +140,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     emperorPanel.removeAll();
-                    emperorBuilder(human.getName(),human.getUrl(), human.getBiography(),"https://upload.wikimedia.org/wikipedia/commons/8/80/Dupondius-Didius_Julianus-RIC_0012_%28obverse%29.jpg",emperorFrame,emperorPanel);
+                    emperorBuilder(human.getName(),human.getUrl(), human.getBiography(),human.getImageURL(),emperorFrame,emperorPanel);
                     emperorPanel.revalidate();
                     emperorFrame.add(emperorPanel, BorderLayout.WEST);
                     emperorFrame.revalidate();
@@ -339,4 +339,3 @@ class NodeExtender extends DefaultMutableTreeNode{
     }
 
 }
-
