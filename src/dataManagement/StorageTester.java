@@ -1,8 +1,9 @@
 package dataManagement;
 
 import webscraper.Dynasty;
-import webscraper.*;
+import webscraper.Member;
 import java.util.*;
+
 
 public class StorageTester {
     public static void main(String[] args) {
@@ -11,8 +12,8 @@ public class StorageTester {
             System.out.println(f.getName());
         }
         try {
-            //System.out.println("oraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            ArrayList<Member> m = storage.getTree("Anarchia militare fino ad Emiliano");
+            System.out.println("oraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            ArrayList<Member> m = storage.getTree("Anarchia militarefinoademiliano");
             System.out.println(m.size());
             for(Member f: m){
                 //System.out.println(f.getName()+"?");
@@ -36,5 +37,6 @@ public class StorageTester {
             corri(g,v+1);
         }
     }
+
 
 }

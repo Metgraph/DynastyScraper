@@ -273,5 +273,4 @@ public class WebScraper implements DynastiesScraper{
         }
         return text;
     }
-
 }
