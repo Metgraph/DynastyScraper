@@ -6,19 +6,20 @@ import java.util.ArrayList;
 
 public class WebScraperTester {
     public static void main(String[] args) {
-        testWebScraper2();
-//        testWebScraper();
+//        testWebScraper2();
+        testWebScraper();
 
     }
 
 
     public static void testWebScraper2() {
         WebScraper2 ws = new WebScraper2();
-        ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
+        //ArrayList<Member> arr = ws.getEmperors("https://it.wikipedia.org/wiki/Imperatori_romani");
 //        System.out.println(arr);
         try {
-            test3(arr, ws);
+            //test3(arr, ws);
 //            test4(ws);
+            test5(ws);
         } finally {
             ws.close();
         }
@@ -26,12 +27,13 @@ public class WebScraperTester {
     }
 
     public static void testWebScraper() {
-        WebScraper ws = new WebScraper();
+        WebScraper2 ws = new WebScraper2();
         ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {
 //            test1(arr, ws);
             test2(arr, ws);
+//            test6(arr, ws);
         } finally {
             ws.close();
         }
@@ -59,7 +61,7 @@ public class WebScraperTester {
         System.out.println("fine");
     }
 
-    public static void test2(ArrayList<Dynasty> arr, WebScraper ws) {
+    public static void test2(ArrayList<Dynasty> arr, WebScraper2 ws) {
         for (Dynasty dinasty : arr) {
             System.out.println(dinasty.getName());
             ArrayList<Member> members = dinasty.getMembers();
@@ -79,15 +81,34 @@ public class WebScraperTester {
 
     public static void test3(ArrayList<Member> arr, WebScraper2 ws) {
         ArrayList<Dynasty> arrD = ws.createDynastiesList(arr);
-        Member temp = arrD.get(1).getMembers().get(0);
+        for (Member member : arrD.get(0).getMembers()) {
+            System.out.println(member);
+        }
 //        ws.addMemberInfo(temp);
         System.out.println("----------\n");
-        System.out.println(temp.getShortName() + " -> " + temp.getName()+ " " + temp.getFather() + " " + temp.getMother() + "\n" + temp.getIssue());
+//        System.out.println(temp.getShortName() + " -> " + temp.getName()+ " " + temp.getFather() + " " + temp.getMother() + "\n" + temp.getIssue());
     }
 
     public static void test4(WebScraper2 ws) {
         Member m = new Member("Cesare", "https://it.wikipedia.org/wiki/Augusto");
         ws.addMemberInfo(m);
         System.out.println(m.getImageURL());
+    }
+
+    public static void test5(WebScraper2 ws) {
+        ArrayList<Dynasty> arrD = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
+        System.out.println(arrD.get(0).getName() + " -> " + arrD.get(1).getName());
+        for (Member member : arrD.get(0).getMembers()) {
+            System.out.println(member);
+        }
+        for (Member member : arrD.get(1).getMembers()) {
+            System.out.println(member);
+        }
+    }
+
+    public static void test6(ArrayList<Dynasty> arr, WebScraper ws){
+        for (Dynasty dinasty : arr) {
+            System.out.println(dinasty.getName());
+        }
     }
 }
