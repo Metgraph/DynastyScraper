@@ -10,7 +10,7 @@ public class Storage {
     private Set<Member> trovati;            // contains all Member already analyzed
 
     /**
-     * Costruttore prende come parametri url di wikipedia della paggina delle dinastie
+     * Costruttore prende come parametri url di wikipedia della paggina delle dinastie e lo scaper da utilizzare
      * creando poi tutto quello che servirà per ottenere le informazioni necessarie
      *
      * @param url, scraper
@@ -23,7 +23,7 @@ public class Storage {
     }
 
     /**
-     * Crea un Member che poi ritornerà prendendo come parametro il nome della dinastia
+     * Crea un ArrayList di Member che poi ritornerà prendendo come parametro il nome della dinastia
      * i Member ritornati sono le radici della dinastia indicata
      *
      * @param nameDinasty
@@ -33,7 +33,9 @@ public class Storage {
     public ArrayList<Member> getTree(String nameDinasty) {
         //cerca la dinastia indicata
         for (int i = 0; i < dynasties.size(); i++) {
+            //verifica quella indicata
             if (dynasties.get(i).getName().equals(nameDinasty)) {
+                //una volta trovata cerca tutti i membri
                 return search(dynasties.get(i));
             }
         }
@@ -50,12 +52,13 @@ public class Storage {
      */
 
     private ArrayList<Member> search(Dynasty dinasty) {
+        //variabile di ritorno
         ArrayList<Member> trees = new ArrayList<>();
         //cicla finchè per tutti gli emperors nella dinastia
         for (Member emperor : dinasty.getMembers()) {
-            //aggiunge l'imperatore all'albero
+            //aggiunge l'imperatore come radice dell'albero
             trees.add(emperor);
-            //crea l'albero con radice l'imperatore
+            //crea l'albero con radice l'imperatore o inserice l'imperatore come nodo dell'albero se necessario
             ricorsione(emperor, trees);
         }
         return trees;
@@ -72,26 +75,34 @@ public class Storage {
     private void ricorsione(Member emperor, ArrayList<Member> trees) {
         //cerca le informazioni sull'imperatore
         scraper.addMemberInfo(emperor);
+        //dichiara che è un imperatore
         emperor.setEmperor(true);
+        //controlla se ha un padre
         try {
             scraper.addMemberInfo(emperor.getFather());
         } catch (Exception e) {
 
         }
+        //controlla se il padre è gia parte dell'albero
+        //itera per tutti i member già analizzati
         for (Member father : trovati) {
+            //controlla se sono uguali
             if (father.equals(emperor.getFather())) {
+                //imposta il padre trovato come padre dell'imperatore
                 emperor.setFather(father);
-                //System.out.println(emperor.getUrl()+" siamo qui");
+                //aggiorna il foglio nel padre
                 if (father.getIssue() != null) {
                     for (int i = 0; i < father.getIssue().size(); i++) {
                         if (father.getIssue().get(i).equals(emperor)) {
                             father.getIssue().set(i, emperor);
+                            //rimuove l'imperatore come radice del'albero
                             trees.remove(emperor);
                         }
                     }
                 }
             }
         }
+        //aggiunge l'imperatore tra i trovati
         trovati.add(emperor);
         //cerca le informazioni per tutti i suoi figli
         for (int i = 0; i < emperor.getIssue().size(); i++) {
@@ -101,6 +112,7 @@ public class Storage {
             } catch (Exception e) {
 
             }
+            //aggiunge il figlio tra i trovati
             trovati.add(emperor.getIssue().get(i));
         }
     }
