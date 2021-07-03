@@ -11,7 +11,6 @@ public class Tester {
 
     public static void main(String[] args) {
         do {
-
             Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper());
 
             InputGUI inFrame = new InputGUI(store.getDynasties());
@@ -46,7 +45,6 @@ public class Tester {
                     break;
                 }
             }
-
         }while(true);
     }
 
