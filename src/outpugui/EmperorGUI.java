@@ -22,11 +22,13 @@ import webscraper.Member;
 public class EmperorGUI extends JFrame implements HyperlinkListener {
     private ArrayList<Member> members;
     private boolean finished = true;
+    private String dinasty;
 
     //Main constructor method
 
     public EmperorGUI(ArrayList<Member> members, String dinasty) {
 
+        this.dinasty = dinasty;
         this.members = members;
 
         //Defining and initializing components
@@ -84,6 +86,12 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         menuBar.add(Box.createHorizontalGlue());
         menuBar.setPreferredSize(new Dimension(0,20));
 
+        //Defining settings of the panel containing the tree representation
+
+        treePanel.setLayout(new BorderLayout());
+        treePanel.setPreferredSize(new Dimension(960, 720));
+        treePanel.setBackground(Color.WHITE);
+
         //Defining tree parameters
 
         JTree generation = createTree(emperorFrame,emperorPanel,treePanel,buttons);
@@ -93,12 +101,6 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         expandAllNodes(generation,0, generation.getRowCount());
         generation.setCellRenderer(new ButtonRenderer());
         treePanel.add(generation);
-
-        //Defining settings of the panel containing the tree representation
-
-        treePanel.setLayout(new BorderLayout());
-        treePanel.setPreferredSize(new Dimension(960, 720));
-        treePanel.setBackground(Color.WHITE);
 
         //Defining the scrollbar of the tree panel
 
@@ -251,7 +253,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
         //Creates a root for the tree
 
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode();
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode(dinasty);
 
         for(Member emperor: members){
 
@@ -410,6 +412,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 //Class for overriding the tree cel renderer and making it customizable
 
 class ButtonRenderer extends JFrame implements TreeCellRenderer{
+
     private Member member;
 
     //Override of the renderer method, makes the name red if is an emperor
@@ -427,10 +430,21 @@ class ButtonRenderer extends JFrame implements TreeCellRenderer{
             NodeExtender node = (NodeExtender) value;
             Member human = node.getMember();
             if (human.isEmperor()){
+
+                if (human.isAdopted()){
+                    JLabel emperor = new JLabel(human.getName() + " (adottato)");
+                    emperor.setForeground(Color.RED);
+                    return emperor;
+                }
+
                 JLabel emperor = new JLabel(human.getName());
                 emperor.setForeground(Color.RED);
                 return emperor;
+
             } else {
+                if (human.isAdopted()){
+                    return new JLabel(human.getName() + " (adottato/a)");
+                }
                 return new JLabel(human.getName());
 
             }
@@ -447,16 +461,18 @@ class NodeExtender extends DefaultMutableTreeNode{
     private Member member;
 
     public NodeExtender(Member value){
+
         super(value);
         member = value;
-
 
     }
 
     //Get method for returning member type
 
     public Member getMember() {
+
         return member;
+
     }
 
 }

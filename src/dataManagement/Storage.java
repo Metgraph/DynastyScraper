@@ -87,17 +87,19 @@ public class Storage {
         //itera per tutti i member già analizzati
         for (Member father : trovati) {
             //controlla se sono uguali
-            if (father.equals(emperor.getFather())) {
-                //imposta il padre trovato come padre dell'imperatore
-                emperor.setFather(father);
-                //aggiorna il foglio nel padre
-                if (father.getIssue() != null) {
-                    for (int i = 0; i < father.getIssue().size(); i++) {
-                        if (father.getIssue().get(i).equals(emperor)) {
-                            father.getIssue().set(i, emperor);
-                            //rimuove l'imperatore come radice del'albero
-                            trees.remove(emperor);
+            if (father.getIssue() != null) {
+                for (int i = 0; i < father.getIssue().size(); i++) {
+                    if (father.getIssue().get(i).equals(emperor)) {
+                        emperor.setFather(father);
+                        //controlla se il figlio è adottato
+                        if(father.getIssue().get(i).isAdopted()){
+                            //imposta il figlio come adottato
+                            emperor.setAdopted(true);
                         }
+                        father.getIssue().set(i, emperor);
+
+                        //rimuove l'imperatore come radice del'albero
+                        trees.remove(emperor);
                     }
                 }
             }
