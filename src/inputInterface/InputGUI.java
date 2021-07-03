@@ -22,13 +22,13 @@ public class InputGUI extends JFrame {
      * Creates input GUI.
      */
     public InputGUI(ArrayList<Dynasty> dynasties) {
-        // Creazione lista dinastie
+        // Creation ArrayList of dynasties
         this.dynasties = new String[dynasties.size()];
         for (int i = 0; i < dynasties.size(); i++){
             this.dynasties[i] = dynasties.get(i).getName();
         }
         // frame settings
-        setSize(600, 355);  // size frame
+        setSize(245, 376);  // size frame
         setTitle("Dynasty Scraper");    // title frame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close frame when clicking on the X button
         setResizable(false);    // Block frame resize
@@ -37,7 +37,7 @@ public class InputGUI extends JFrame {
 
         // graphical list containing all the dynasties
         JList dynastyList = new JList(this.dynasties);
-        dynastyList.setBounds(0,0,220, 270);    // set dimension and position in the frame of the JList
+        dynastyList.setBounds(0,0,220, 290);    // set dimension and position in the frame of the JList
         dynastyList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);  // set selection mode
         add(dynastyList); // add JList to the frame
 
@@ -51,7 +51,7 @@ public class InputGUI extends JFrame {
 
         // button
         JButton createTree = new JButton("Genera albero");
-        createTree.setBounds(0,270,220,30);   // set dimension and position in the frame of the JButton
+        createTree.setBounds(0,290,223,30);   // set dimension and position in the frame of the JButton
 
         // disposes the frame
         createTree.addActionListener(new ActionListener() {
