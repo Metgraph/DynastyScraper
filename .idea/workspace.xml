@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="aggiornamento Tester">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="Aggiornamento tutto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +141,7 @@
       </method>
     </configuration>
     <configuration name="StorageTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.StorageTester" />
+      <option name="MAIN_CLASS_NAME" value="dataManagement.StorageTester" />
       <module name="Dynasty Scraper" />
       <extension name="coverage">
         <pattern>
@@ -182,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -365,7 +364,28 @@
       <option name="project" value="LOCAL" />
       <updated>1625315064757</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="commento Storage">
+      <created>1625315648338</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1625315648338</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Aggiornamento EmperorGUI">
+      <created>1625315723257</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1625315723257</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Aggiornamento tutto">
+      <created>1625320115380</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1625320115380</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +425,10 @@
     <MESSAGE value="add docs to Dynasty" />
     <MESSAGE value="add docs to Member" />
     <MESSAGE value="aggiornamento Tester" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiornamento Tester" />
+    <MESSAGE value="commento Storage" />
+    <MESSAGE value="Aggiornamento EmperorGUI" />
+    <MESSAGE value="Aggiornamento tutto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiornamento tutto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

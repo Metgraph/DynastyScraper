@@ -95,12 +95,10 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         //Defining tree parameters
 
         JTree generation = createTree(emperorFrame,emperorPanel,treePanel,buttons);
-        generation.setAlignmentX(CENTER_ALIGNMENT);
-        generation.setAlignmentY(CENTER_ALIGNMENT);
         generation.setRootVisible(true);
         expandAllNodes(generation,0, generation.getRowCount());
         generation.setCellRenderer(new ButtonRenderer());
-        treePanel.add(generation);
+        treePanel.add(generation, BorderLayout.CENTER);
 
         //Defining the scrollbar of the tree panel
 
@@ -113,9 +111,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
         //Defining main frame parameters
 
-        emperorFrame.setLocationRelativeTo(null);
-        emperorFrame.setSize(1280, 720);
-        emperorFrame.setMinimumSize(new Dimension(1280, 720));
+        emperorFrame.setMinimumSize(new Dimension(720, 720));
         emperorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         emperorFrame.setLayout(new BorderLayout());
 
@@ -125,11 +121,12 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         menuBar.add(home);
         menuBar.add(menu);
         emperorFrame.add(menuBar, BorderLayout.NORTH);
-        emperorFrame.add(treeScrollbar, BorderLayout.CENTER);
+        emperorFrame.add(treeScrollbar);
 
-        //Setting the frame visible
+        //Setting the frame visible and center the allignement
 
         emperorFrame.setVisible(true);
+        emperorFrame.setLocationRelativeTo(null);
 
     }
 
@@ -365,6 +362,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         emperorBio.setText("<html>" + bio + "</html>");
         emperorBio.setAlignmentX(CENTER_ALIGNMENT);
         emperorBio.setEditable(false);
+        emperorBio.setCaretPosition(0);
 
         //Hyperlinks reader that also adds the wikipedia root domain to the url making it clickable
 
