@@ -17,6 +17,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeCellRenderer;
 import java.util.ArrayList;
 
+import test.Tester;
 import webscraper.Member;
 
 public class EmperorGUI extends JFrame implements HyperlinkListener {
@@ -413,7 +414,7 @@ class ButtonRenderer extends JFrame implements TreeCellRenderer{
 
     private Member member;
 
-    //Override of the renderer method, makes the name red if is an emperor
+    //Override of the renderer method, makes the name red if is an emperor, checks if is adopted and adds their relative wifes
 
     @Override
     public Component getTreeCellRendererComponent(JTree    tree,
@@ -427,23 +428,37 @@ class ButtonRenderer extends JFrame implements TreeCellRenderer{
         if(value.getClass().equals(equal.getClass())){
             NodeExtender node = (NodeExtender) value;
             Member human = node.getMember();
+
+            String spouses = "";
+            if(human.getSpouses() != null && human.getSpouses().size()>0){
+                spouses = " mogli (";
+                for(int i = 0; i < human.getSpouses().size(); i++){
+
+                    spouses+=human.getSpouses().get(i).getName();
+                    if(i < human.getSpouses().size()-1) spouses+=", ";
+                }
+                spouses+= ")";
+            }
+
             if (human.isEmperor()){
 
                 if (human.isAdopted()){
-                    JLabel emperor = new JLabel(human.getName() + " (adottato)");
+                    JLabel emperor = new JLabel(human.getName() + " (adottato)" + spouses);
                     emperor.setForeground(Color.RED);
                     return emperor;
                 }
 
-                JLabel emperor = new JLabel(human.getName());
+                JLabel emperor = new JLabel(human.getName() + spouses);
                 emperor.setForeground(Color.RED);
                 return emperor;
 
             } else {
+
                 if (human.isAdopted()){
-                    return new JLabel(human.getName() + " (adottato/a)");
+                    return new JLabel(human.getName() + " (adottato/a)" + spouses);
                 }
-                return new JLabel(human.getName());
+                return new JLabel(human.getName() + spouses);
+
 
             }
         }
