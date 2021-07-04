@@ -50,9 +50,9 @@ public class WebScraperTester {
     }
 
     public static void test2(ArrayList<Dynasty> arr, WebScraper ws) {
-        for (Dynasty dinasty : arr) {
-            System.out.println(dinasty.getName());
-            ArrayList<Member> members = dinasty.getMembers();
+        for (Dynasty dynasty : arr) {
+            System.out.println(dynasty.getName());
+            ArrayList<Member> members = dynasty.getMembers();
             for (Member member : members) {
                 ws.addMemberInfo(member);
                 System.out.println("Imperatore: " + member);
