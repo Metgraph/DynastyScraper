@@ -1,5 +1,7 @@
 package webscraper;
 
+import org.openqa.selenium.NoSuchElementException;
+
 import java.util.ArrayList;
 
 public interface DynastiesScraper {
