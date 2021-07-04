@@ -3,6 +3,7 @@ package outpugui;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.*;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -182,7 +183,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
                     //the button refreshes the panel based on the selected emperor
 
                     emperorPanel.removeAll();
-                    emperorBuilder(human.getName(),human.getUrl(), human.getBiography(),human.getImageURL(),emperorFrame,emperorPanel);
+                    emperorBuilder(human.getName(),human.getUrl(), human.getBiography(), human.getImageURL(),emperorFrame,emperorPanel);
                     emperorPanel.revalidate();
                     emperorFrame.add(emperorPanel, BorderLayout.WEST);
                     emperorFrame.revalidate();
@@ -253,11 +254,15 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
         DefaultMutableTreeNode root = new DefaultMutableTreeNode(dinasty);
 
-        for(Member emperor: members){
+        try {
+            for (Member emperor : members) {
 
-            //Adding nodes to the root created by
+                //Adding nodes to the root created by
 
-            root.add(createNode(emperor,emperorFrame, emperorPanel,treepanel,buttons));
+                root.add(createNode(emperor, emperorFrame, emperorPanel, treepanel, buttons));
+            }
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
 
         //Instancing the tree and returning it
@@ -281,25 +286,34 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
 
         //Creating the image part using a jlabel
 
+        ImageIcon picture = new ImageIcon();
+        JLabel emperorPic;
         BufferedImage image = null;
 
+        //Image exceptions
         try {
 
             URL picurl = new URL(pic);
             image = ImageIO.read(picurl);
+            picture = new ImageIcon(image);
 
         } catch (MalformedURLException ex) {
-
+            picture = new ImageIcon();
             ex.printStackTrace();
 
         } catch (IOException iox) {
-
+            picture = new ImageIcon();
             iox.printStackTrace();
-
+        } catch (NullPointerException e){
+            picture = new ImageIcon();
+            e.printStackTrace();
+        } catch (IllegalArgumentException Ile){
+            picture = new ImageIcon();
+            Ile.printStackTrace();
         }
 
-        ImageIcon picture = new ImageIcon(image);
-        JLabel emperorPic = new JLabel(picture);
+
+        emperorPic = new JLabel(picture);
         emperorPic.setAlignmentX(CENTER_ALIGNMENT);
 
         //creating the textpane contaning the emperor name
