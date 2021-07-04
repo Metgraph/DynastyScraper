@@ -132,6 +132,11 @@ public class Storage {
 
             try {
                 scraper.addMemberInfo(emperor.getIssue().get(i));
+                if(emperor.getIssue().get(i).getIssue()!=null){
+                    for(Member son:emperor.getIssue().get(i).getIssue()){
+                        trovati.add(son);
+                    }
+                }
             } catch (Exception e) {
 
             }

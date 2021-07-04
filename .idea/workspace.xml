@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper2.java" beforeDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="exezzioni Storage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +24,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
