@@ -1,20 +1,18 @@
-/*
+
 
 package outpugui;
 import webscraper.Member;
 import java.util.*;
 import dataManagement.Storage;
+import webscraper.WebScraper;
 
 
-    public class Main {
+public class Main {
         public static void main(String[] args) {
 
-            Storage storage = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani");
-            ArrayList<Member> m = storage.getTree("Anarchia militarefinoademiliano");
-            //ArrayList<Member> m = null;
-            storage.close();
-            new EmperorGUI(m,"Anarchia militarefinoadEmiliano");
+
+            ArrayList<Member> m = null;
+            new EmperorGUI(m,null);
         }
     }
 
-*/

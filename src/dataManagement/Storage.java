@@ -62,12 +62,14 @@ public class Storage {
     private ArrayList<Member> search(Dynasty dinasty) {
         //variabile di ritorno | viarable to return
         ArrayList<Member> trees = new ArrayList<>();
-        //cicla finchè per tutti gli emperors nella dinastia | loops all the emperors in the dynasty
-        for (Member emperor : dinasty.getMembers()) {
-            //aggiunge l'imperatore come radice dell'albero | adds the emperor as the tree's root
-            trees.add(emperor);
-            //crea l'albero con radice l'imperatore o inserice l'imperatore come nodo dell'albero se necessario | creates the tree with the emperor as the root, or inserts the emperor as the tree's node if necessary
-            ricorsione(emperor, trees);
+        if(dinasty.getMembers()!=null){
+            //cicla finchè per tutti gli emperors nella dinastia | loops all the emperors in the dynasty
+            for (Member emperor : dinasty.getMembers()) {
+                //aggiunge l'imperatore come radice dell'albero | adds the emperor as the tree's root
+                trees.add(emperor);
+                //crea l'albero con radice l'imperatore o inserice l'imperatore come nodo dell'albero se necessario | creates the tree with the emperor as the root, or inserts the emperor as the tree's node if necessary
+                ricorsione(emperor, trees);
+            }
         }
         return trees;
 
@@ -85,6 +87,11 @@ public class Storage {
      */
 
     private void ricorsione(Member emperor, ArrayList<Member> trees) {
+        //controlla se l'imperatore è null
+        if(emperor==null){
+            trees.remove(emperor);
+            return;
+        }
         //cerca le informazioni sull'imperatore | finds informations about the emperor
         scraper.addMemberInfo(emperor);
         //dichiara che è un imperatore | declares that he's an emperor
