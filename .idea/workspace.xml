@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Dynasty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Dynasty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625045395900</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update WebScraper, now can throw IllegalArgumentException&#10;comment has been translated from italian to english">
+      <created>1625384259680</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1625384259680</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +298,8 @@
     <MESSAGE value="sistemato MOMENTANEAMENTE metodo search in Storage" />
     <MESSAGE value="change getBio Xpath" />
     <MESSAGE value="uncommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="uncommit" />
+    <MESSAGE value="update WebScraper, now can throw IllegalArgumentException&#10;comment has been translated from italian to english" />
+    <option name="LAST_COMMIT_MESSAGE" value="update WebScraper, now can throw IllegalArgumentException&#10;comment has been translated from italian to english" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

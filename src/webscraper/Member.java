@@ -45,9 +45,9 @@ public class Member {
     /**
      * Create object with the given name, own Wikipedia page url and if he's adopted
      *
-     * @param name
-     * @param url
-     * @param adopted
+     * @param name The person name
+     * @param url The Wikipedia page url
+     * @param adopted If he's adopted
      */
     public Member(String name, String url, boolean adopted) {
         this.fullName = name;
@@ -339,16 +339,23 @@ public class Member {
 
     @Override
     public boolean equals(Object o) {
+        //if o is null returns false
         if (o==null)
             return false;
 
+        //if o is the same object return true
         if (this == o)
             return true;
 
+        //if o is an instance of different class returns false
         if (o.getClass() != this.getClass()) {
             return false;
         }
+
+        //cast the object into a member instance
         Member otherMember = (Member) o;
+        //if they have the same url and it isn't null or empty returns true
+        //otherwise returns if the names are equals (some Member instance can not have an url)
         if (otherMember.getUrl().equals(getUrl())) {
             if (getUrl() == null || getUrl().equals("")) {
                 return otherMember.getFullName().equals(getFullName());

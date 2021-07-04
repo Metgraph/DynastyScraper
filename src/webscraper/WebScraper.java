@@ -36,7 +36,7 @@ public class WebScraper implements DynastiesScraper{
      * @return A list of all founded emperors in the page
      */
     public ArrayList<Dynasty> getDynasties(String urlDynasty) throws IllegalArgumentException{
-        //if it isn't a wikipedia url it will raies IllegalArgumentException error
+        //if it isn't a wikipedia url it will raies IllegalArgumentException
         if(!isWikipediaURL(urlDynasty)){
             throw new IllegalArgumentException("Invalid URL, it is not a wikipedia URL");
         }
