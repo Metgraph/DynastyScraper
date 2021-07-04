@@ -324,6 +324,7 @@ public class EmperorGUI extends JFrame implements HyperlinkListener {
         emperorName.setFont(new Font("Hoefler Text", Font.BOLD, 20));
         emperorName.setAlignmentX(CENTER_ALIGNMENT);
         emperorName.setBorder(new EmptyBorder(20, 20, 20, 20));
+        emperorName.setEditable(false);
 
         //Making it clickable by using mouselisteners
 
