@@ -1,4 +1,4 @@
-package test;
+package main;
 
 import dataManagement.Storage;
 import inputInterface.InputGUI;
@@ -7,7 +7,7 @@ import webscraper.Member;
 import webscraper.WebScraper;
 import java.util.ArrayList;
 
-public class Tester {
+public class Main {
 
     public static void main(String[] args) {
         do {
