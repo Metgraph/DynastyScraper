@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="minor fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/EmperorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/outpugui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/outpugui/Outputmain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="tester has been renamed main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,13 +147,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,7 +188,7 @@
       <workItem from="1621778000747" duration="1112000" />
       <workItem from="1621842203231" duration="293000" />
       <workItem from="1625433038355" duration="26000" />
-      <workItem from="1625494222651" duration="166000" />
+      <workItem from="1625494222651" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1620237866002</created>
@@ -277,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625384624103</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="tester has been renamed main">
+      <created>1625494510733</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1625494510734</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +312,8 @@
     <MESSAGE value="uncommit" />
     <MESSAGE value="update WebScraper, now can throw IllegalArgumentException&#10;comment has been translated from italian to english" />
     <MESSAGE value="minor fixs" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor fixs" />
+    <MESSAGE value="tester has been renamed main" />
+    <option name="LAST_COMMIT_MESSAGE" value="tester has been renamed main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
