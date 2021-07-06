@@ -19,7 +19,7 @@ public class Storage {
      * @param url, scraper
      */
 
-    public Storage(String url, DynastiesScraper scraper) {
+    public Storage(String url, DynastiesScraper scraper) throws IllegalArgumentException {
         trovati = new HashSet<>();
         this.scraper = scraper;
         dynasties = scraper.getDynasties(url);
@@ -92,15 +92,15 @@ public class Storage {
             trees.remove(emperor);
             return;
         }
-        //cerca le informazioni sull'imperatore | finds informations about the emperor
-        scraper.addMemberInfo(emperor);
-        //dichiara che è un imperatore | declares that he's an emperor
-        emperor.setEmperor(true);
-        //controlla se ha un padre | finds if he has a father
         try {
+            //cerca le informazioni sull'imperatore | finds informations about the emperor
+            scraper.addMemberInfo(emperor);
+            //dichiara che è un imperatore | declares that he's an emperor
+            emperor.setEmperor(true);
+            //controlla se ha un padre | finds if he has a father
             scraper.addMemberInfo(emperor.getFather());
-        } catch (Exception e) {
-
+        } catch (NoSuchElementException | IllegalArgumentException e) {
+            return;
         }
         //controlla se il padre è gia parte dell'albero | checks if the father is already part of the tree
         //itera per tutti i member già analizzati | iterates all the analised Member
