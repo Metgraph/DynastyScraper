@@ -10,20 +10,16 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        do {
+        while(true) {
             Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper());
 
             InputGUI inFrame = new InputGUI(store.getDynasties());
 
-            while (true) {
-                if (inFrame.isFinished()) {
-                    try {
-                        Thread.sleep(20);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    break;
+            while (inFrame.isFinished()) {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -34,18 +30,14 @@ public class Main {
 
             EmperorGUI outFrame = new EmperorGUI(tree, inFrame.getDynastyName());
 
-            while (true) {
-                if (outFrame.isFinished()) {
-                    try {
-                        Thread.sleep(20);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    break;
+            while (outFrame.isFinished()) {
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-        }while(true);
+        }
     }
 
 }
