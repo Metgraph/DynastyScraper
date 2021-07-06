@@ -99,7 +99,7 @@ public class Storage {
             emperor.setEmperor(true);
             //controlla se ha un padre | finds if he has a father
             scraper.addMemberInfo(emperor.getFather());
-        } catch (NoSuchElementException | IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             return;
         }
         //controlla se il padre è gia parte dell'albero | checks if the father is already part of the tree

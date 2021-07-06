@@ -5,12 +5,11 @@ Scraper e visualizzatore grafico della gerarchia familiare delle varie dinastie 
 
 #Requisti ambiente
 
-Java versione 1.8
-Connessione a internet.
+Java versione 1.8, Chrome versione 91.0.4472, Connessione a internet.
 
 #Avvio
 
-Esecuzione del file Main.java attraverso Ide o linea di comando.
+Esecuzione del file Main.java attraverso IDE.
 
 #Installazione
 
