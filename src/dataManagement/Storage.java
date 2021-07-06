@@ -87,7 +87,7 @@ public class Storage {
      */
 
     private void ricorsione(Member emperor, ArrayList<Member> trees) {
-        //controlla se l'imperatore è null
+        //controlla se l'imperatore è null | checks if the emperor is null
         if(emperor==null){
             trees.remove(emperor);
             return;
