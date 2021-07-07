@@ -1,5 +1,6 @@
 package dataManagement;
 
+import org.openqa.selenium.NoSuchElementException;
 import webscraper.*;
 
 import java.util.*;
@@ -99,7 +100,7 @@ public class Storage {
             emperor.setEmperor(true);
             //controlla se ha un padre | finds if he has a father
             scraper.addMemberInfo(emperor.getFather());
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | NoSuchElementException e) {
             return;
         }
         //controlla se il padre è gia parte dell'albero | checks if the father is already part of the tree

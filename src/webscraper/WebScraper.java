@@ -91,6 +91,10 @@ public class WebScraper implements DynastiesScraper{
      * @param personLookingFor the person on which to take the family
      */
     public void addMemberInfo(Member personLookingFor) throws NoSuchElementException, IllegalArgumentException{
+        //if object is null end the method execution
+        if(personLookingFor == null)
+            return;
+
         //if it isn't a wikipedia url it will raies IllegalArgumentException error
         if(!isWikipediaURL(personLookingFor.getUrl())){
             throw new IllegalArgumentException("Invalid URL, it is not a wikipedia URL");
@@ -158,7 +162,8 @@ public class WebScraper implements DynastiesScraper{
         //takes the short name
         try{
             WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
-            personLookingFor.setName(shName.getText());
+            String shortName = clearText(shName.getText());
+            personLookingFor.setName(shortName);
         }catch (NoSuchElementException noShortName){
             //leave the old setted short name
         }
@@ -277,12 +282,14 @@ public class WebScraper implements DynastiesScraper{
 
     //check if the domain is it.wikipedia.org
     private static boolean isWikipediaURL(String url){
+
         try{
             URI uri = new URI(url);
             String domain = uri.getHost().toLowerCase();
             return domain.contains("it.wikipedia.org");
 
-        }catch (URISyntaxException e){
+        //these exceptions occur when the string is not a correct url
+        }catch (URISyntaxException | NullPointerException e){
             return false;
         }
     }

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -297,7 +297,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625650681067</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add exceptions">
+      <created>1625651807021</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625651807021</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix path">
+      <created>1625651842504</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1625651842504</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +347,9 @@
     <MESSAGE value="readme" />
     <MESSAGE value="ecezzioni" />
     <MESSAGE value="now DynastyScraper require path for the driver" />
-    <option name="LAST_COMMIT_MESSAGE" value="now DynastyScraper require path for the driver" />
+    <MESSAGE value="add exceptions" />
+    <MESSAGE value="fix path" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix path" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
