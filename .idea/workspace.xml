@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Dynasty Scraper:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/error.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,11 +107,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager" selected="Application.Tester">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -311,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625651842504</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix isWikipediaUrl method">
+      <created>1625653071466</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1625653071466</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +363,8 @@
     <MESSAGE value="now DynastyScraper require path for the driver" />
     <MESSAGE value="add exceptions" />
     <MESSAGE value="fix path" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix path" />
+    <MESSAGE value="fix isWikipediaUrl method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix isWikipediaUrl method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -105,24 +105,17 @@ public class WebScraper implements DynastiesScraper{
 
         //goes to the right table of page
         WebElement synoptic = driver.findElement(By.className("sinottico"));
-        personLookingFor.setBiography(getBio());
+        personLookingFor.setBiography(takeBio());
 
-        //if there is a image of the person will takes is url, otherwise sets null
-        try{
-            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
-            personLookingFor.setImageURL(image.getAttribute("src"));
-        }catch (NoSuchElementException noImage){
-            personLookingFor.setImageURL(null);
-        }
+        takeImage(synoptic, personLookingFor);
 
-        //if the line "Figli" is present takes their names and urls, otherwise sets empty ArrayList
-        try {
-            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
-            personLookingFor.setIssue(getPeopleArray(descendants, true));
-        } catch (NoSuchElementException noDescendants) {
-            personLookingFor.setIssue(new ArrayList<>());
-        }
+        takeSons(synoptic, personLookingFor);
 
+        takeMother(synoptic, personLookingFor);
+        takeFather(synoptic, personLookingFor);
+        takeConsorts(synoptic, personLookingFor);
+        takeDynasty(synoptic, personLookingFor);
+        takeName(synoptic, personLookingFor);
         //if the line "Madre" is present takes its name, otherwise sets null
         try {
             WebElement mother = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Madre')]/following::td"));
@@ -175,6 +168,46 @@ public class WebScraper implements DynastiesScraper{
      */
     public void close() {
         this.driver.close();
+    }
+
+    private static void takeImage(WebElement synoptic, Member person){
+        //if there is a image of the person will takes is url, otherwise sets null
+        try{
+            WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
+            person.setImageURL(image.getAttribute("src"));
+        }catch (NoSuchElementException noImage){
+            person.setImageURL(null);
+        }
+    }
+
+    private static void takeSons(WebElement synoptic, Member person){
+        //if the line "Figli" is present takes their names and urls, otherwise sets empty ArrayList
+        try {
+            WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
+            person.setIssue(getPeopleArray(descendants, true));
+        } catch (NoSuchElementException noDescendants) {
+            person.setIssue(new ArrayList<>());
+        }
+    }
+
+    private static void takeMother(WebElement synoptic, Member person){
+
+    }
+
+    private static void takeFather(WebElement synoptic, Member person){
+
+    }
+
+    private static void takeConsorts(WebElement synoptic, Member person){
+
+    }
+
+    private static void takeName(WebElement synoptic, Member person){
+
+    }
+
+    private static void takeDynasty(WebElement synoptic, Member person){
+
     }
 
 
@@ -248,7 +281,7 @@ public class WebScraper implements DynastiesScraper{
     }
 
 
-    private String getBio() {
+    private String takeBio() {
         List<WebElement> span = driver.findElements(By.xpath("//span[@class='mw-headline']"));
         List<WebElement> ll = span.get(0).findElements(By.xpath("./preceding::p"));
         StringBuilder adjustedBioBuilder = new StringBuilder();

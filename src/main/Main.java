@@ -2,10 +2,10 @@ package main;
 
 import dataManagement.Storage;
 import inputInterface.InputGUI;
-import org.openqa.selenium.WebDriverException;
 import outpugui.EmperorGUI;
 import webscraper.Member;
 import webscraper.WebScraper;
+import org.openqa.selenium.WebDriverException;
 
 import javax.swing.*;
 import java.util.ArrayList;

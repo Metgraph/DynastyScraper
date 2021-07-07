@@ -9,8 +9,6 @@ import java.util.ArrayList;
 public class Member {
     private final String fullName;
     private final String url;
-    private String beginReign;
-    private String endReign;
     private String dynastyName;
     private String dynastyUrl;
     private ArrayList<Member> issue;
@@ -40,6 +38,13 @@ public class Member {
         }
 
         this.adopted = false;
+        this.issue = new ArrayList<>();
+        this.spouses = new ArrayList<>();
+        this.biography = "";
+        this.imageURL = "";
+        this.emperor = false;
+        this.dynastyUrl = "";
+        this.dynastyName = "";
     }
 
     /**
@@ -58,6 +63,13 @@ public class Member {
             this.name = name;
         }
         this.adopted = adopted;
+        this.issue = new ArrayList<>();
+        this.spouses = new ArrayList<>();
+        this.biography = "";
+        this.imageURL = "";
+        this.emperor = false;
+        this.dynastyUrl = "";
+        this.dynastyName = "";
     }
 
     /**
@@ -79,24 +91,6 @@ public class Member {
     }
 
     /**
-     * Get when his reign ended
-     *
-     * @return The date of the reign end
-     */
-    public String getEndReign() {
-        return endReign;
-    }
-
-    /**
-     * Set when his reign ended
-     *
-     * @param endReign The date when the reign end
-     */
-    public void setEndReign(String endReign) {
-        this.endReign = endReign;
-    }
-
-    /**
      * Get the person's sons and daughters
      *
      * @return list of people
@@ -112,24 +106,6 @@ public class Member {
      */
     public void setIssue(ArrayList<Member> arr) {
         this.issue = arr;
-    }
-
-    /**
-     * Get when his reign started
-     *
-     * @return The date when the reign begin
-     */
-    public String getBeginReign() {
-        return beginReign;
-    }
-
-    /**
-     * Set when his reign started
-     *
-     * @param beginReign The date when the reign begin
-     */
-    public void setBeginReign(String beginReign) {
-        this.beginReign = beginReign;
     }
 
     /**
