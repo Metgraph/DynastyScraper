@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        //find the location
+        //find the parameter l and his value
         String path = "";
         boolean findLArg = false;
         for (String arg : args) {
@@ -29,6 +29,7 @@ public class Main {
         if(path.isEmpty()){
             path = "resources/chromedriver.exe";
         }
+
         while(true) {
             WebScraper scraper;
             try{
