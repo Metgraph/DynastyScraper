@@ -2,7 +2,6 @@ package webscraper;
 
 import java.util.ArrayList;
 
-//TODO completare docs
 /**
  * This class provide a data structure to save information about a dynasty member
  */
