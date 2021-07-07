@@ -1,27 +1,40 @@
 
-#DinastyScraper
+# DinastyScraper
 
 Scraper e visualizzatore grafico della gerarchia familiare delle varie dinastie romane.
 
-#Requisti ambiente
+# Requisti ambiente
 
-Java versione 1.8, Chrome versione 91.0.4472, Connessione a internet.
+* Java versione 1.8
+* Chrome
+* Driver chrome compatibili con la propria versione di chrome
+* Avere il jar selenium-server-standalone versione 3 (il programma è stato testato con la versione 3.141.59)
+* Connessione a internet.
 
-#Avvio
+# Installazione
 
-Esecuzione del file Main.java attraverso IDE.
+Entrare nella cartella src ed eseguire il comando per compilare i file
+```bash
+javac -d ../bin -classpath "path/to/selenium-server-standalone.jar" dataManagement/Storage.java inputInterface/inputGUI.java main/Main.java outpugui/EmperorGUI.java webscraper/Member.java webscraper/DynastiesScraper.java webscraper/Dynasty.java webscraper/Member.java webscraper/WebScraper.java
+```
+Spostarsi nella cartella bin dove sono presenti i file class generati ed eseguire il comando per creare il jar
+```bash
+jar -cvfm DynastyScraper.jar ../src/META-INF/MANIFEST.MF dataManagement/*.class inputInterface/*.class main/*.class outpugui/*.class webscraper/*.class
+```
 
-#Installazione
+# Avvio
 
-Scompattare il file zip nella directory desiderata
+Eseguire il comando
+```bash
+java -cp DynastyScraper.jar;path/to/selenium-server-standalone.jar main.Main 
+```
 
-#Bug
+# Bug
 
 Se chiusa la finestra di selezione delle dinastie manualmente(usando il pulsante di chiusura delle finestre dell' OS) il browser rimarrà aperto,
-tale avvenimento non è considerabile come bug, in quanto la visualizzazione del browser è solo a scopo dimostrativo del funzionamento del processo \
-di scraping.
+tale avvenimento non è considerabile come bug, in quanto la visualizzazione del browser è solo a scopo dimostrativo del funzionamento del processo di scraping.
 
-#Copyright
+# Copyright
 
 Copyright (c) 2021 Silvio Gori,Matteo Bernardo,Edoardo Lunati, Alessandro Lommi
 
