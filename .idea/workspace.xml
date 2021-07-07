@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Dynasty Scraper:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="ecezzioni">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/DynastiesScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/DynastiesScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +101,26 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.WebScraperTester">
+  <component name="RunManager" selected="Application.Tester">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="outpugui.Outputmain" />
       <module name="Dynasty Scraper" />
@@ -135,7 +146,6 @@
     <configuration name="Tester" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Dynasty Scraper" />
-      <option name="PROGRAM_PARAMETERS" value="-l resources\chromedriver.exe" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,7 +153,6 @@
     <configuration name="WebScraperTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="webscraper.WebScraperTester" />
       <module name="Dynasty Scraper" />
-      <option name="PROGRAM_PARAMETERS" value="-l asxdsd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="webscraper.*" />
@@ -162,9 +171,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.StorageTester" />
+        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -295,91 +304,7 @@
       <option name="project" value="LOCAL" />
       <updated>1625589870654</updated>
     </task>
-    <task id="LOCAL-00017" summary="now DynastyScraper require path for the driver">
-      <created>1625650681067</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1625650681067</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add exceptions">
-      <created>1625651807021</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1625651807021</updated>
-    </task>
-    <task id="LOCAL-00019" summary="fix path">
-      <created>1625651842504</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1625651842504</updated>
-    </task>
-    <task id="LOCAL-00020" summary="fix isWikipediaUrl method">
-      <created>1625653071466</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1625653071466</updated>
-    </task>
-    <task id="LOCAL-00021" summary="removed reign variable and set values in Member constructors">
-      <created>1625670335286</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1625670335286</updated>
-    </task>
-    <task id="LOCAL-00022" summary="remove TODO">
-      <created>1625670358274</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1625670358274</updated>
-    </task>
-    <task id="LOCAL-00023" summary="moved part of code inside methods">
-      <created>1625670872969</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1625670872969</updated>
-    </task>
-    <task id="LOCAL-00024" summary="add reading args">
-      <created>1625672747723</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1625672747723</updated>
-    </task>
-    <task id="LOCAL-00025" summary="fix comments">
-      <created>1625672819041</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1625672819041</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix takeBio">
-      <created>1625673633167</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1625673633167</updated>
-    </task>
-    <task id="LOCAL-00027" summary="create method getPathDriver">
-      <created>1625676267345</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1625676267345</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix WebScraperTester">
-      <created>1625679790714</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1625679790714</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +323,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
+    <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli&#10;Sistemato errori di Typo (mi sono accorto ora che dinastia si scrive dynasty e non dinasty )&#10;Aggiunta variabile d'instanza dynastyName che tiene il nome della dinastia riportata nella pagina dell'imperatore" />
@@ -411,19 +339,7 @@
     <MESSAGE value="rewadme" />
     <MESSAGE value="readme" />
     <MESSAGE value="ecezzioni" />
-    <MESSAGE value="now DynastyScraper require path for the driver" />
-    <MESSAGE value="add exceptions" />
-    <MESSAGE value="fix path" />
-    <MESSAGE value="fix isWikipediaUrl method" />
-    <MESSAGE value="removed reign variable and set values in Member constructors" />
-    <MESSAGE value="remove TODO" />
-    <MESSAGE value="moved part of code inside methods" />
-    <MESSAGE value="add reading args" />
-    <MESSAGE value="fix comments" />
-    <MESSAGE value="fix takeBio" />
-    <MESSAGE value="create method getPathDriver" />
-    <MESSAGE value="fix WebScraperTester" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix WebScraperTester" />
+    <option name="LAST_COMMIT_MESSAGE" value="ecezzioni" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

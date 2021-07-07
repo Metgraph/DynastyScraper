@@ -1,6 +1,6 @@
 package webscraper;
 
-import okhttp3.WebSocket;
+
 import org.openqa.selenium.WebDriverException;
 
 import java.util.ArrayList;
