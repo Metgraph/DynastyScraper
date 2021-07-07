@@ -26,8 +26,9 @@ jar -cvfm DynastyScraper.jar ../src/META-INF/MANIFEST.MF dataManagement/*.class 
 
 Eseguire il comando
 ```bash
-java -cp DynastyScraper.jar;path/to/selenium-server-standalone.jar main.Main 
+java -cp DynastyScraper.jar;path/to/selenium-server-standalone.jar main.Main -l path/to/chromedriver.file
 ```
+Nel caso in cui non venga specificato il percorso del driver verrà usato **resources\chromedriver.exe**
 
 # Bug
 
