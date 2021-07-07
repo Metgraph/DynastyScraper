@@ -115,51 +115,8 @@ public class WebScraper implements DynastiesScraper{
         takeFather(synoptic, personLookingFor);
         takeConsorts(synoptic, personLookingFor);
         takeDynasty(synoptic, personLookingFor);
-        takeName(synoptic, personLookingFor);
-        //if the line "Madre" is present takes its name, otherwise sets null
-        try {
-            WebElement mother = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Madre')]/following::td"));
-            String motherName = clearText(mother.getText());
-            String motherUrl = getUrlFromWE(mother);
-            personLookingFor.setMother(new Member(motherName, motherUrl));
-        } catch (NoSuchElementException noMother) {
-            personLookingFor.setMother(null);
-        }
+        takeName(personLookingFor);
 
-        //if the line "Padre" is present takes its name, otherwise sets null
-        try {
-            WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
-            ArrayList<Member> fatherArray = getPeopleArray(father, false);
-            personLookingFor.setFather(fatherArray.get(0));
-        } catch (NoSuchElementException noFather) {
-            personLookingFor.setFather(null);
-        }
-
-        //if the line "Coniuge" is present takes its name, otherwise sets null
-        try {
-            WebElement consort = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Coniuge')]/following::td"));
-            personLookingFor.setSpouses(getPeopleArray(consort, false));
-        } catch (NoSuchElementException noConsort) {
-            personLookingFor.setSpouses(null);
-        }
-
-        //if the line "Dinastia" is present takes its name, otherwise sets an empty string
-        try {
-            WebElement dynastyWE = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Dinastia')]/following::td"));
-            String dynastyName = clearText(dynastyWE.getText());
-            personLookingFor.setDynastyName(dynastyName);
-        } catch (NoSuchElementException noConsort) {
-            personLookingFor.setDynastyName("");
-        }
-
-        //takes the short name
-        try{
-            WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
-            String shortName = clearText(shName.getText());
-            personLookingFor.setName(shortName);
-        }catch (NoSuchElementException noShortName){
-            //leave the old setted short name
-        }
     }
 
 
@@ -170,8 +127,34 @@ public class WebScraper implements DynastiesScraper{
         this.driver.close();
     }
 
+    //take the biography in Wikipedia page
+    private String takeBio() {
+        List<WebElement> span = driver.findElements(By.xpath("//span[@class='mw-headline']"));
+        List<WebElement> ll = span.get(0).findElements(By.xpath("./preceding::p"));
+        StringBuilder adjustedBioBuilder = new StringBuilder();
+        for (WebElement webElement : ll) {
+            String partOfBio = webElement.getAttribute("innerHTML");
+            partOfBio = removeBracketsNum(webElement, partOfBio);
+            adjustedBioBuilder.append(partOfBio);
+        }
+        String adjustedBio = adjustedBioBuilder.toString();
+        adjustedBio = adjustedBio.replace('"', '\'');
+        return adjustedBio;
+    }
+
+    //takes the short name
+    private void takeName(Member person){
+        try{
+            WebElement shName = driver.findElement(By.xpath("//div[@id='mw-content-text']//p/b"));
+            String shortName = clearText(shName.getText());
+            person.setName(shortName);
+        }catch (NoSuchElementException noShortName){
+            //leave the old setted short name
+        }
+    }
+
+    //if there is a image of the person will takes is url, otherwise sets null
     private static void takeImage(WebElement synoptic, Member person){
-        //if there is a image of the person will takes is url, otherwise sets null
         try{
             WebElement image = synoptic.findElement(By.xpath("//div[@class='floatnone']/a/img"));
             person.setImageURL(image.getAttribute("src"));
@@ -180,8 +163,8 @@ public class WebScraper implements DynastiesScraper{
         }
     }
 
+    //if the line "Figli" is present takes their names and urls, otherwise sets empty ArrayList
     private static void takeSons(WebElement synoptic, Member person){
-        //if the line "Figli" is present takes their names and urls, otherwise sets empty ArrayList
         try {
             WebElement descendants = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Figli')]/following::td"));
             person.setIssue(getPeopleArray(descendants, true));
@@ -190,24 +173,48 @@ public class WebScraper implements DynastiesScraper{
         }
     }
 
+    //if the line "Madre" is present takes its name, otherwise sets null
     private static void takeMother(WebElement synoptic, Member person){
-
+        try {
+            WebElement mother = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Madre')]/following::td"));
+            String motherName = clearText(mother.getText());
+            String motherUrl = getUrlFromWE(mother);
+            person.setMother(new Member(motherName, motherUrl));
+        } catch (NoSuchElementException noMother) {
+            person.setMother(null);
+        }
     }
 
+    //if the line "Padre" is present takes its name, otherwise sets null
     private static void takeFather(WebElement synoptic, Member person){
-
+        try {
+            WebElement father = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Padre')]/following::td"));
+            ArrayList<Member> fatherArray = getPeopleArray(father, false);
+            person.setFather(fatherArray.get(0));
+        } catch (NoSuchElementException noFather) {
+            person.setFather(null);
+        }
     }
 
+    //if the line "Coniuge" is present takes its name, otherwise sets null
     private static void takeConsorts(WebElement synoptic, Member person){
-
+        try {
+            WebElement consort = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Coniuge')]/following::td"));
+            person.setSpouses(getPeopleArray(consort, false));
+        } catch (NoSuchElementException noConsort) {
+            person.setSpouses(new ArrayList<>());
+        }
     }
 
-    private static void takeName(WebElement synoptic, Member person){
-
-    }
-
+    //if the line "Dinastia" is present takes its name, otherwise sets an empty string
     private static void takeDynasty(WebElement synoptic, Member person){
-
+        try {
+            WebElement dynastyWE = synoptic.findElement(By.xpath("//tr/th[contains(text(),'Dinastia')]/following::td"));
+            String dynastyName = clearText(dynastyWE.getText());
+            person.setDynastyName(dynastyName);
+        } catch (NoSuchElementException noConsort) {
+            person.setDynastyName("");
+        }
     }
 
 
@@ -278,21 +285,6 @@ public class WebScraper implements DynastiesScraper{
         text = text.replaceAll("\\p{Punct}", "");
 
         return text.trim();
-    }
-
-
-    private String takeBio() {
-        List<WebElement> span = driver.findElements(By.xpath("//span[@class='mw-headline']"));
-        List<WebElement> ll = span.get(0).findElements(By.xpath("./preceding::p"));
-        StringBuilder adjustedBioBuilder = new StringBuilder();
-        for (WebElement webElement : ll) {
-            String partOfBio = webElement.getAttribute("innerHTML");
-            partOfBio = removeBracketsNum(webElement, partOfBio);
-            adjustedBioBuilder.append(partOfBio);
-        }
-        String adjustedBio = adjustedBioBuilder.toString();
-        adjustedBio = adjustedBio.replace('"', '\'');
-        return adjustedBio;
     }
 
     //removes the notes from text

@@ -7,10 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/error.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625653071466</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="removed reign variable and set values in Member constructors">
+      <created>1625670335286</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1625670335286</updated>
+    </task>
+    <task id="LOCAL-00022" summary="remove TODO">
+      <created>1625670358274</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1625670358274</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +374,9 @@
     <MESSAGE value="add exceptions" />
     <MESSAGE value="fix path" />
     <MESSAGE value="fix isWikipediaUrl method" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix isWikipediaUrl method" />
+    <MESSAGE value="removed reign variable and set values in Member constructors" />
+    <MESSAGE value="remove TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove TODO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
