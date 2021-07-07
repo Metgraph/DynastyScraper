@@ -16,7 +16,7 @@ public class Main {
         while(true) {
             WebScraper scraper;
             try{
-                scraper = new WebScraper("D:\\download_hdd\\Unigine_Heaven-4.0.exe");
+                scraper = new WebScraper("resources/chromedriver.exe");
             }catch (IllegalStateException | WebDriverException exception){
                 JOptionPane.showMessageDialog(null, "Chrome driver not found");
                 break;
