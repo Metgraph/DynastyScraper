@@ -6,7 +6,7 @@ import java.util.*;
 
 public class StorageTester {
     public static void main(String[] args) {
-        Storage storage = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper());
+        Storage storage = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", new WebScraper("resources/chromedriver.exe"));
         /*for(Dynasty f: storage.getDynasties()){
             System.out.println(f.getName());
         }*/

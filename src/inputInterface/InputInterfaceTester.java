@@ -7,7 +7,7 @@ public class InputInterfaceTester {
 
     public static void main(String[] args){
 
-        Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani",new WebScraper());
+        Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani",new WebScraper("chromedriver.exe"));
 
         InputGUI inFrame = new InputGUI(store.getDynasties());
 

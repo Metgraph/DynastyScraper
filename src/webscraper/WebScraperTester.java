@@ -15,7 +15,7 @@ public class WebScraperTester {
 
 
     public static void testWebScraper() {
-        WebScraper ws = new WebScraper();
+        WebScraper ws = new WebScraper("resources/chromedriver.exe");
         ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {

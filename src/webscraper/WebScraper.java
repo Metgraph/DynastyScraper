@@ -23,8 +23,8 @@ public class WebScraper implements DynastiesScraper{
     /**
      * Constructor, initialize the web driver and open the browser
      */
-    public WebScraper() {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+    public WebScraper(String pathDriver) throws IllegalStateException{
+        System.setProperty("webdriver.chrome.driver", pathDriver);
         driver = new ChromeDriver();
     }
 

@@ -43,8 +43,7 @@ public class Member {
     }
 
     /**
-     * Create object with the given name, own Wikipedia page url and if he's adopted
-     *
+     * Create object with the given name, own Wikipedia page url and if he's adopted     *
      * @param name The person name
      * @param url The Wikipedia page url
      * @param adopted If he's adopted

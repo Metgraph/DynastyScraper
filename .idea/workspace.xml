@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="ecezzioni">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataManagement/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/DynastiesScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/DynastiesScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataManagement/StorageTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inputInterface/InputInterfaceTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inputInterface/InputInterfaceTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
