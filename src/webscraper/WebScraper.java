@@ -105,7 +105,7 @@ public class WebScraper implements DynastiesScraper{
 
         //goes to the right table of page
         WebElement synoptic = driver.findElement(By.className("sinottico"));
-        personLookingFor.setBiography(takeBio());
+        takeBio(personLookingFor);
 
         takeImage(synoptic, personLookingFor);
 
@@ -128,7 +128,7 @@ public class WebScraper implements DynastiesScraper{
     }
 
     //take the biography in Wikipedia page
-    private String takeBio() {
+    private void takeBio(Member person) {
         List<WebElement> span = driver.findElements(By.xpath("//span[@class='mw-headline']"));
         List<WebElement> ll = span.get(0).findElements(By.xpath("./preceding::p"));
         StringBuilder adjustedBioBuilder = new StringBuilder();
@@ -139,7 +139,7 @@ public class WebScraper implements DynastiesScraper{
         }
         String adjustedBio = adjustedBioBuilder.toString();
         adjustedBio = adjustedBio.replace('"', '\'');
-        return adjustedBio;
+        person.setBiography(adjustedBio);
     }
 
     //takes the short name

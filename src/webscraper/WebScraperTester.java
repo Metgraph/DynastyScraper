@@ -11,16 +11,20 @@ public class WebScraperTester {
     }
 
 
-
-
     public static void testWebScraper() {
+//        try{
+//
+//        }catch (){
+//
+//        }
         WebScraper ws = new WebScraper("resources/chromedriver.exe");
         ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {
-//            test1(arr, ws);
+            test1(arr, ws);
             test2(arr, ws);
-//            test6(arr, ws);
+        } catch (Exception e) {
+            System.out.println("Test fallito:\n" + e);
         } finally {
             ws.close();
         }
