@@ -1,6 +1,7 @@
 package webscraper;
 
 import okhttp3.WebSocket;
+import org.openqa.selenium.WebDriverException;
 
 import java.util.ArrayList;
 
@@ -12,19 +13,31 @@ public class WebScraperTester {
 
 
     public static void testWebScraper() {
-//        try{
-//
-//        }catch (){
-//
-//        }
-        WebScraper ws = new WebScraper("resources/chromedriver.exe");
+        WebScraper ws;
+        try{
+            ws = new WebScraper("resources/chromedriversadfs.exe");
+            System.out.println("Test errore driver fallito");
+            return;
+        }catch (IllegalStateException | WebDriverException e){
+            System.out.println("Test errore driver passato");
+            ws = new WebScraper("resources/chromedriver.exe");
+        }
+
+        try{
+            ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.net/wiki/Imperatori_romani");
+            System.out.println("Test errore driver fallito");
+            return;
+        }catch (IllegalArgumentException e){
+            System.out.println("Test errore link passato");
+        }
         ArrayList<Dynasty> arr = ws.getDynasties("https://it.wikipedia.org/wiki/Imperatori_romani");
 
         try {
             test1(arr, ws);
             test2(arr, ws);
+            System.out.println("Test scraping effettuati");
         } catch (Exception e) {
-            System.out.println("Test fallito:\n" + e);
+            System.out.println("Test scraping fallito:\n" + e);
         } finally {
             ws.close();
         }

@@ -13,31 +13,17 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        //find the parameter l and his value
-        String path = "";
-        boolean findLArg = false;
-        for (String arg : args) {
-            if(findLArg){
-                path = arg;
-                break;
-            }else {
-                findLArg = arg.equals("-l");
-            }
-        }
+        String path = getPathDriver(args);
 
-        //if value was not found it will set the default path
-        if(path.isEmpty()){
-            path = "resources/chromedriver.exe";
-        }
-
-        while(true) {
+        while (true) {
             WebScraper scraper;
-            try{
+            try {
                 scraper = new WebScraper(path);
-            }catch (IllegalStateException | WebDriverException exception){
+            } catch (IllegalStateException | WebDriverException exception) {
                 JOptionPane.showMessageDialog(null, "Chrome driver not found");
                 break;
             }
+
             Storage store = new Storage("https://it.wikipedia.org/wiki/Imperatori_romani", scraper);
 
             InputGUI inFrame = new InputGUI(store.getDynasties());
@@ -65,6 +51,21 @@ public class Main {
                 }
             }
         }
+    }
+
+    private static String getPathDriver(String[] args) {
+        //find the parameter l and his value
+        boolean findLArg = false;
+        for (String arg : args) {
+            if (findLArg) {
+                return arg;
+            } else {
+                findLArg = arg.equals("-l");
+            }
+        }
+
+        //if value was not found it will set the default path
+        return "resources/chromedriver.exe";
     }
 
 }

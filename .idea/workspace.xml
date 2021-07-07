@@ -6,9 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="fix comments">
+    <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraperTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +137,7 @@
     <configuration name="Tester" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Dynasty Scraper" />
-      <option name="PROGRAM_PARAMETERS" value="-l" />
+      <option name="PROGRAM_PARAMETERS" value="-l resources\chromedriver.exe" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,6 +145,7 @@
     <configuration name="WebScraperTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="webscraper.WebScraperTester" />
       <module name="Dynasty Scraper" />
+      <option name="PROGRAM_PARAMETERS" value="-l asxdsd" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="webscraper.*" />
@@ -163,9 +164,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WebScraperTester" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.StorageTester" />
-        <item itemvalue="Application.WebScraperTester" />
       </list>
     </recent_temporary>
   </component>
@@ -359,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625672819041</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fix takeBio">
+      <created>1625673633167</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1625673633167</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +386,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="Aggiunto metodo getPersonInfo per prendere le informazioni necessarie della singola persona" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter" />
     <MESSAGE value="Aggiunti valori d'instanza mother e father (String) e relativi getter e setter&#10;Aggiunte eccezzioni per errori relativi alla mancanza di madre, padre e figli" />
@@ -403,7 +410,8 @@
     <MESSAGE value="moved part of code inside methods" />
     <MESSAGE value="add reading args" />
     <MESSAGE value="fix comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix comments" />
+    <MESSAGE value="fix takeBio" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix takeBio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
