@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="969262f3-32d5-4b7b-81ad-d6e01fccede8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/webscraper/WebScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/webscraper/WebScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +136,7 @@
     <configuration name="Tester" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Dynasty Scraper" />
+      <option name="PROGRAM_PARAMETERS" value="-l resources/chromedriver2.exe" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -335,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625670358274</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="moved part of code inside methods">
+      <created>1625670872969</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1625670872969</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +385,8 @@
     <MESSAGE value="fix isWikipediaUrl method" />
     <MESSAGE value="removed reign variable and set values in Member constructors" />
     <MESSAGE value="remove TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove TODO" />
+    <MESSAGE value="moved part of code inside methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved part of code inside methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

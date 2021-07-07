@@ -13,10 +13,26 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        //find the location
+        String path = "";
+        boolean findLArg = false;
+        for (String arg : args) {
+            if(findLArg){
+                path = arg;
+                break;
+            }else {
+                findLArg = arg.equals("-l");
+            }
+        }
+
+        //if value was not found it will set the default path
+        if(path.isEmpty()){
+            path = "resources/chromedriver.exe";
+        }
         while(true) {
             WebScraper scraper;
             try{
-                scraper = new WebScraper("resources/chromedriver.exe");
+                scraper = new WebScraper(path);
             }catch (IllegalStateException | WebDriverException exception){
                 JOptionPane.showMessageDialog(null, "Chrome driver not found");
                 break;
