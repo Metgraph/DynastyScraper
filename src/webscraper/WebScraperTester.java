@@ -11,8 +11,10 @@ public class WebScraperTester {
 
     }
 
-
     public static void testWebScraper() {
+        testDriverIllegalStateException();
+        testDriverWebDriverException();
+
         WebScraper ws = new WebScraper("resources/chromedriver.exe");
 
         testURL(ws);
@@ -25,6 +27,29 @@ public class WebScraperTester {
 
     }
 
+
+    private static void testDriverIllegalStateException(){
+        try {
+            WebScraper ws = new WebScraper("afgdsfsf sdfsdfvc");
+            System.out.println("Test fallito, avrebbe dovuto generare errore");
+        }catch (IllegalStateException e){
+            System.out.println("Test IllegalStateException eseguito con successo");
+        }catch (Exception e){
+            System.out.println("Test fallito:\n"+e);
+        }
+    }
+
+    private static void testDriverWebDriverException(){
+        try {
+            //mettere come path un qualsiasi file esistente
+            WebScraper ws = new WebScraper("src/main/Main.java");
+            System.out.println("Test fallito, avrebbe dovuto generare errore");
+        }catch (WebDriverException e){
+            System.out.println("Test WebDriverException eseguito con successo");
+        }catch (Exception e){
+            System.out.println("Test fallito:\n"+e);
+        }
+    }
 
     private static void testURL(WebScraper ws) {
         try {
