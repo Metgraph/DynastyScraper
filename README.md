@@ -5,7 +5,11 @@ Scraper e visualizzatore grafico della gerarchia familiare delle varie dinastie 
 
 #Requisti ambiente
 
-Java versione 1.8, Chrome versione 91.0.4472, Connessione a internet.
+Java versione 1.8
+Chrome
+Driver chrome compatibili con la propria versione di chrome
+avere il jar selenium-server-standalone versione 3 (il programma è stato testato con la versione 3.141.59)
+Connessione a internet.
 
 #Avvio
 
@@ -13,7 +17,11 @@ Esecuzione del file Main.java attraverso IDE.
 
 #Installazione
 
-Scompattare il file zip nella directory desiderata
+entrare nella cartella src
+eseguire il comando javac -d ../bin -classpath "path/to/selenium-server-standalone.jar" dataManagement/Storage.java inputInterface/inputGUI.java main/Main.java outpugui/EmperorGUI.java webscraper/Member.java webscraper/DynastiesScraper.java webscraper/Dynasty.java webscraper/Member.java webscraper/WebScraper.java
+spostarsi nella cartella bin dove sono presenti i file class generati
+eseguire il comando jar -cvfm DynastyScraper.jar ../src/META-INF/MANIFEST.MF dataManagement/*.class inputInterface/*.class main/*.class outpugui/*.class webscraper/*.class
+eseguire il comando java -cp DynastyScraper.jar;path/to/selenium-server-standalone.jar main.Main 
 
 #Bug
 
