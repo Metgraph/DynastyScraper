@@ -1,9 +1,6 @@
 package webscraper;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.URI;
@@ -23,7 +20,7 @@ public class WebScraper implements DynastiesScraper{
     /**
      * Constructor, initialize the web driver and open the browser
      */
-    public WebScraper(String pathDriver) throws IllegalStateException{
+    public WebScraper(String pathDriver) throws IllegalStateException, WebDriverException {
         System.setProperty("webdriver.chrome.driver", pathDriver);
         driver = new ChromeDriver();
     }

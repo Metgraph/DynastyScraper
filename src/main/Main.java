@@ -2,6 +2,7 @@ package main;
 
 import dataManagement.Storage;
 import inputInterface.InputGUI;
+import org.openqa.selenium.WebDriverException;
 import outpugui.EmperorGUI;
 import webscraper.Member;
 import webscraper.WebScraper;
@@ -15,8 +16,8 @@ public class Main {
         while(true) {
             WebScraper scraper;
             try{
-                scraper = new WebScraper("resources/chromedriver.exe");
-            }catch (IllegalStateException exception){
+                scraper = new WebScraper("D:\\download_hdd\\Unigine_Heaven-4.0.exe");
+            }catch (IllegalStateException | WebDriverException exception){
                 JOptionPane.showMessageDialog(null, "Chrome driver not found");
                 break;
             }
